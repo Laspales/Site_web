@@ -1,3 +1,4 @@
+/* Filigrane logo dev */
 .fili1 {
     position: fixed;
     top: -20%;
@@ -21,7 +22,7 @@
   }
   .fili3 {
     position: fixed;
-    bottom: -25%;
+    bottom: -30%;
     right: -5%;
     transform: rotate(-45deg);
     font-size: 20.5em;
@@ -43,23 +44,60 @@
   }
   .fili5 {
     position: fixed;
-    top: 5%;
-    right: 10%;
-    font-size: 2O.5em;
+    top: 0;
+    right: -10%;
+    font-size: 20.5em;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.15);
     pointer-events: none; 
     opacity: 0.4;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
   }
-  .fili6 {
+
+ /* style pour .title et .Surname */
+
+.title{
+    font-size: 1.25em;
+    display: block;
+    width: 100px;
     position: fixed;
-    top: 20%;
-    left: 43%;
-    font-size: 19.5em;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.15);
-    pointer-events: none; 
-    opacity: 0.4;
-  }
- 
+    top: 15%;
+    left: 5%;
+}
+
+.Surname{
+    font-size: 1.25em;
+    display: block;
+    width: auto;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+.Surname span {
+    text-transform: uppercase;
+}
+
+.title h1, .Surname h1{
+    color: black;
+}
+
+/* Style .image */
+
+.image{
+    position: fixed;
+    top: 33%;
+    left: 45%;
+}
+
+.image img{
+    cursor: pointer;
+}
+/*
+.image img:hover{
+
+   
+}
+*/
+
+/* style dark them section */

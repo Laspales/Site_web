@@ -50,3 +50,6 @@
     position: absolute;
     top: 0;
   }
+  body.dark Header a, body.dark Header li{
+    color: whitesmoke;
+  }

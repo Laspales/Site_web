@@ -6,9 +6,9 @@ import { DiJavascript1 } from "react-icons/di";
 import { BsDatabaseFill } from "react-icons/bs";
 import { IoLayersSharp } from "react-icons/io5";
 import { CiGrid42 } from "react-icons/ci";
-function Section(){
+function Section() {
 
-    return(
+    return (
         <div className="App-Section">
             <div className="fili1">
                 <DiLaravel />
@@ -25,17 +25,14 @@ function Section(){
             <div className="fili5">
                 <IoLayersSharp />
             </div>
-            <div className="fili6">
-                <CiGrid42 />
-            </div>
             <div className="title">
-                    <h1>Développeur Web</h1>
+                <h1>Développeur <br /> Web</h1>
             </div>
             <div className="image">
-
+                     <img src="./LA_logo.png" alt="image" width="220px" height="200px" />
             </div>
             <div className="Surname">
-                    <h1>Laspales <span>epalla ndjalla</span></h1>
+                <h1>Laspales <br /><span>epalla ndjalla</span></h1>
             </div>
         </div>
     );
