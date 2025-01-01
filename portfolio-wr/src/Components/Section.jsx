@@ -1,18 +1,41 @@
 import React from "react";
 import './Section-Style.css'
-
+import { DiLaravel } from "react-icons/di";
+import { DiReact } from "react-icons/di";
+import { DiJavascript1 } from "react-icons/di";
+import { BsDatabaseFill } from "react-icons/bs";
+import { IoLayersSharp } from "react-icons/io5";
+import { CiGrid42 } from "react-icons/ci";
 function Section(){
 
     return(
         <div className="App-Section">
+            <div className="fili1">
+                <DiLaravel />
+            </div>
+            <div className="fili2">
+                <DiReact />
+            </div>
+            <div className="fili3">
+                <DiJavascript1 />
+            </div>
+            <div className="fili4">
+                <BsDatabaseFill />
+            </div>
+            <div className="fili5">
+                <IoLayersSharp />
+            </div>
+            <div className="fili6">
+                <CiGrid42 />
+            </div>
             <div className="title">
-
+                    <h1>Développeur Web</h1>
             </div>
             <div className="image">
 
             </div>
             <div className="Surname">
-
+                    <h1>Laspales <span>epalla ndjalla</span></h1>
             </div>
         </div>
     );

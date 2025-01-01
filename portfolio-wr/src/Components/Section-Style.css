@@ -1,0 +1,65 @@
+.fili1 {
+    position: fixed;
+    top: -20%;
+    left: -5%;
+    font-size: 20.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.15);
+    pointer-events: none; 
+    opacity: 0.4;
+  }
+  .fili2 {
+    position: fixed;
+    bottom: -30%;
+    left: -10%;
+    transform: rotate(45deg);
+    font-size: 20.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.15);
+    pointer-events: none; 
+    opacity: 0.4;
+  }
+  .fili3 {
+    position: fixed;
+    bottom: -25%;
+    right: -5%;
+    transform: rotate(-45deg);
+    font-size: 20.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.15);
+    pointer-events: none; 
+    opacity: 0.4;
+  }
+  .fili4 {
+    position: fixed;
+    top: -35%;
+    left: 43%;
+    transform: rotate(-45deg);
+    font-size: 20.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.15);
+    pointer-events: none; 
+    opacity: 0.4;
+  }
+  .fili5 {
+    position: fixed;
+    top: 5%;
+    right: 10%;
+    font-size: 2O.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.15);
+    pointer-events: none; 
+    opacity: 0.4;
+    transform: rotate(-45deg);
+  }
+  .fili6 {
+    position: fixed;
+    top: 20%;
+    left: 43%;
+    font-size: 19.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.15);
+    pointer-events: none; 
+    opacity: 0.4;
+  }
+ 
