@@ -5,7 +5,6 @@ import { DiReact } from "react-icons/di";
 import { DiJavascript1 } from "react-icons/di";
 import { BsDatabaseFill } from "react-icons/bs";
 import { IoLayersSharp } from "react-icons/io5";
-import { CiGrid42 } from "react-icons/ci";
 function Section() {
 
     return (

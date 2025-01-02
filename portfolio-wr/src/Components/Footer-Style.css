@@ -1,0 +1,27 @@
+footer {
+    position: fixed;
+    left: -5%;
+    width: 100%;
+    padding: 0px;
+    height: 60px;
+    bottom: 0px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline-block;
+    padding-left: 50px;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgba(100,100,100, 0.95);
+    font-size: 20px;
+}
+
+footer a:hover{
+    color: rgba(100,100,100, 0.95);
+}

@@ -3,6 +3,7 @@ import React from 'react';
 import { initializeThemeHandler } from './Components/theme';
 import Header from './Components/Header';
 import Section from './Components/Section';
+import Footer from './Components/Footer';
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
     <body className='light'>
       <Header toggleTheme={toggleTheme} />
       <Section />
+      <Footer />
     </body>
   );
 }
