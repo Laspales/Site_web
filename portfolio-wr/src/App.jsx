@@ -1,40 +1,56 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { initializeThemeHandler } from './Components/theme';
 import Header from './Components/Header';
+import Filigrane from './Components/filigrane';
 import Section from './Components/Section';
 import Footer from './Components/Footer';
+import Projets from './pages/Projets';
+import Contact from './pages/Contact';
+import APropos from './pages/Apropos';
 import './App.css';
 
-function App() {
-  const [theme, setTheme] = useState('light'); // Gestion de l'état du thème
+function Accueil() {
+  return  <Section />;
+}
+// fonction  APP
 
-  // Initialiser le thème lors du premier rendu
+function App() {
+  const [theme, setTheme] = useState('light');
   useEffect(() => {
-    initializeThemeHandler(); // Charger le thème initial depuis le localStorage
+    initializeThemeHandler();
   }, []);
 
-  // Fonction pour alterner entre les thèmes
   const toggleTheme = () => {
     setTheme((prevTheme) => {
-      const newTheme = prevTheme === 'light' ? 'dark' : 'light'; // Inverser le thème
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
       document.body.classList.remove(prevTheme);
       document.body.classList.add(newTheme);
-      localStorage.setItem('old_Theme', newTheme); // Sauvegarder le thème dans localStorage
-      return newTheme; // Retourner le nouveau thème
+      localStorage.setItem('old_Theme', newTheme);
+      return newTheme;
     });
   };
 
   useEffect(() => {
-    document.body.classList.add(theme); // Appliquer le thème au body
+    document.body.classList.add(theme);
   }, [theme]);
 
   return (
-    <body className='light'>
-      <Header toggleTheme={toggleTheme} />
-      <Section />
-      <Footer />
-    </body>
+    <Router>
+      <div className={`app ${theme}`}>
+        <Header toggleTheme={toggleTheme} />
+        <Filigrane />
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/projets" element={<Projets />} />
+          <Route path="/apropos" element={<APropos />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+       
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

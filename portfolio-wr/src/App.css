@@ -28,6 +28,6 @@ body::after {
   height: 100%;
   filter: blur(100px) saturate(100%);
   top: 0px;
-  opacity: 0.1;
+  opacity: 0.3;
   transform: translateZ(0px);
 }
