@@ -1,0 +1,53 @@
+.Contact-Title{
+    font-size: 1em;
+    display: block;
+    width: 400px;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+}
+.Contact-Form label{
+    text-transform: capitalize;
+    padding-top: 20px;
+
+}
+.Contact-Form{
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    color: whitesmoke;
+    background-color: #333;
+    position: absolute;
+    top: 25%;
+    left: 38%;
+}
+
+#email,
+#name,
+#com {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: none;
+    border-radius: 0;
+    border-bottom: 3px solid #F07167;
+    color: whitesmoke;
+    background-color: #333;
+    box-shadow: none;
+    
+}
+#com{
+    width: 100%;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 150px;
+    max-height: 150px;
+}
+#send {
+    background-color: whitesmoke;
+    color: black;
+    position: absolute;
+    bottom: 3%;
+}

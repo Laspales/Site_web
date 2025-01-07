@@ -8,7 +8,7 @@ body::before {
   background:
       linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px) center,
       linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px) center;
-  background-size: 30px 30px;
+  background-size: 31px 31px;
   transition: all 0.5s linear 0s;
 }
 

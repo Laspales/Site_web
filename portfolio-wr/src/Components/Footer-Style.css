@@ -18,10 +18,10 @@ footer ul li {
 
 footer a {
     text-decoration: none;
-    color: rgba(100,100,100, 0.95);
+    color: rgba(0, 0, 0, 0.8);
     font-size: 20px;
 }
 
 footer a:hover{
-    color: rgba(100,100,100, 0.95);
+    color: rgba(0, 0, 0, 0.8);
 }
