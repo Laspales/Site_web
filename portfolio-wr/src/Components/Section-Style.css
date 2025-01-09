@@ -1,47 +1,126 @@
  /* style pour .title et .Surname */
 
-.title{
-    font-size: 1.25em;
-    display: block;
-    width: 100px;
-    position: fixed;
-    top: 15%;
-    left: 5%;
-}
+ .title {
+     font-size: 1.25em;
+     display: block;
+     width: 100px;
+     position: fixed;
+     top: 15%;
+     left: 5%;
+ }
 
-.Surname{
-    font-size: 1.25em;
-    display: block;
-    width: auto;
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-}
+ .Surname {
+     font-size: 1.25em;
+     display: block;
+     width: auto;
+     position: fixed;
+     bottom: 5%;
+     right: 5%;
+ }
 
-.Surname span {
-    text-transform: uppercase;
-}
+ .Surname span {
+     text-transform: uppercase;
+ }
 
-.title h1, .Surname h1{
-    color: black;
-}
+ .title h1,
+ .Surname h1 {
+     color: black;
+ }
 
-/* Style .image */
-
-.image{
-    position: fixed;
-    top: 33%;
-    left: 45%;
-}
-
-.image img{
-    cursor: pointer;
-}
-/*
-.image img:hover{
-
-   
-}
-*/
+ /* Style .image */
 
 
+ .image {
+     position: fixed;
+     top: 33%;
+     left: 45%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: auto;
+     width: 220px;
+     height: 200px;
+
+ }
+
+ /* Animation : faire tourner le logo central au chargement de la page*/
+@keyframes rotation {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .image img {
+    animation: rotation 4s linear infinite; 
+    display: block; 
+    margin: auto; 
+  }
+
+
+ /* animation rotation des cercles */
+
+ /* Conteneur des cercles */
+ .circle {
+     position: fixed;
+     top: 20%;
+     left: 39.5%;
+     width: 400px;
+     height: 400px;
+     margin: auto;
+     animation: spin 10s linear infinite;
+     /* Animation pour tourner */
+ }
+
+ /* Chaque cercle individuel */
+ .circle div {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 55px;
+     height: 55px;
+     border-radius: 50%;
+     font-weight: bold;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ /* Placement des cercles en forme de cercle */
+ .circle .circlea {
+     transform: translate(-50%, -50%) rotate(0deg) translate(140px) rotate(0deg);
+ }
+
+ .circle .circleb {
+     transform: translate(-50%, -50%) rotate(60deg) translate(140px) rotate(-60deg);
+ }
+
+ .circle .circlec {
+     transform: translate(-50%, -50%) rotate(120deg) translate(140px) rotate(-120deg);
+ }
+
+ .circle .circled {
+     transform: translate(-50%, -50%) rotate(180deg) translate(140px) rotate(-180deg);
+ }
+
+ .circle .circlee {
+     transform: translate(-50%, -50%) rotate(240deg) translate(140px) rotate(-240deg);
+ }
+
+ .circle .circlef {
+     transform: translate(-50%, -50%) rotate(300deg) translate(140px) rotate(-300deg);
+ }
+
+ /* Animation de rotation circulaire */
+ @keyframes spin {
+     from {
+         transform: rotate(0deg);
+     }
+
+     to {
+         transform: rotate(360deg);
+     }
+ }
