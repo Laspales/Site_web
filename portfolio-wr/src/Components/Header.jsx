@@ -12,12 +12,12 @@ function Header({ toggleTheme }) {
             <nav className="navbar">
                 <div className="linear">
                     <ul className="line">
-                        <li className={`logo ${isActive("/")}`} ><Link to="\" ></Link><a href="/"><img src="/images/LA_logo.png" alt="image" width="60px" height="50px" /></a></li>
+                        <li className="logo" ><Link to="\" ></Link><a href="/"><sub><img src="/images/LA_logo.png" alt="image" width="95px" height="80px" /></sub></a></li>
                         <li className={`nv ${isActive("/")}`}><Link to="/">Accueil</Link></li>
                         <li className={`nv ${isActive("/projets")}`}><Link to="/projets">Projets</Link></li>
                         <li className={`nv ${isActive("/apropos")}`}><Link to="/apropos">À propos</Link></li>
                         <li className={`nv ${isActive("/contact")}`}><Link to="/contact">Contact</Link></li>
-                        <li className="theme" onClick={toggleTheme}><FaCircleHalfStroke /></li>
+                        <li className="nv"><FaCircleHalfStroke  className="theme" onClick={toggleTheme} style={{position: 'fixed', top:'6.5%'}}/></li>
                     </ul>
                 </div>
             </nav>

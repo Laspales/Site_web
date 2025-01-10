@@ -2,8 +2,11 @@ import React from "react";
 
 function Projets(){
     return(
-        <div>
-              <h1>AKA lo cul</h1>
+        <div className="App-Projets">
+              <h1>Projets.</h1>
+              <div className="projet">
+                <div className="s-image"></div>
+              </div>
         </div>
     );
 }

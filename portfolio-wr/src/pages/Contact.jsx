@@ -6,30 +6,27 @@ function Contact() {
     return (
         <div className="App-Contact">
             <div className="Contact-Title">
-                <h1>Contactez-moi</h1>
+                <h1>Contact.</h1>
+                <p>Contactez-moi ou envoyez-moi un email directement sur <b>badepalla09@gmail.com</b></p>
             </div>
             <div className="Contact-Form">
                 <form method="POST">
-
-                    <label for="name">nom</label>
-                    <br />
+ 
                     <input id="name" className="ye" type="text"
                         name="name"
-                        placeholder="Entrez votre nom"
+                        placeholder="Nom"
                         required autofocus autocomplete="name" />
                     <br /><br />
-                    <label for="email">email</label>
-                    <br />
+                    
                     <input id="email" className="ye" type="text"
                         name="email"
-                        placeholder="Entrez votre adresse mail"
+                        placeholder="Adresse mail"
                         required autofocus autocomplete="name" />
                     <br /><br />
-                    <label for="commentaire">Commentaire</label>
-                    <br />
-                    <textarea id="com" name="commentaire" placeholder="Tapez votre commentaire..."></textarea>
+                       
+                    <textarea id="com" name="message" placeholder="Message"></textarea>
                     <br /><br />
-                    <button type="submit" id="send">Envoyez <sub><BsSend /></sub></button>
+                    <button type="submit" id="send">Envoyer</button>
                 </form>
             </div>
         </div>

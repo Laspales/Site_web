@@ -1,34 +1,35 @@
+.App-Contact{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    position: absolute;
+    top: 11%;
+    left: 20%;
+}
 .Contact-Title{
     font-size: 1em;
     display: block;
     width: 400px;
-    position: fixed;
-    top: 10%;
-    left: 5%;
+    
+   
 }
-.Contact-Form label{
-    text-transform: capitalize;
-    font-size: 1.25em;
-    padding-top: 20px;
 
+input, textarea{
+    all: unset;
+    background: none;
 }
-input:focus {
+input:focus, textarea:focus {
     outline: none;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);
 }
-textarea:focus{
-    outline: none;
-}
+
 .Contact-Form{
     font-size: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
     width: 500px;
     height: 420px;
-    padding: 25px;
-    color: whitesmoke;
-    background-color: #333;
-    position: absolute;
-    top: 22.5%;
-    left: 37%;
+   
 }
 
 #email,
@@ -37,13 +38,11 @@ textarea:focus{
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-style: none;
-    border-radius: 0;
-    border-bottom: 3px solid #F07167;
-    color: whitesmoke;
+    padding-left: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     font-size: 1.25em;
-    background-color: #333;
-    box-shadow: none;
+    font-weight: 500;
     
 }
 #com{
@@ -52,6 +51,7 @@ textarea:focus{
     max-width: 500px;
     min-height: 100px;
     max-height: 150px;
+    overflow: auto;
 }
 #send {
     all: unset;
@@ -60,7 +60,11 @@ textarea:focus{
     text-align: center;
     font-size: 1.5em;
     border: 1px solid;
-    position: absolute;
-    right: 2%;
-    bottom: 3%;
+    border-radius: 5px; 
+    font-weight: 500; 
+}
+
+#send:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
 }
