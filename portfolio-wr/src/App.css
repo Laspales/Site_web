@@ -6,21 +6,21 @@ body::before {
   position: fixed;
   z-index: -1;
   background:
-      linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px) center,
-      linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px) center;
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px) center,
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px) center;
   background-size: 110px 110px;
   transition: all 0.5s linear 0s;
 }
 
 body::after {
   background-image:
-      radial-gradient(at 40% 40%, rgb(30, 144, 255) 0px, transparent 50%),
-      radial-gradient(at 90% 10%, rgb(255, 105, 180) 0px, transparent 50%),
-      radial-gradient(at 50% 95%, rgb(0, 255, 255) 0px, transparent 50%),
-      radial-gradient(at 20% 30%, rgb(50, 205, 50) 0px, transparent 50%),
-      radial-gradient(at 90% 90%, rgb(255, 255, 0) 0px, transparent 50%),
-      radial-gradient(at 33% 50%, rgb(255, 69, 0) 0px, transparent 50%),
-      radial-gradient(at 79% 53%, rgb(128, 0, 128) 0px, transparent 50%);
+    radial-gradient(at 40% 40%, rgb(30, 144, 255) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgb(255, 105, 180) 0px, transparent 50%),
+    radial-gradient(at 50% 95%, rgb(0, 255, 255) 0px, transparent 50%),
+    radial-gradient(at 20% 30%, rgb(50, 205, 50) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgb(255, 255, 0) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgb(255, 69, 0) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, rgb(128, 0, 128) 0px, transparent 50%);
   position: fixed;
   content: "";
   z-index: -1;

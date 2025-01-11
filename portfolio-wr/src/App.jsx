@@ -48,7 +48,6 @@ function App() {
           <Route path="/apropos" element={<APropos />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-       
         <Footer />
       </div>
     </Router>

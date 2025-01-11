@@ -1,0 +1,61 @@
+.App-Projets{
+    position: absolute;
+    top: 15%;
+    left: 18%;
+}
+.projet{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.conteneur{
+    width: 550px;
+    height: 350px;
+    background-image: url('/images/feather.jpg');
+    background-position: center;
+    background-size: cover;
+    border: 1px solid;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.s-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+.description{
+    display: flexbox;
+    position: relative;
+    top: 45%;
+    width: 100%;
+    height: 300px;
+    padding-left: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(255,255,255,0));
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.conteneur:hover .description {
+    opacity: 1; 
+    visibility: visible;
+}
+.techno{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: -5%;
+}
+
+.techno .tec{
+    display: inline-flex;
+    padding: 10px;
+}
+
+.techno .tec span{
+    border: 1px solid;
+    border-radius: 50px;
+    padding: 7px;
+}
