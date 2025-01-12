@@ -1,9 +1,9 @@
 import React from "react";
 import { IoFootball } from "react-icons/io5";
-import { FcReading } from "react-icons/fc";
-import { FcMusic } from "react-icons/fc";
+import { GiRead } from "react-icons/gi";
+import { GiMusicalNotes } from "react-icons/gi";
 import { PiCodeFill } from "react-icons/pi";
-import { FcOldTimeCamera } from "react-icons/fc";
+import { IoCameraSharp } from "react-icons/io5";
 import { PiDogFill } from "react-icons/pi";
 import './Section-Style.css'
 
@@ -18,12 +18,12 @@ function Section() {
             <div className="image">
                 <img src="/images/LA_logo.png" alt="image" width="210px" height="190px" />
                 <div className="circle">
-                    <div className="circlea"><IoFootball style={{fontSize: '50px', color: '#111'}}/></div>
-                    <div className="circleb"><FcReading style={{fontSize: '50px'}}/></div>
-                    <div className="circlec"><FcMusic style={{fontSize: '50px' }}/></div>
-                    <div className="circled"><PiCodeFill style={{color : '#333', fontSize: '50px'}}/></div>
-                    <div className="circlee"><FcOldTimeCamera style={{fontSize: '50px'}}/></div>
-                    <div className="circlef"><PiDogFill style={{color : 'Orange', fontSize: '50px'}}/></div>
+                    <div className="circlea"><IoFootball style={{fontSize: '50px', color: 'black'}}/></div>
+                    <div className="circleb"><GiRead style={{fontSize: '50px', color: 'black'}}/></div>
+                    <div className="circlec"><GiMusicalNotes style={{fontSize: '50px', color: 'black'}}/></div>
+                    <div className="circled"><PiCodeFill style={{color : 'black', fontSize: '50px'}}/></div>
+                    <div className="circlee"><IoCameraSharp style={{fontSize: '50px', color: 'black'}}/></div>
+                    <div className="circlef"><PiDogFill style={{color : 'black', fontSize: '50px'}}/></div>
                 </div>
             </div>
             <div className="Surname">

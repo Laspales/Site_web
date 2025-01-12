@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import './pages-css/Contact-Style.css';
-import { BsSend } from "react-icons/bs";
+import axios from "axios";
 
 function Contact() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const [status, setStatus] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:5000/contact', formData);
+            setStatus(response.data.message);
+            setFormData({ name: '', email: '', message: '' });
+        } catch (error) {
+            setStatus('Erreur lors de l\'envoi du message.');
+        }
+    };
+
     return (
         <div className="App-Contact">
             <div className="Contact-Title">
@@ -10,24 +33,42 @@ function Contact() {
                 <p>Contactez-moi ou envoyez-moi un email directement sur <b>badepalla09@gmail.com</b></p>
             </div>
             <div className="Contact-Form">
-                <form method="POST">
- 
-                    <input id="name" className="ye" type="text"
+                <form onSubmit={handleSubmit}>
+                    <input
+                        id="name"
+                        type="text"
                         name="name"
                         placeholder="Nom"
-                        required autofocus autocomplete="name" />
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
                     <br /><br />
-                    
-                    <input id="email" className="ye" type="text"
+
+                    <input
+                        id="email"
+                        type="email"
                         name="email"
                         placeholder="Adresse mail"
-                        required autofocus autocomplete="name" />
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
                     <br /><br />
-                       
-                    <textarea id="com" name="message" placeholder="Message"></textarea>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Message"
+                        required
+                        value={formData.message}
+                        onChange={handleChange}
+                    ></textarea>
                     <br /><br />
+                    
                     <button type="submit" id="send">Envoyer</button>
                 </form>
+                {status && <p>{status}</p>}
             </div>
         </div>
     );
