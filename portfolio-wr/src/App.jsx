@@ -10,6 +10,7 @@ import Projets from './pages/Projets';
 import Contact from './pages/Contact';
 import APropos from './pages/Apropos';
 import './App.css';
+import AdminMessages from './Components/AdminMessage';
 
 function Accueil() {
   return  <Section />;
@@ -47,6 +48,7 @@ function App() {
           <Route path="/projets" element={<Projets />} />
           <Route path="/apropos" element={<APropos />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<AdminMessages />} />
         </Routes>
         <Footer />
       </div>
