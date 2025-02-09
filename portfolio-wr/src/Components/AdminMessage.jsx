@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminMessage-Style.css";
-
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 function AdminMessages() {
     const [messages, setMessages] = useState([]);
     const [error, setError] = useState("");
@@ -59,7 +60,8 @@ function AdminMessages() {
                             value={loginData.password}
                             onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
                             required
-                        />
+                        /><span className="vp"> <FaRegEye /></span> 
+                            <span className="vpn"><FaRegEyeSlash /></span>
                         <br /> <br />
                         <button type="submit">Se connecter</button>
                     </form>

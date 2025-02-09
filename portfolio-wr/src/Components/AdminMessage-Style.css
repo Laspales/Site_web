@@ -45,3 +45,16 @@
     border: 1px solid;
     padding: 15px;
 }
+.vp, .vpn{
+    position: absolute;
+    top: 50%;
+    right:0;
+    border:1px solid transparent;
+    background:none;
+    z-index:3;
+    padding:14px;
+    cursor:pointer;
+}
+.vpn{
+    display: none;
+}

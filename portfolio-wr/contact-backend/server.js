@@ -66,7 +66,7 @@ app.post('/contact', async (req, res) => {
         const { name, email, message } = req.body;
         const newContact = new Contact({ name, email, message });
         await newContact.save();
-        res.status(200).json({ message: 'Message enregistré avec succès.' });
+        res.status(200).json({ message: 'Message envoyé ' });
     } catch (err) {
         res.status(500).json({ error: 'Erreur lors de l\'enregistrement du message.' });
     }
