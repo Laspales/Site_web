@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminMessage-Style.css";
-import { FaRegEye } from "react-icons/fa";
-import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+
 function AdminMessages() {
     const [messages, setMessages] = useState([]);
     const [error, setError] = useState("");
     const [token, setToken] = useState(localStorage.getItem("token") || "");
     const [loginData, setLoginData] = useState({ username: "", password: "" });
     const [loginError, setLoginError] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
         if (token) {
@@ -36,7 +37,7 @@ function AdminMessages() {
             setToken(response.data.accessToken);
             setLoginError("");
         } catch (err) {
-            setLoginError("Identifiants incorrects.");
+            setLoginError(err.response?.data?.error || "Erreur lors de la connexion.");
         }
     };
 
@@ -54,14 +55,18 @@ function AdminMessages() {
                             required
                         />
                         <br /><br />
-                        <input
-                            type="password"
-                            placeholder="Mot de passe"
-                            value={loginData.password}
-                            onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                            required
-                        /><span className="vp"> <FaRegEye /></span> 
-                            <span className="vpn"><FaRegEyeSlash /></span>
+                        <div className="password-container">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Mot de passe"
+                                value={loginData.password}
+                                onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
+                                required
+                            />
+                            <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
+                                {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
+                            </span>
+                        </div>
                         <br /> <br />
                         <button type="submit">Se connecter</button>
                     </form>
@@ -103,3 +108,4 @@ function AdminMessages() {
 }
 
 export default AdminMessages;
+

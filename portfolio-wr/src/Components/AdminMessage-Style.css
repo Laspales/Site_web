@@ -8,6 +8,7 @@
 .Admin-Messages form input {
     width: 100%;
     padding: 10px;
+    border-bottom: 3px solid darkgrey;
 }
 
 .Admin-Messages form button {
@@ -45,16 +46,28 @@
     border: 1px solid;
     padding: 15px;
 }
-.vp, .vpn{
-    position: absolute;
-    top: 50%;
-    right:0;
-    border:1px solid transparent;
-    background:none;
-    z-index:3;
-    padding:14px;
-    cursor:pointer;
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
-.vpn{
-    display: none;
+
+.password-container input {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+.error {
+    color: rgba(255, 55, 39, 1);
+    font-weight: bold;
+    background-color: rgba(255, 229, 229, 1);
+    padding: 10px;
+    border: 1px solid rgba(255, 55, 39, 1);
+    border-radius: 5px;
+    text-align: center;
 }
