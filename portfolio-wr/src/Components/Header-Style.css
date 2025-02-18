@@ -38,7 +38,7 @@
 .logo{
   position: absolute;
   top: 0;
-  left: -105%;
+  left: -145%;
 }
 
 .linear {
@@ -55,6 +55,19 @@
   border-bottom: 2px solid;
   opacity: 0.8;
 }
+
+/*style button admin */
+
+#adm{
+  position: fixed;
+  bottom: -2%;
+  right: 0;
+  padding: 5px;
+  cursor: all-scroll;
+  color: rgba(0, 0, 0, 0.15);
+  opacity: 0.04;
+}
+
 /* style dark theme */
 body.dark {
   color: rgba(250, 250, 250, 0.95) !important;
@@ -70,6 +83,7 @@ body.dark .App-Section .title h1,
 body.dark .App-Section .Surname h1 {
   color: whitesmoke;
 }
+
 body.dark .App-Section .circle div{
   border: 1px solid whitesmoke;
   background-color: whitesmoke;
@@ -77,16 +91,20 @@ body.dark .App-Section .circle div{
   padding: 3px;
   opacity: 0.4;
 }
-body.dark .App-Footer li a {
+
+body.dark .App-Footer li a, body.dark .Admin-Messages form input{
   color: whitesmoke;
 }
+
 body.dark .App-Contact #send:hover, body.dark .Admin-Messages form button:hover, body.dark .Admin-Messages #deco:hover{
   color: rgba(0, 0, 0, 0.8);
   background-color: whitesmoke;
 }
+
 body.dark .App-Contact #name, body.dark .App-Contact #message, body.dark .App-Contact #email{
   border: 1px solid rgba(250, 250, 250, 0.9);
 }
+
 body.dark .App-Projets .description{
   color: black;
 }

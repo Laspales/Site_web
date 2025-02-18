@@ -31,3 +31,17 @@ body::after {
   opacity: 0.17;
   transform: translateZ(0px);
 }
+/* scrollbar */
+
+body::-webkit-scrollbar {
+  width: 12px; /* largeur de la barre de défilement */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 1); /* couleur de la piste de défilement */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.6); 
+ 
+}

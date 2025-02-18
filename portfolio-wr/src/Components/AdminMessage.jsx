@@ -46,6 +46,7 @@ function AdminMessages() {
             {!token ? (
                 <div>
                     <h1>Connexion Admin</h1>
+
                     <form onSubmit={handleLogin}>
                         <input
                             type="text"
@@ -54,11 +55,14 @@ function AdminMessages() {
                             onChange={(e) => setLoginData({ ...loginData, username: e.target.value })}
                             required
                         />
+
                         <br /><br />
+
                         <div className="password-container">
                             <input
                                 type={showPassword ? "text" : "password"}
                                 placeholder="Mot de passe"
+                                id="mdp"
                                 value={loginData.password}
                                 onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
                                 required
@@ -67,9 +71,12 @@ function AdminMessages() {
                                 {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
                             </span>
                         </div>
+
                         <br /> <br />
+                        
                         <button type="submit">Se connecter</button>
                     </form>
+
                     {loginError && <p className="error">{loginError}</p>}
                 </div>
             ) : (
