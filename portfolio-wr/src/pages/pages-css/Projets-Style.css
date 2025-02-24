@@ -13,7 +13,7 @@
 .conteneur{
     width: 550px;
     height: 350px;
-    background-image: url('/images/feather.jpg');
+    background-image: url('/images/bofimage.jpg');
     background-position: center;
     background-size: cover;
     border: 1px solid;
@@ -37,6 +37,7 @@
     opacity: 0; 
     visibility: hidden; 
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    color: white;
 }
 .conteneur:hover .description {
     opacity: 1; 
@@ -58,6 +59,7 @@
     border: 1px solid;
     border-radius: 50px;
     padding: 7px;
+   
 }
 
   

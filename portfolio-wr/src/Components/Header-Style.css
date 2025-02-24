@@ -92,7 +92,7 @@ body.dark .App-Section .circle div{
   opacity: 0.4;
 }
 
-body.dark .App-Footer li a, body.dark .Admin-Messages form input{
+body.dark .App-Footer li a, body.dark .Admin-Messages form input, body.dark .Admin-Messages form #mdp{
   color: whitesmoke;
 }
 

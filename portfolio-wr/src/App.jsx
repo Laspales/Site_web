@@ -8,7 +8,7 @@ import Section from './Components/Section';
 import Footer from './Components/Footer';
 import Projets from './pages/Projets';
 import Contact from './pages/Contact';
-import APropos from './pages/Apropos';
+import APropos from './pages/APropos';
 import './App.css';
 import AdminMessages from './Components/AdminMessage';
 

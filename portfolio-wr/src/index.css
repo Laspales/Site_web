@@ -8,13 +8,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
-
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   min-width: 320px;
   min-height: 100vh;
 }
