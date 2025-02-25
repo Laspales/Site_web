@@ -17,6 +17,7 @@ function Section() {
             </div>
             <div className="image">
                 <img src="/images/LA_logo.png" alt="image" width="210px" height="190px" />
+                {/*
                 <div className="circle">
                     <div className="circlea"><IoFootball style={{fontSize: '50px', color: 'black'}}/></div>
                     <div className="circleb"><GiRead style={{fontSize: '50px', color: 'black'}}/></div>
@@ -25,6 +26,7 @@ function Section() {
                     <div className="circlee"><IoCameraSharp style={{fontSize: '50px', color: 'black'}}/></div>
                     <div className="circlef"><PiDogFill style={{color : 'black', fontSize: '50px'}}/></div>
                 </div>
+                */}
             </div>
             <div className="Surname">
                 <h1>Laspales <br /><span>epalla ndjalla</span></h1>

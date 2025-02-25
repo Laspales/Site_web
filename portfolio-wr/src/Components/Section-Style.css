@@ -60,9 +60,9 @@
   }
 */
 
- /* animation rotation des cercles */
+  
 
- /* Conteneur des cercles */
+ /* Conteneur des cercles 
  .circle {
      position: fixed;
      top: 20%;
@@ -71,10 +71,10 @@
      height: 400px;
      margin: auto;
      animation: spin 10s linear infinite;
-     /* Animation pour tourner */
+     
  }
-
- /* Chaque cercle individuel */
+    */
+ /* Chaque cercle 
  .circle div {
      position: fixed;
      top: 50%;
@@ -88,8 +88,8 @@
      justify-content: center;
      align-items: center;
  }
-
- /* Placement des cercles en forme de cercle */
+*/
+ /* Placement des cercles en forme de cercle 
  .circle .circlea {
      transform: translate(-50%, -50%) rotate(0deg) translate(140px) rotate(0deg);
  }
@@ -113,8 +113,8 @@
  .circle .circlef {
      transform: translate(-50%, -50%) rotate(300deg) translate(140px) rotate(-300deg);
  }
-
- /* Animation de rotation circulaire */
+*/
+ /* Animation de rotation circulaire 
  @keyframes spin {
      from {
          transform: rotate(0deg);
@@ -124,3 +124,5 @@
          transform: rotate(360deg);
      }
  }
+*/
+ 
