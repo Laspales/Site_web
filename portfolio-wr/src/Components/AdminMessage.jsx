@@ -19,7 +19,7 @@ function AdminMessages() {
 
     const fetchMessages = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/messages", {
+            const response = await axios.get("http://localhost:5001/messages", {
                 headers: { Authorization: token },
             });
             setMessages(response.data);
@@ -32,7 +32,7 @@ function AdminMessages() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/login", loginData);
+            const response = await axios.post("http://localhost:5001/login", loginData);
             localStorage.setItem("token", response.data.accessToken);
             setToken(response.data.accessToken);
             setLoginError("");
