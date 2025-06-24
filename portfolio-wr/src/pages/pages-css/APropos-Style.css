@@ -1,8 +1,8 @@
 
 .App-Apropos{
    position: absolute;
-   top: 15%;
-   left: 10%;
+   top: 15vh;
+   left: 15vw;
 }
 
 .App-Apropos .profil{

@@ -43,7 +43,7 @@
 
  }
 
- /* Animation : faire tourner le logo central au chargement de la page
+ /* Animation : faire tourner le logo central au chargement de la page */
 @keyframes rotation {
     from {
       transform: rotate(360deg);
@@ -58,7 +58,7 @@
     display: block; 
     margin: auto; 
   }
-*/
+
 
   
 
