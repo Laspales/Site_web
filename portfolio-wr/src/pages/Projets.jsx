@@ -10,21 +10,21 @@ const projects = [
     {
         name: "bubbletea",
         description: "Site e-commerce pour Bubble Tea avec gestion des commandes et espace admin. Paiement en ligne disponible.",
-        technologies: ["html", "css", "javascript", "laravel", "php", "mysql"],
+        technologies: ["laravel", "javascript","php", "html", "css", "mysql"],
         images: [
-            "/images/images_projets/bubbletea/Capture_decran_31.png",
-            "/images/images_projets/bubbletea/image01.png",
+            "/images/images_projets/bubbletea/image6.png",
+            "/images/images_projets/bubbletea/image4.png",
             "/images/images_projets/bubbletea/image2.png",
             "/images/images_projets/bubbletea/image3.png",
-            "/images/images_projets/bubbletea/image4.png",
             "/images/images_projets/bubbletea/image5.png",
-            "/images/images_projets/bubbletea/image6.png"
+            "/images/images_projets/bubbletea/image01.png",
+            "/images/images_projets/bubbletea/Capture_decran_31.png"
         ]
     },
     {
         name: "irc",
         description: "Chat en temps réel avec salons, notifications et gestion des utilisateurs connectés.",
-        technologies: ["html", "css", "javascript", "nodejs", "socket.io"],
+        technologies: ["nodejs", "javascript", "html", "css", "socket.io"],
         images: [
             "/images/images_projets/irc/irc0.PNG",
             "/images/images_projets/irc/irc1.PNG",
@@ -45,7 +45,7 @@ const projects = [
     },
     {
         name: "my hyrule castle",
-        description: "Mini-jeu web d’exploration avec énigmes et graphismes rétro.",
+        description: "Mini-jeu web d’exploration avec graphismes rétro.",
         technologies: ["typescript","nodejs"],
         images: [
             "/images/images_projets/hyrule_castle/hc0.PNG",

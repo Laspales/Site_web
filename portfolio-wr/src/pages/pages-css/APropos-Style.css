@@ -1,16 +1,65 @@
-
-.App-Apropos{
+.App-Apropos {
    position: absolute;
    top: 15vh;
-   left: 15vw;
+   left: 10vw;
+   width: 900px;
+   min-height: 500px;
 }
 
-.App-Apropos .profil{
-   width: 50px;
-   height: 50px;
-   border: 1px solid #000;
+.profile-image {
+   width: 180px;
+   height: 180px;
+   border-radius: 50%;
+   position: absolute;
+   top: 16.5vh;
+   left: -10vw;
+}
+
+.profile-pulse {
+   border-radius: 50%;
+}
+
+.timeline-container {
+   position: absolute;
+   left: 5vw;
+   top: 8.5vh;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+   min-width: 1100px;
+   padding-left: 50px;
+   margin-top: 40px;
+}
+
+.timeline-item {
+   width: 49%;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   align-items: center;
+   position: relative;
+}
+
+.timeline-icon {
+   width: 40px;
+   height: 40px;
+   background: #fff;
+   border: 3px solid rgba(0, 0, 0, 0.7);
    border-radius: 50%;
    display: flex;
-    justify-content: center;
-    align-items: center;
+   align-items: center;
+   justify-content: center;
+   color: rgba(0, 0, 0, 0.7);
+   position: absolute;
+   left: 10px;
+   z-index: 1;
+}
+
+.timeline-content {
+   margin-left: 70px;
+   background: #f5f5f5;
+   padding: 10px 10px;
+   border-radius: 10px;
+   border: 1.5px solid rgba(0, 0, 0, 0.7);
 }

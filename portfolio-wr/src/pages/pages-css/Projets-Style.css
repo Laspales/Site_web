@@ -41,7 +41,6 @@
     text-transform:  uppercase;
     display: inline-block;
     margin-right: 15px;
-    padding: 0;
 }
 
 /*boutons prev et next*/
@@ -77,6 +76,3 @@
     background-color:  rgba(0, 0, 0, 0.95);
     opacity: 0.7;
 }
-
-
-/*gestion des images*/

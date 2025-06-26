@@ -7,7 +7,7 @@ function ProjectCarousel({ images }) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [images.length]);
 
@@ -30,7 +30,7 @@ function ProjectCarousel({ images }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.05 }} // transition douce
+          transition={{ duration: 0.05 }} 
           style={{
             width: "100%",
             height: "100%",
