@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import './Section-Style.css'
 
 function Section() {
-
+        
     return (
         <div className="App-Section">
 
@@ -17,14 +17,24 @@ function Section() {
                 <h1>Développeur <br /><span style={{color : "grey"}}>Web</span> </h1>
             </div>
             <div className="image">
+                <motion.div 
+                    className="image"
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: 360 }}
+                    transition={{
+                        duration: 1.5,
+                        ease: "easeInOut"
+                    }}
+                >
+
                 <motion.img
                     src="/images/LA_logo.png"
                     alt="Laspales Image"
-                    width="230px"
-                    height="210px"
+                    width="210px"
+                    height="190px"
                     initial={{ scale: 1 }}
                     animate={{
-                        scale: [1, 1.1, 1],
+                        scale: [1, 1.2, 1], 
                     }}
                     transition={{
                         duration: 2,
@@ -32,12 +42,12 @@ function Section() {
                         repeatType: "loop",
                         ease: "easeInOut"
                     }}
-                    style={{ borderRadius: "12px" }}
+                   
                 />
-
+             </motion.div>
             </div>
             <div className="Surname">
-                <h1>Laspales <br /><span>epalla ndjalla</span></h1>
+                <h1>Laspales <br /><span style={{color: "grey"}}>epalla</span>&nbsp;<span>ndjalla</span></h1>
             </div>
 
         </div>

@@ -11,7 +11,7 @@
     font-size: 1em;
     display: block;
     width: 400px;
-    
+    margin-left: 11px;
    
 }
 
@@ -29,6 +29,7 @@ input:focus, textarea:focus {
     font-size: 12px;
     width: 500px;
     height: 420px;
+    margin-left: 11px;
    
 }
 
@@ -39,7 +40,7 @@ input:focus, textarea:focus {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     font-size: 1.25em;
     font-weight: 500;
@@ -53,6 +54,10 @@ input:focus, textarea:focus {
     max-height: 150px;
     overflow: auto;
 }
+input::placeholder,
+textarea::placeholder {
+  color: rgba(0, 0, 0, 0.8)
+}
 #send {
     all: unset;
     cursor: pointer;
@@ -62,9 +67,20 @@ input:focus, textarea:focus {
     border: 1px solid;
     border-radius: 5px; 
     font-weight: 500; 
+    background-color: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
 }
 
 #send:hover{
-    background-color: rgba(0, 0, 0, 0.8);
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.sendmail {
+    position: absolute;
+    top: 35%;
+    left: 80%;
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
 }

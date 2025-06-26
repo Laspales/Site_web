@@ -28,7 +28,7 @@ body::after {
   height: 100%;
   filter: blur(100px) saturate(75%);
   top: 0;
-  opacity: 0.17;
+  opacity: 0.4;
   transform: translateZ(0px);
 }
 /* scrollbar */

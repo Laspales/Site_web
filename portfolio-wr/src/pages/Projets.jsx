@@ -75,7 +75,7 @@ function Projets() {
     return (
         <div className="App-Projets">
             {/* Titre principal de la page */}
-            <h1>Projets.</h1>
+            <h1>Mes projets...</h1>
 
             {/* Animation de transition entre les projets avec framer-motion */}
             <AnimatePresence mode="wait">

@@ -4,6 +4,7 @@ import { PiBookBookmarkThin } from "react-icons/pi";
 import { CiMusicNote1 } from "react-icons/ci";
 import { PiSoccerBallThin } from "react-icons/pi";
 import { IoExtensionPuzzleOutline } from "react-icons/io5";
+import { CiFaceSmile } from "react-icons/ci";
 import { motion } from "framer-motion";
 import './pages-css/APropos-Style.css';
 
@@ -37,7 +38,7 @@ function APropos() {
     return (
         <div className="App-Apropos">
             <div className="Apropos-Title">
-                <h1>À Propos de moi</h1>
+                <h1>À propos de moi </h1>
             </div>
             <div className="timeline-container">
                 <div className="profile-image">
