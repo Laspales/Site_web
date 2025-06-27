@@ -27,9 +27,11 @@
      color: black;
  }
 
- /* Style .image */
-
-
+ .title h1 .grey,
+ .Surname h1 .grey {
+     color: grey;
+ }
+ /* style pour div image */
  .image {
      position: fixed;
      top: 33%;
@@ -42,5 +44,22 @@
      height: 200px;
 
  }
+ /* style dark theme */
+ body.dark .image  {
+     width: 220px;
+     height: 200px;
+     background-color: rgba(255, 255, 255, 0.65);
+     clip-path: polygon(50% 0%,
+             90% 25%,
+             90% 75%,
+             50% 100%,
+             10% 75%,
+             10% 25%
+         );
 
- 
+ }
+ body.dark .image img {
+     width: 220px;
+     height: 200px;
+     object-fit: cover;
+ }

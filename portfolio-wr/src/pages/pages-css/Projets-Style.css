@@ -40,7 +40,8 @@
 .techno .tec{
     text-transform:  uppercase;
     display: inline-block;
-    margin-right: 15px;
+    text-align: center;
+    margin: 0 10px 0 0;
 }
 
 /*boutons prev et next*/
@@ -76,3 +77,23 @@
     background-color:  rgba(0, 0, 0, 0.95);
     opacity: 0.7;
 }
+
+/* Style pour le dark thème */
+
+body.dark .App-Projets .description .titre{
+  color: white;
+}
+body.dark .App-Projets .description p{
+  color: white;
+} 
+body.dark .App-Projets .techno .tec{
+  color: white;
+}   
+body.dark .App-Projets .prev, body.dark .App-Projets .next {
+  color: white;
+}
+body.dark .App-Projets .prev:hover, body.dark .App-Projets .next:hover {
+  color: rgba(0, 0, 0, 0.95);
+  background-color: white;
+  opacity: 1;
+} 

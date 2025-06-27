@@ -19,7 +19,7 @@ function Header({ toggleTheme }) {
                         <li className={`nv ${isActive("/projets")}`}><Link to="/projets">Projets</Link></li>
                         <li className={`nv ${isActive("/contact")}`}><Link to="/contact">Contact</Link></li>
                         <li className={`nv ${isActive("/admin")}`} id="adm"><Link to="/admin"><RiAdminLine /></Link></li>
-                        <li className="nv"><FaCircleHalfStroke  className="theme" onClick={toggleTheme} style={{position: 'relative'}}/></li>
+                        <li className="nv"><FaCircleHalfStroke  className="theme" onClick={toggleTheme} /></li>
                     </ul>
                 </div>
             </nav>

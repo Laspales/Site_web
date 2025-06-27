@@ -1,62 +1,59 @@
+# Portfolio WR
 
-## Getting Started
+Bienvenue sur mon portfolio ! Ce site met en avant mon parcours, mes projets, mes compétences et mes expériences professionnelles. Vous y trouverez plusieurs pages :
 
-To get started with this project, follow these steps:
+- **Accueil** : Présentation générale et introduction à mon univers professionnel.
+- **Profil** : Détails sur mon parcours, mes formations et mes centres d’intérêt.
+- **Projets** : Description de mes réalisations, avec des exemples concrets et des liens vers les dépôts GitHub.
+- **Compétences** : Liste de mes compétences techniques et outils maîtrisés.
+- **Expériences** : Retour sur mes expériences professionnelles et stages.
+- **Contact** : Formulaire pour me contacter directement.
 
-1. **Clone the repository:**
-    ```sh
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+## Technologies utilisées
+
+Ce site a été développé avec :
+- **React** pour le frontend (interface utilisateur)
+- **Node.js** et **Express** pour le backend (serveur)
+- **MongoDB** et **MySQL** pour la gestion des bases de données
+- **Git** et **GitHub** pour le versioning et la gestion du code source
+
+## Installation et lancement
+
+1. **Cloner le dépôt**  
+    ```bash
+    git clone https://github.com/votre-utilisateur/portfolio-wr.git
+    cd portfolio-wr
     ```
 
-2. **Install dependencies:**
-    ```sh
-    npm install
-    ```
+2. **Installer les dépendances**  
+    - Pour le frontend :
+      ```bash
+      cd frontend
+      npm install
+      ```
+    - Pour le backend :
+      ```bash
+      cd ../backend
+      npm install
+      ```
 
-3. **Run the development server:**
-    ```sh
-    npm run dev
-    ```
+3. **Configurer les variables d’environnement**  
+    - Créez un fichier `.env` dans le dossier `backend` avec vos paramètres (exemple : URL de la base de données, port, etc.).
 
-4. **Build for production:**
-    ```sh
-    npm run build
-    ```
+4. **Lancer le projet**  
+    - Démarrer le backend :
+      ```bash
+      npm start
+      ```
+    - Démarrer le frontend (dans un autre terminal) :
+      ```bash
+      cd ../frontend
+      npm start
+      ```
 
-5. **Preview the production build:**
-    ```sh
-    npm run preview
-    ```
+## À venir
 
-## Project Structure
+Une section sur les difficultés rencontrées et les solutions apportées sera ajoutée à la fin du développement du site.
 
-The project structure is as follows:
+Merci de votre visite et bonne découverte !
 
-```
-/c:/Users/bibou/Site_web/portfolio-wr/
-├── public
-│   └── index.html
-├── src
-│   ├── assets
-│   ├── components
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── .eslintrc.js
-├── vite.config.js
-└── package.json
-```
-
-## Learn More
-
-To learn more about Vite and React, check out the following resources:
-
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
-- [Vite Plugins](https://vitejs.dev/plugins/)
-- [ESLint](https://eslint.org/docs/user-guide/getting-started)
-
-## License
-
-This project is licensed under the MIT License.

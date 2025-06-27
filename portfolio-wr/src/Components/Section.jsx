@@ -22,7 +22,7 @@ function Section() {
                         ease: "easeInOut"
                     }}
                 >
-                    Développeur <br /><span style={{color : "grey"}}>Web</span> 
+                    Développeur <br /><span className="grey">Web</span> 
                 </motion.h1>
                 
             </div>
@@ -65,7 +65,7 @@ function Section() {
                         ease: "easeInOut"
                     }}
                 >
-                    Laspales <br /><span style={{color: "grey"}}>epalla</span>&nbsp;<span>ndjalla</span>
+                    Laspales <br /><span className="grey">epalla</span>&nbsp;<span>ndjalla</span>
                 </motion.h1>
             </div>
 

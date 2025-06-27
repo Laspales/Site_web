@@ -1,13 +1,11 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import './Footer-Style.css'
 import { CiLinkedin } from "react-icons/ci";
 import { VscGithubAlt } from "react-icons/vsc";
-import { TbFileCv } from "react-icons/tb";
 import { MdOutlineContactMail } from "react-icons/md";
-import { MdArrowRightAlt } from "react-icons/md";
 import { CiFaceSmile } from "react-icons/ci";
 import { motion } from "framer-motion";
+import './Footer-Style.css'
 function Footer() {
     return (
         <div className="App-Footer">

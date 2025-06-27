@@ -11,27 +11,59 @@ import './pages-css/APropos-Style.css';
 const items = [
     {
         icon: <IoSchoolOutline />,
-        text: "Apprenti ingénieur en Software Engineering à l'ESIEA avec une préférence pour le développement Full Stack."
+        text: (
+            <>
+                Apprenti ingénieur en <strong>Software Engineering</strong> à l'ESIEA avec une préférence pour le
+                <strong> développement Full Stack</strong>.
+            </>
+        )
     },
 
+       {
+        icon: <PiBookBookmarkThin />,
+        text: (
+            <>
+                J’apprécie les récits d'<strong>aventure</strong>, de <strong>mystère</strong> et d’<strong>analyse</strong>. 
+                Les romans d’<strong>Arsène Lupin</strong> le gentleman cambrioleur de 
+                Maurice Leblanc. Je lis aussi des <strong>anthologies africaines</strong> et 
+                je suis fan de <strong>mangas</strong>, surtout de One Piece, Dragon Ball, Naruto et HunterxHunter.
+            </>
+        )
+    },
+    
     {
         icon: <IoExtensionPuzzleOutline />,
-        text: "Je m'intéresse à l’histoire, notamment la Seconde Guerre mondiale, la Guerre froide et l’histoire du Cameroun, la décolonisation de l'Afrique Noire à travers documentaires et lectures."
+        text: (
+            <>  
+            Je m'intéresse à <strong>l’histoire</strong>, notamment la <strong>Seconde Guerre mondiale</strong>, 
+            l’histoire du <strong>Cameroun</strong>, la <strong>décolonisation de l'Afrique Noire</strong> à travers 
+            documentaires et lectures. Je regarde aussi des documentaires sur <strong>les animaux </strong> et 
+            d'autres documentaires et vidéos sur <strong>Youtube</strong>.
+            </>
+        )
     },
 
-    {
-        icon: <PiBookBookmarkThin />,
-        text: "J’apprécie les récits d'aventure, de mystère et d’analyse. Les romans d’Arsène Lupin de Maurice Leblanc m’ont marqué. Je lis aussi des anthologies africaines et je suis fan de mangas, surtout de One Piece."
-    },
-
-    {
-        icon: <PiSoccerBallThin />,
-        text: "Le football est ma passion, je le pratique autant que je le suis. J’aime aussi le vélo et le badminton, pour leur dynamisme et leurs bienfaits physiques."
-    },
     {
         icon: <CiMusicNote1 />,
-        text: "La musique est essentielle pour moi, j'écoute de tout, mais j'ai une préférence pour la musique classique"
-    }
+        text: (
+            <>
+                J'adore la <strong>musique</strong>, j'en écoute quotidiennement et différents styles. Ceux que j'écoute le plus sont 
+                le <strong>hip-hop/rap</strong>, le <strong>easy listening orchestral</strong> de <strong>Paul Mauriat</strong>, 
+                le <strong> new age</strong>, la <strong>chanson française littéraire</strong> de <strong>Georges Brassens </strong> 
+                 mais aussi des <strong>chansons romantiques</strong> de <strong>Julio Iglesias</strong>.
+            </>)
+    },
+    {
+        icon: <PiSoccerBallThin />,
+        text: (
+            <>
+            Le <strong>football</strong> est ma passion, je le pratique autant que je le suis. Je suis supporter du
+            <strong> Bayern de Munich</strong> et aussi d'<strong>Arsenal</strong>. En dehors du football,
+            j'aime pratiquer le <strong>badminton</strong> et faire du <strong>vélo</strong>.
+            </>
+        )
+    },
+   
 ];
 
 function APropos() {
@@ -48,8 +80,8 @@ function APropos() {
                         width={"180px"}
                         height={"180px"}
                         initial={{ scale: 0 }}
-                        animate={{ scale: 1}}
-                        transition={{ duration: 3, type: "spring", stiffness: 150, damping: 100 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 5, type: "spring", stiffness: 150, damping: 100 }}
                         whileHover={{ scale: 1.15, transition: { duration: 0.2 } }}
                     />
 
@@ -60,7 +92,7 @@ function APropos() {
                             className="timeline-icon"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
-                            transition={{ delay: index * 0.3, duration: 4, type: "spring", stiffness: 150, damping: 100 }}
+                            transition={{ delay: index * 0.5, duration: 6, type: "spring", stiffness: 150, damping: 100 }}
                             whileHover={{ scale: 1.15, rotate: 360, transition: { duration: 0.35 } }}
                         >
                             {item.icon}
@@ -69,8 +101,8 @@ function APropos() {
                             className="timeline-content"
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.3 + 0.1, duration: 0.5 }}
-                            whileHover={{ scale: 1.02, color: "white", backgroundColor: "black", transition: { duration: 0.35 } }}
+                            transition={{ delay: index * 0.4 + 0.3, duration: 1 }}
+                            whileHover={{ scale: 1.05, color: "white", backgroundColor: "black", transition: { duration: 0.35 } }}
                         >
                             <p>{item.text}</p>
                         </motion.div>

@@ -9,6 +9,7 @@ import Footer from './Components/Footer';
 import Projets from './pages/Projets';
 import Contact from './pages/Contact';
 import APropos from './pages/APropos';
+import Cursor from './Components/cursor';
 import './App.css';
 import AdminMessages from './Components/AdminMessage';
 
@@ -40,7 +41,9 @@ function App() {
 
   return (
     <Router>
+      
       <div className={`app ${theme}`}>
+        <Cursor />
         <Header toggleTheme={toggleTheme} />
         <Filigrane />
         <Routes>
