@@ -9,7 +9,7 @@
     width: 95.5%;
     padding: 10px;
     color: rgba(0, 0, 0, 0.8);
-    border-bottom: 3px solid darkgrey;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.8);
     background: none;
 }
 .Admin-Messages form button {
@@ -19,6 +19,8 @@
     text-align: center;
     border: 1px solid;
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
 }
 .Admin-Messages #deco {
     all: unset;
@@ -30,10 +32,12 @@
     border-radius: 5px;
     padding: 5px;
     margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
 }
 .Admin-Messages form button:hover, .Admin-Messages #deco:hover{
-    background-color: rgba(0, 0, 0, 0.8);
-    color: whitesmoke;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .Admin-Messages table{
@@ -63,7 +67,7 @@
     position: absolute;
     right: 10px;
     cursor: pointer;
-    color: darkgrey;
+    color: rgba(0, 0, 0, 0.8);
 }
 .error {
     color: rgba(255, 55, 39, 1);

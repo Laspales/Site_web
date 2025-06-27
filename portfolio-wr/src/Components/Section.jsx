@@ -14,7 +14,17 @@ function Section() {
         <div className="App-Section">
 
             <div className="title">
-                <h1>Développeur <br /><span style={{color : "grey"}}>Web</span> </h1>
+                <motion.h1
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeInOut"
+                    }}
+                >
+                    Développeur <br /><span style={{color : "grey"}}>Web</span> 
+                </motion.h1>
+                
             </div>
             <div className="image">
                 <motion.div 
@@ -47,7 +57,16 @@ function Section() {
              </motion.div>
             </div>
             <div className="Surname">
-                <h1>Laspales <br /><span style={{color: "grey"}}>epalla</span>&nbsp;<span>ndjalla</span></h1>
+                <motion.h1 
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeInOut"
+                    }}
+                >
+                    Laspales <br /><span style={{color: "grey"}}>epalla</span>&nbsp;<span>ndjalla</span>
+                </motion.h1>
             </div>
 
         </div>

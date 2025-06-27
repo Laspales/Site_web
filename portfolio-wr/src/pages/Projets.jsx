@@ -96,7 +96,9 @@ function Projets() {
                             {/* Affichage dynamique des technologies utilisées */}
                             {currentProject.technologies.map((tech, index) => (
                                 <li key={index} className="tec"><span>{tech}</span></li>
+                                
                             ))}
+                             
                         </ul>
                     </div>
                     {/* Carousel d'images du projet courant */}
