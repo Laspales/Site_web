@@ -153,40 +153,40 @@ function Projets() {
                             {currentProject.technologies.map((tech, index) => {
                                 const Icon = technologyIcons[tech.key];
                                 return (
-                                     <motion.li
-                                            initial={{ scale: 1 }}
-                                            animate={{
-                                                scale: [1, 1.2, 1],
-                                            }}
-                                            transition={{
-                                                duration: 2,
-                                                repeat: Infinity,
-                                                repeatType: "loop",
-                                                ease: "easeInOut"
-                                            }}
-                                        >
-                                    <li
-                                        key={index}
-                                        className="tec"
-                                        style={{
-                                            ...tech.style,
-                                            width: "50px",
-                                            height: "50px",
-                                            margin: "0",
-                                            padding: "0",
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            borderRadius: "50%",
-                                            fontSize: "1.5rem",
-                                            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)"
+                                    <motion.li
+                                        initial={{ scale: 1 }}
+                                        animate={{
+                                            scale: [1, 1.2, 1],
+                                        }}
+                                        transition={{
+                                            duration: 2,
+                                            repeat: Infinity,
+                                            repeatType: "loop",
+                                            ease: "easeInOut"
                                         }}
                                     >
-                                       
-                                        {Icon && <span>{Icon}</span>}
-                                       
-                                    </li>
-                                     </motion.li>
+                                        <li
+                                            key={index}
+                                            className="tec"
+                                            data-label={tech.name}
+                                            style={{
+                                                ...tech.style,
+                                                width: "42px",
+                                                height: "42px",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                borderRadius: "50%",
+                                                fontSize: "1.5rem",
+                                                listStyle: "none",
+                                                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                                                position: "relative",
+                                                cursor: "default"
+                                            }}
+                                        >
+                                            {Icon && <span>{Icon}</span>}
+                                        </li>
+                                    </motion.li>
                                 );
                             })}
                         </ul>
