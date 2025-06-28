@@ -7,7 +7,7 @@ function ProjectCarousel({ images }) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(timer);
   }, [images.length]);
 
@@ -18,9 +18,9 @@ function ProjectCarousel({ images }) {
         position: "absolute",
         top: "15%",
         left: "47.3%",
-        width: "550px",
-        height: "400px",
-        overflow: "hidden"
+        width: "600px",
+        height: "450px",
+        overflow: "hidden",
       }}
     >
       <AnimatePresence mode="wait">

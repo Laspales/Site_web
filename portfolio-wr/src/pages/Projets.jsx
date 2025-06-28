@@ -1,35 +1,51 @@
 import React, { useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
+import { AiFillHtml5 } from "react-icons/ai";
+import { SiCss3, SiPhp, SiTypescript, SiMysql, SiSocketdotio } from "react-icons/si";
+import { IoLogoJavascript, IoLogoLaravel } from "react-icons/io5";
+import { RiNodejsLine } from "react-icons/ri";
 import ProjectCarousel from "./ProjectCarousel";
 import "./pages-css/Projets-Style.css";
 
-// Liste des projets à afficher dans le portfolio.
-// Chaque projet contient un nom, une description, les technologies utilisées et un tableau d'images.
+// Styles personnalisés pour chaque techno
 const technologyStyles = {
-    html: { backgroundColor: "#ffe8e8", color: "#e34c26" },
-    css: { backgroundColor: "#e0f7ff", color: "#264de4" },
-    javascript: { backgroundColor: "#fff8dc", color: "#f0db4f" },
-    php: { backgroundColor: "#e8e8ff", color: "#4f5b93" },
-    laravel: { backgroundColor: "#fcebea", color: "#d9230f" },
-    mysql: { backgroundColor: "#e5f7e7", color: "#00758f" },
-    nodejs: { backgroundColor: "#e6ffe6", color: "#3c873a" },
-    socketio: { backgroundColor: "#f4f4f4", color: "#010101" },
-    typescript: { backgroundColor: "#f0f8ff", color: "#3178c6" }
+    html: { color: "#e34c26" },
+    css: { color: "#264de4" },
+    javascript: { color: "#f0db4f" },
+    php: { color: "#4f5b93" },
+    laravel: { color: "#d9230f" },
+    mysql: { color: "#00758f" },
+    nodejs: { color: "#3c873a" },
+    socketio: { color: "#010101" },
+    typescript: { color: "#3178c6" }
 };
+
+// Icônes associées à chaque techno
+const technologyIcons = {
+    html: <AiFillHtml5 />,
+    css: <SiCss3 />,
+    javascript: <IoLogoJavascript />,
+    php: <SiPhp />,
+    laravel: <IoLogoLaravel />,
+    nodejs: <RiNodejsLine />,
+    typescript: <SiTypescript />,
+    mysql: <SiMysql />,
+    socketio: <SiSocketdotio />
+};
+
+// Normalisation des noms + styles
 const normalizeTechnologies = (techList) =>
     techList.map((tech) => {
-        const name = tech.name || tech; // déjà un objet ou une string
-        const key = name.toLowerCase().replace(/\s/g, "").replace(/\./g, "");
-
+        const name = tech.name || tech;
+        const key = name.toLowerCase().replace(/\./g, "");
         return {
             name,
-            style: technologyStyles[key] || {
-                backgroundColor: "#f0f0f0",
-                color: "#000"
-            }
+            key,
+            style: technologyStyles[key] || { color: "#000" }
         };
     });
+
 const projects = [
     {
         name: "bubbletea",
@@ -54,7 +70,11 @@ const projects = [
     },
     {
         name: "irc",
-        description: "Chat en temps réel avec salons, notifications et gestion des utilisateurs connectés.",
+        description: (
+            <>
+                Chat en temps réel avec salons, notifications et gestion des utilisateurs connectés.
+            </>
+        ),
         technologies: normalizeTechnologies([
             "NodeJS", "JavaScript", "HTML", "CSS", "Socket.io"
         ]),
@@ -67,7 +87,11 @@ const projects = [
     },
     {
         name: "premier portfolio",
-        description: "Portfolio dynamique avec formulaire de contact et présentation de projets.",
+        description: (
+            <>
+                Portfolio dynamique avec formulaire de contact et présentation de projets.
+            </>
+        ),
         technologies: normalizeTechnologies([
             "HTML", "CSS", "Laravel", "PHP", "MySQL"
         ]),
@@ -80,7 +104,11 @@ const projects = [
     },
     {
         name: "my hyrule castle",
-        description: "Mini-jeu web d’exploration avec graphismes rétro.",
+        description: (
+            <>
+                Mini-jeu web d’exploration avec graphismes rétro, inspiré du RPG Zelda.
+            </>
+        ),
         technologies: normalizeTechnologies([
             "TypeScript", "NodeJS"
         ]),
@@ -93,11 +121,8 @@ const projects = [
 ];
 
 function Projets() {
-    // currentIndex gère l'index du projet actuellement affiché
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Fonction de navigation pour passer au projet suivant ou précédent
-    // Utilise un modulo pour boucler sur la liste des projets
     const handleNav = (direction) => {
         setCurrentIndex((prev) =>
             direction === "next"
@@ -106,15 +131,12 @@ function Projets() {
         );
     };
 
-    // Récupère le projet courant à afficher
     const currentProject = projects[currentIndex];
 
     return (
         <div className="App-Projets">
-            {/* Titre principal de la page */}
             <h1>Mes projets...</h1>
 
-            {/* Animation de transition entre les projets avec framer-motion */}
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentProject.name}
@@ -124,43 +146,58 @@ function Projets() {
                     transition={{ duration: 0.02 }}
                     className="conteneur-slider"
                 >
-                    {/* Description et technologies du projet courant */}
                     <div className="description">
                         <span className="titre">{currentProject.name}</span>
                         <p className="desc">{currentProject.description}</p>
                         <span className="titre">technologies</span>
                         <ul className="techno">
                             {currentProject.technologies.map((tech, index) => {
-                                const isStyled = typeof tech === "object" && tech.name && tech.style;
-
+                                const Icon = technologyIcons[tech.key];
                                 return (
                                     <li
                                         key={index}
                                         className="tec"
                                         style={{
-                                            ...(isStyled ? tech.style : {}),
-                                            fontFamily: "sans-serif"
+                                            ...tech.style,
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "8px",
+                                            fontSize: "2.25rem",
+                                            listStyle: "none"
                                         }}
-                                        
                                     >
-                                      {isStyled ? tech.name : tech}
+                                        <motion.li
+                                            initial={{ scale: 1 }}
+                                            animate={{
+                                                scale: [1, 1.2, 1],
+                                            }}
+                                            transition={{
+                                                duration: 2,
+                                                repeat: Infinity,
+                                                repeatType: "loop",
+                                                ease: "easeInOut"
+                                            }}
+                                        >
+                                            {Icon && <span>{Icon}</span>}
+                                        </motion.li>
                                     </li>
                                 );
-                               
                             })}
                         </ul>
                     </div>
-                    {/* Carousel d'images du projet courant */}
                     <div className="projet-image">
                         <ProjectCarousel images={currentProject.images} />
                     </div>
                 </motion.div>
             </AnimatePresence>
 
-            {/* Flèches de navigation pour changer de projet */}
             <div className="nav-arrows">
-                <button className="prev" onClick={() => handleNav("prev")}> <BsArrowLeft /> </button>
-                <button className="next" onClick={() => handleNav("next")}> <BsArrowRight /> </button>
+                <button className="prev" onClick={() => handleNav("prev")}>
+                    <BsArrowLeft />
+                </button>
+                <button className="next" onClick={() => handleNav("next")}>
+                    <BsArrowRight />
+                </button>
             </div>
         </div>
     );

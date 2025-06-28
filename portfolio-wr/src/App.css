@@ -1,4 +1,4 @@
-/* background grillage avec dégardé */
+/* background grillage avec dégradé */
 body::before {
   content: "";
   height: 100vh;
@@ -8,7 +8,7 @@ body::before {
   background:
     linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px) center,
     linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px) center;
-  background-size: 110px 110px;
+  background-size: 25px 25px;
   transition: all 0.5s linear 0s;
 }
 
@@ -31,7 +31,7 @@ body::after {
   opacity: 0.4;
   transform: translateZ(0px);
 }
-/* scrollbar */
+/* Barre de défilement  */
 
 body::-webkit-scrollbar {
   width: 12px; /* largeur de la barre de défilement */

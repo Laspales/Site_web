@@ -106,7 +106,6 @@ body.dark .App-Section .circle div{
 body.dark .App-Footer li a, body.dark .Admin-Messages form input, body.dark .Admin-Messages form #mdp{
   color: white;
 }
-
 body.dark .App-Contact #send:hover, body.dark .Admin-Messages form button:hover, body.dark .Admin-Messages #deco:hover{
   color: rgba(0, 0, 0, 0.8);
   background-color: white;

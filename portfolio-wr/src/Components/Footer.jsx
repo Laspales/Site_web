@@ -11,9 +11,10 @@ function Footer() {
         <div className="App-Footer">
             <footer>
                 <ul>
-                    <li><a href="https://www.linkedin.com/in/aspales-epalla-ndjalla-9a5555254/" target="blank"><CiLinkedin /></a></li>
-                    <li><a href="https://github.com/Laspales" target="blank"><VscGithubAlt /></a></li>
-                    <li><Link to="/contact"><MdOutlineContactMail /></Link></li>
+                        <li><a href="https://www.linkedin.com/in/aspales-epalla-ndjalla-9a5555254/" target="blank"><CiLinkedin /></a></li>
+                        <li><a href="https://github.com/Laspales" target="blank"><VscGithubAlt /></a></li>
+                        <li><Link to="/contact"><MdOutlineContactMail /></Link></li>
+                    
                     <li id="cv">
                         <motion.li
                             initial={{ scale: 1 }}
@@ -34,6 +35,7 @@ function Footer() {
                         </motion.li>
 
                     </li>
+
                 </ul>
             </footer>
         </div>
