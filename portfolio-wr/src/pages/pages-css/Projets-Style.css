@@ -18,8 +18,6 @@
     width: 335px;
     height: 335px;
     padding-left: 7px;
-    border: 1px dashed;
-    background-color: white;
 }
 .description .titre{
     font-size: 1em;
@@ -33,19 +31,14 @@
     margin-bottom: 35px;
 }
 .techno{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     margin: 0;
     padding: 0;
+    list-style: none;
    
 }
-
-/* .techno .tec{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 /*boutons prev et next*/
 .prev,

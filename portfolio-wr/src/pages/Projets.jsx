@@ -8,17 +8,17 @@ import { RiNodejsLine } from "react-icons/ri";
 import ProjectCarousel from "./ProjectCarousel";
 import "./pages-css/Projets-Style.css";
 
-// Styles personnalisés pour chaque techno
+// Styles personnalisés pour chaque techno 
 const technologyStyles = {
-    html: { color: "#e34c26" },
-    css: { color: "#264de4" },
-    javascript: { color: "#f0db4f" },
-    php: { color: "#4f5b93" },
-    laravel: { color: "#d9230f" },
-    mysql: { color: "#00758f" },
-    nodejs: { color: "#3c873a" },
-    socketio: { color: "#010101" },
-    typescript: { color: "#3178c6" }
+    html: { backgroundColor: "#ffe8e8", color: "#e34c26" },
+    css: { backgroundColor: "#e0f7ff", color: "#264de4" },
+    javascript: { backgroundColor: "#fff8dc", color: "#f0db4f" },
+    php: { backgroundColor: "#e8e8ff", color: "#4f5b93" },
+    laravel: { backgroundColor: "#fcebea", color: "#d9230f" },
+    mysql: { backgroundColor: "#e5f7e7", color: "#00758f" },
+    nodejs: { backgroundColor: "#e6ffe6", color: "#3c873a" },
+    socketio: { backgroundColor: "#f4f4f4", color: "#010101" },
+    typescript: { backgroundColor: "#f0f8ff", color: "#3178c6" }
 };
 
 // Icônes associées à chaque techno
@@ -34,15 +34,15 @@ const technologyIcons = {
     socketio: <SiSocketdotio />
 };
 
-// Normalisation des noms + styles
+// Normalisation des noms et styles
 const normalizeTechnologies = (techList) =>
     techList.map((tech) => {
         const name = tech.name || tech;
-        const key = name.toLowerCase().replace(/\./g, "");
+        const key = name.toLowerCase().replace(/\s/g, "").replace(/\./g, "");
         return {
             name,
             key,
-            style: technologyStyles[key] || { color: "#000" }
+            style: technologyStyles[key] || { backgroundColor: "#f0f0f0", color: "#000" }
         };
     });
 
@@ -135,7 +135,7 @@ function Projets() {
 
     return (
         <div className="App-Projets">
-            <h1>Mes projets...</h1>
+            <h1>Mes projets</h1>
 
             <AnimatePresence mode="wait">
                 <motion.div
@@ -147,26 +147,13 @@ function Projets() {
                     className="conteneur-slider"
                 >
                     <div className="description">
-                        <span className="titre">{currentProject.name}</span>
+                        <h3 className="titre">{currentProject.name}</h3>
                         <p className="desc">{currentProject.description}</p>
-                        <span className="titre">technologies</span>
                         <ul className="techno">
                             {currentProject.technologies.map((tech, index) => {
                                 const Icon = technologyIcons[tech.key];
                                 return (
-                                    <li
-                                        key={index}
-                                        className="tec"
-                                        style={{
-                                            ...tech.style,
-                                            display: "flex",
-                                            alignItems: "center",
-                                            gap: "8px",
-                                            fontSize: "2.25rem",
-                                            listStyle: "none"
-                                        }}
-                                    >
-                                        <motion.li
+                                     <motion.li
                                             initial={{ scale: 1 }}
                                             animate={{
                                                 scale: [1, 1.2, 1],
@@ -178,9 +165,28 @@ function Projets() {
                                                 ease: "easeInOut"
                                             }}
                                         >
-                                            {Icon && <span>{Icon}</span>}
-                                        </motion.li>
+                                    <li
+                                        key={index}
+                                        className="tec"
+                                        style={{
+                                            ...tech.style,
+                                            width: "50px",
+                                            height: "50px",
+                                            margin: "0",
+                                            padding: "0",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            borderRadius: "50%",
+                                            fontSize: "1.5rem",
+                                            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)"
+                                        }}
+                                    >
+                                       
+                                        {Icon && <span>{Icon}</span>}
+                                       
                                     </li>
+                                     </motion.li>
                                 );
                             })}
                         </ul>
@@ -203,4 +209,4 @@ function Projets() {
     );
 }
 
-export default Projets;
+export default Projets; 
