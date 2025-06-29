@@ -14,12 +14,14 @@ import './App.css';
 import AdminMessages from './Components/AdminMessage';
 
 function Accueil() {
-  return  <Section />;
+  return <Section />;
 }
 
 // fonction  APP
 
 function App() {
+
+  //dark theme
   const [theme, setTheme] = useState('light');
   useEffect(() => {
     initializeThemeHandler();
@@ -34,14 +36,37 @@ function App() {
       return newTheme;
     });
   };
-
-  useEffect(() => {
+   useEffect(() => {
     document.body.classList.add(theme);
   }, [theme]);
 
+  //accès page admin avec code clavier
+  useEffect(() => {
+    let buffer = "";
+    const secretCode = "marcdandresy"; 
+
+    const handleKeyPress = (e) => {
+      buffer += e.key.toLowerCase();
+      if (buffer.length > secretCode.length) {
+        buffer = buffer.slice(-secretCode.length);
+      }
+
+      if (buffer === secretCode) {
+        window.location.href = "/admin";
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
+ 
   return (
     <Router>
-      
+
       <div className={`app ${theme}`}>
         <Cursor />
         <Header toggleTheme={toggleTheme} />

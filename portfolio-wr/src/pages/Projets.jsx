@@ -177,6 +177,7 @@ function Projets() {
                                                 alignItems: "center",
                                                 justifyContent: "center",
                                                 borderRadius: "50%",
+                                                paddingTop: "5px",
                                                 fontSize: "1.5rem",
                                                 listStyle: "none",
                                                 boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
