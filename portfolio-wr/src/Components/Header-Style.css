@@ -63,17 +63,6 @@
   opacity: 0.8;
 }
 
-/*style button admin */
-
-#adm{
-  position: fixed;
-  bottom: -2%;
-  right: 0;
-  padding: 5px;
-  cursor: all-scroll;
-  color: rgba(0, 0, 0, 0.15);
-  opacity: 0.04;
-}
 
 /* style dark theme */
 body.dark {

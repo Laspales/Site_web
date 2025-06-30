@@ -43,7 +43,7 @@ function App() {
   //accès page admin avec code clavier
   useEffect(() => {
     let buffer = "";
-    const secretCode = "marcdandresy"; 
+    const secretCode = "grint"; 
 
     const handleKeyPress = (e) => {
       buffer += e.key.toLowerCase();

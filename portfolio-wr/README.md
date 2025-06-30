@@ -43,12 +43,13 @@ Ce site a été développé avec :
 4. **Lancer le projet**  
     - Démarrer le backend :
       ```bash
+      cd /portfolio-wr/contact-backend
       npm start
       ```
     - Démarrer le frontend (dans un autre terminal) :
       ```bash
-      cd ../frontend
-      npm start
+      cd ../portfolio-wr
+      npm run dev 
       ```
 
 ## À venir
