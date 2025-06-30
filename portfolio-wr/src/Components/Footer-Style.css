@@ -1,13 +1,13 @@
 footer {
     position: fixed;
     left: -5%;
-    z-index: 999;
-    width: 100% !important;
-    height: 60px !important;
-    padding: 0px !important;
+    z-index: 10;
+    width: 100vw ;
+    height: 60px ;
+    padding: 0px ;
     display: flex;
-    flex-direction: row !important;
-    bottom: 0 !important;
+    flex-direction: row !;
+    bottom: 0 ;
    
 }
 
@@ -62,6 +62,9 @@ footer a:hover{
 #cv a{
   font-size: 15px;
 }
+.fcv{
+  visibility: hidden;
+}
 /* Footer lien cv scintillement dark style */
 
 @keyframes scintillementblanc {
@@ -79,3 +82,30 @@ body.dark .App-Footer #cv{
 }
 
 /* note à moi même voir comment forcer pour que l'emoji scintille aussi */
+
+
+/* RESPONSIVE DESIGN FOOTER */
+
+@media (max-width: 768px) {
+  footer{
+    position: fixed;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.8);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer ul li{
+    display: inline-block;
+    padding: 15px;
+}
+.fcv{
+  visibility: visible;
+}
+#cv{
+  visibility: hidden;
+  position: fixed;
+  top: -100%;
+}
+}

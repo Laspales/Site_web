@@ -36,14 +36,28 @@ function App() {
       return newTheme;
     });
   };
-   useEffect(() => {
+  useEffect(() => {
     document.body.classList.add(theme);
   }, [theme]);
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 768) {
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+        localStorage.setItem('old_Theme', 'dark');
+        setTheme('dark');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   //accès page admin avec code clavier
   useEffect(() => {
     let buffer = "";
-    const secretCode = "grint"; 
+    const secretCode = "grint";
 
     const handleKeyPress = (e) => {
       buffer += e.key.toLowerCase();
@@ -63,7 +77,7 @@ function App() {
     };
   }, []);
 
- 
+
   return (
     <Router>
 

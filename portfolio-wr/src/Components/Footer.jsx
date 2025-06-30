@@ -4,6 +4,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { VscGithubAlt } from "react-icons/vsc";
 import { MdOutlineContactMail } from "react-icons/md";
 import { CiFaceSmile } from "react-icons/ci";
+import { TbFileCv } from "react-icons/tb";
 import { motion } from "framer-motion";
 import './Footer-Style.css'
 function Footer() {
@@ -14,7 +15,8 @@ function Footer() {
                         <li><a href="https://www.linkedin.com/in/aspales-epalla-ndjalla-9a5555254/" target="blank"><CiLinkedin /></a></li>
                         <li><a href="https://github.com/Laspales" target="blank"><VscGithubAlt /></a></li>
                         <li><Link to="/contact"><MdOutlineContactMail /></Link></li>
-                    
+                        <li className="fcv"> <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer"><TbFileCv />
+                            </a></li>
                     <li id="cv">
                         <motion.li
                             initial={{ scale: 1 }}
@@ -30,7 +32,7 @@ function Footer() {
 
                         >
                             <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer">
-                                <span>Voir mon cv</span><CiFaceSmile />
+                                <span>Voir mon cv</span><CiFaceSmile /><TbFileCv className="fcv"/>
                             </a>
                         </motion.li>
 

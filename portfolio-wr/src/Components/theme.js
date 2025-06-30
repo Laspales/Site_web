@@ -1,25 +1,31 @@
 export function initializeThemeHandler() {
-    document.addEventListener('DOMContentLoaded', function () {
-        const btnTheme = document.querySelector('.theme');
-        const body = document.body;
-        const old_Theme = localStorage.getItem('old_Theme');
+    const body = document.body;
+    const screenWidth = window.innerWidth;
 
-        if (old_Theme) {
-            body.classList.add(old_Theme);
-        }
 
-        if (btnTheme) {
-            btnTheme.addEventListener('click', () => {
-                if (body.classList.contains('dark')) {
-                    body.classList.add('light');
-                    body.classList.remove('dark');
-                    localStorage.setItem('old_Theme', 'light');
-                } else if (body.classList.contains('light')) {
-                    body.classList.add('dark');
-                    body.classList.remove('light');
-                    localStorage.setItem('old_Theme', 'dark');
-                }
-            });
-        }
-    });
+    if (screenWidth < 768) {
+        body.classList.remove('light');
+        body.classList.add('dark');
+        localStorage.setItem('old_Theme', 'dark');
+    } else {
+        const savedTheme = localStorage.getItem('old_Theme') || 'light';
+        body.classList.remove('light', 'dark');
+        body.classList.add(savedTheme);
+    }
+
+    // Écouteur de clic pour le bouton theme
+    const btnTheme = document.querySelector('.theme');
+    if (btnTheme) {
+        btnTheme.addEventListener('click', () => {
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                localStorage.setItem('old_Theme', 'light');
+            } else {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                localStorage.setItem('old_Theme', 'dark');
+            }
+        });
+    }
 }

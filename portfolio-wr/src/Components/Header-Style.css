@@ -1,67 +1,146 @@
 .App-header {
-  display: inline;
   position: fixed;
-  top: -2vh;
+  top: 0;
   left: 0;
   width: 100%;
-  font-size: 17px;
-  width: 100%;
-  height: 50px;
-  padding-bottom: 10px;
-  margin-right: 10px;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.linear {
+  display: flex;
+}
+
+.line {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .line li {
-  display: inline-flex;
-  list-style: none;
-  padding-top: 30px;
-  padding-bottom: 5px;
-  padding-left: 26px;
-  padding-right: 26px;
+  padding: 0 1rem;
 }
 
 .line li a {
   text-decoration: none;
-  padding: 30px;
-  color: rgba(0, 0, 0, 1);
-  padding: 10px;
-  margin: 0;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+  color: black;
 }
 
-.nv {
-  padding-right: 40px;
+.nv.active {
+  border-bottom: 3px solid;
+  opacity: 0.8;
 }
 
 .theme {
   cursor: pointer;
 }
-.nv svg{
+
+.nv svg {
   position: relative;
   top: 3px;
-  vertical-align: center;
-}
-.logo{
-  position:  fixed;
-  top: -2vh;
-  left: -4vw;
-  padding: 0;
-  margin: 0;
 }
 
-.linear {
-  width: auto;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  right: 20px;
-  position: absolute;
-  top: 0;
+
+/* RESPONSIVE DESIGN HEADER */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+  }
+
+  .linear {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    display: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    overflow-y: auto;
+    max-height: 80vh;
+    z-index: 5;
+  }
+
+
+  .line.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .line li {
+    width: 100%;
+  }
+
+  .line li a {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+    display: block;
+  }
+
+
+  .logo img {
+    width: 65px;
+    height: 50px;
+  }
+
+  body.dark .App-header {
+    background-color: rgba(34, 34, 34, 0.8);
+  }
+
+  body.dark .line {
+    background-color: rgba(40, 40, 40, 1);
+  }
+  .theme{
+    position: fixed;
+    top: -20vh;
+    visibility: hidden;
+  }
+ 
 }
 
-.nv.active {
-  border-bottom: 2px solid;
-  opacity: 0.8;
-}
 
 
 /* style dark theme */
@@ -79,12 +158,13 @@ body.dark .App-Section .title h1,
 body.dark .App-Section .Surname h1 {
   color: white;
 }
+
 body.dark .App-Section .title .grey,
 body.dark .App-Section .Surname .grey {
   color: rgba(0, 0, 0, 0.8);
 }
 
-body.dark .App-Section .circle div{
+body.dark .App-Section .circle div {
   border: 1px solid white;
   background-color: white;
   border-radius: 50px;
@@ -92,17 +172,28 @@ body.dark .App-Section .circle div{
   opacity: 0.4;
 }
 
-body.dark .App-Footer li a, body.dark .Admin-Messages form input, body.dark .Admin-Messages form #mdp{
+body.dark .App-Footer li a,
+body.dark .Admin-Messages form input,
+body.dark .Admin-Messages form #mdp {
   color: white;
 }
-body.dark .App-Contact #send:hover, body.dark .Admin-Messages form button:hover, body.dark .Admin-Messages #deco:hover{
+
+body.dark .App-Contact #send:hover,
+body.dark .Admin-Messages form button:hover,
+body.dark .Admin-Messages #deco:hover {
   color: rgba(0, 0, 0, 0.8);
   background-color: white;
 }
-body.dark .App-Contact #name, body.dark .App-Contact #message, body.dark .App-Contact #email{
+
+body.dark .App-Contact #name,
+body.dark .App-Contact #message,
+body.dark .App-Contact #email {
   border: 1px solid rgba(250, 250, 250, 0.9);
 }
-body.dark .App-Contact #name::placeholder, body.dark .App-Contact #message::placeholder, body.dark .App-Contact #email::placeholder {
+
+body.dark .App-Contact #name::placeholder,
+body.dark .App-Contact #message::placeholder,
+body.dark .App-Contact #email::placeholder {
   color: rgba(250, 250, 250, 0.9);
 }
 
@@ -111,6 +202,7 @@ body.dark .App-Contact #send {
   color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(250, 250, 250, 0.9);
 }
+
 body.dark .App-Contact #send:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: rgba(250, 250, 250, 0.9);
@@ -118,23 +210,32 @@ body.dark .App-Contact #send:hover {
 
 body.dark .App-Apropos .timeline-content {
   color: black;
-   background: #f5f5f5;
+  background: #f5f5f5;
 }
+
 body.dark .Admin-Messages table {
   border: 1px solid rgba(250, 250, 250, 0.9);
 }
-body.dark .Admin-Messages form button, body.dark .Admin-Messages #deco {
+
+body.dark .Admin-Messages form button,
+body.dark .Admin-Messages #deco {
   background-color: rgba(250, 250, 250, 0.9);
   color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(250, 250, 250, 0.9);
 }
-body.dark .Admin-Messages form button:hover, body.dark .Admin-Messages #deco:hover {
+
+body.dark .Admin-Messages form button:hover,
+body.dark .Admin-Messages #deco:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: rgba(250, 250, 250, 0.9);
 }
-body.dark .Admin-Messages form input::placeholder, body.dark .Admin-Messages form .eye-icon{
+
+body.dark .Admin-Messages form input::placeholder,
+body.dark .Admin-Messages form .eye-icon {
   color: rgba(250, 250, 250, 0.9);
 }
-body.dark .Admin-Messages form input, body.dark .Admin-Messages form #mdp {
+
+body.dark .Admin-Messages form input,
+body.dark .Admin-Messages form #mdp {
   border-bottom: 3px solid rgba(250, 250, 250, 0.9);
 }

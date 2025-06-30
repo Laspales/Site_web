@@ -29,4 +29,4 @@ const Cursor = () => {
 };
 
 export default Cursor;
-//  j'ai pris ça sur CodePen
+//  inspi CodePen
