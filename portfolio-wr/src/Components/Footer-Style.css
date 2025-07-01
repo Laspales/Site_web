@@ -87,25 +87,41 @@ body.dark .App-Footer #cv{
 /* RESPONSIVE DESIGN FOOTER */
 
 @media (max-width: 768px) {
-  footer{
+  footer {
     position: fixed;
+    bottom: 0;
     left: 0;
-    background-color: rgba(34, 34, 34, 0.8);
-    width: 100vw;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(34, 34, 34, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+    box-sizing: border-box;
   }
-  footer ul li{
+
+  footer ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+  }
+
+  footer ul li {
     display: inline-block;
     padding: 15px;
-}
-.fcv{
-  visibility: visible;
-}
-#cv{
-  visibility: hidden;
-  position: fixed;
-  top: -100%;
-}
+  }
+
+  .fcv {
+    visibility: visible;
+  }
+
+  #cv {
+    visibility: hidden;
+    position: fixed;
+    top: -100%;
+  }
 }

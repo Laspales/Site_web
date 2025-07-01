@@ -72,7 +72,7 @@ function Contact() {
                 </form>
                 {status && <p>{status}</p>}
             </div>
-            <div className="sendmail" style={{  width: "300px" }}>
+            {/* <div className="sendmail" style={{  width: "300px" }}>
                 <motion.div
                     className="sendmail-icon-wrapper"
                     initial={{opacity: 0}}
@@ -91,7 +91,7 @@ function Contact() {
                         style={{ width: "170px", height: "170px" }}
                     />
                 </motion.div>
-            </div>
+            </div> */}
         </div>
     );
 }

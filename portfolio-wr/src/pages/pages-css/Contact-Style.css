@@ -1,86 +1,134 @@
-.App-Contact{
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
-    width: 700px;
-    position: absolute;
-    top: 15vh;
-    left: 15vw;
-}
-.Contact-Title{
-    font-size: 1em;
-    display: block;
-    width: 400px;
-    margin-left: 11px;
-   
+.App-Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 700px;
+  position: absolute;
+  top: 15vh;
+  left: 10vw;
 }
 
-input, textarea{
-    all: unset;
-    background: none;
-}
-input:focus, textarea:focus {
-    outline: none;
-    background-color: rgba(255, 255, 255, 1);
-    color: rgba(0, 0, 0, 1);
+.Contact-Title {
+  font-size: 1em;
+  display: block;
+  width: 400px;
+  margin-left: 11px;
 }
 
-.Contact-Form{
-    font-size: 12px;
-    width: 500px;
-    height: 420px;
-    margin-left: 11px;
-   
+.Contact-Form {
+  font-size: 12px;
+  width: 500px;
+  height: 420px;
+  margin-left: 11px;
 }
 
-#email,
-#name,
-#message {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    font-size: 1.25em;
-    font-weight: 500;
-    
+input,
+textarea {
+  all: unset;
+  background: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  font-size: 1.25em;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
-#message{
-    width: 100%;
-    min-width: 500px;
-    max-width: 500px;
-    min-height: 100px;
-    max-height: 150px;
-    overflow: auto;
-}
+
 input::placeholder,
 textarea::placeholder {
-  color: rgba(0, 0, 0, 0.8)
+  color: rgba(0, 0, 0, 0.8);
 }
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+#message {
+  width: 100%;
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 150px;
+  overflow: auto;
+  resize: vertical;
+}
+
 #send {
-    all: unset;
-    cursor: pointer;
-    padding: 5px;
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.5em;
+  border: 1px solid;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+#send:hover {
+  background-color: whitesmoke;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* RESPONSIVE DESIGN CONTACT */
+@media (max-width: 600px) {
+  .App-Contact {
+    position: fixed;
+    top: 3vh;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .Contact-Title {
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
-    font-size: 1.5em;
-    border: 1px solid;
-    border-radius: 5px; 
-    font-weight: 500; 
-    background-color: rgba(0, 0, 0, 0.8);
-    color: whitesmoke;
-}
+    margin: 0 0 1rem 0;
+    padding: 0 1rem;
+  }
 
-#send:hover{
-    background-color: whitesmoke;
-    color: rgba(0, 0, 0, 0.8);
-}
+  .Contact-Form {
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+  }
 
-.sendmail {
-    position: absolute;
-    top: 35%;
-    left: 80%;
-    width: 200px;
-    height: 200px;
-    opacity: 0.3;
+  input,
+  textarea {
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #message {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    resize: vertical;
+    overflow: auto;
+  }
+
+  #send {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
 }

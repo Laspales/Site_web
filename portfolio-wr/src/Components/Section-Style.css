@@ -31,6 +31,26 @@
  .Surname h1 .grey {
      color: grey;
  }
+
+ /* RESPONSIVE DESIGN PAGE D,ACCUEIL */
+
+@media (max-width: 600px) {
+    .title,
+    .Surname {
+        font-size: 0.3rem;
+        margin: 10px;
+        text-align: center;
+    }
+    /* .image {
+        width: 120px;
+        height: 100px;
+    }
+    body.dark .image,
+    body.dark .image img {
+        width: 120px;
+        height: 100px;
+    } */
+}
  /* style pour div image */
  .image {
      position: fixed;
