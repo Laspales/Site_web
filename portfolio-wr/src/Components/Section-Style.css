@@ -1,6 +1,6 @@
  /* style pour .title et .Surname */
 
- .title {
+ .title, #trespo {
      font-size: 1.25em;
      display: block;
      width: 100px;
@@ -9,7 +9,7 @@
      left: 5%;
  }
 
- .Surname {
+ .Surname, #frespo {
      font-size: 1.25em;
      display: block;
      width: auto;
@@ -31,25 +31,36 @@
  .Surname h1 .grey {
      color: grey;
  }
+#trespo, #frespo{
+    visibility: hidden;
+    width: 500px;
+    text-transform: capitalize;
+    font-size: 25px;
+    width: 100vw;
+}
+#trespo span{
+    text-transform: uppercase;
+}
 
  /* RESPONSIVE DESIGN PAGE D,ACCUEIL */
 
-@media (max-width: 600px) {
-    .title,
-    .Surname {
+@media (max-width: 768px) {
+    h1 {
         font-size: 0.3rem;
         margin: 10px;
         text-align: center;
+        visibility: hidden;
+    }
+    #trespo, #frespo{
+        visibility: visible;
     }
     /* .image {
+
         width: 120px;
         height: 100px;
     }
-    body.dark .image,
-    body.dark .image img {
-        width: 120px;
-        height: 100px;
-    } */
+*/
+
 }
  /* style pour div image */
  .image {

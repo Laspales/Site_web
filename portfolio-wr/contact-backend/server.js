@@ -50,7 +50,7 @@ app.get('/messages', authenticateToken, async (req, res) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Exemple simple : vérifiez les identifiants admin (à améliorer pour production)
+    // Vérifiez les identifiants admin (à améliorer pour production)
     if (username === 'bad' && password === 'ame') {
         const user = { username };
         const accessToken = jwt.sign(user, 'SECRET_KEY');
