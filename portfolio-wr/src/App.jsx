@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { initializeThemeHandler } from './Components/theme';
 import Header from './Components/Header';
-import Filigrane from './Components/filigrane';
+import Filigrane from './Components/Filigrane';
 import Section from './Components/Section';
 import Footer from './Components/Footer';
 import Projets from './pages/Projets';
