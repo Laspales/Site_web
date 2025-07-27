@@ -69,7 +69,7 @@ function Section() {
                 
             </div>
             <div id="frespo">
-                    <p >et je vous souhaite la bienvenue sur mon portfolio. et Nguimout est gay hé hé hé</p>
+                    <p >et je vous souhaite la bienvenue sur mon portfolio.</p>
             </div>
         </div>
     );
