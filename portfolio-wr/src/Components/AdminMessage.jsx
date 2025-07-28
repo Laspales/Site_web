@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./AdminMessage-Style.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
@@ -11,21 +11,29 @@ function AdminMessages() {
     const [loginError, setLoginError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
+    // Charge les messages automatiquement si token existant
     useEffect(() => {
         if (token) {
-            fetchMessages();
+            console.log("🔑 Token trouvé au chargement :", token);
+            fetchMessages(token);
         }
     }, [token]);
 
-    const fetchMessages = async () => {
+    const fetchMessages = async (usedToken) => {
+        console.log(" Envoi requête messages avec token :", usedToken);
         try {
             const response = await axios.get("http://localhost:5001/messages", {
-                headers: { Authorization: token },
+                headers: { Authorization: `Bearer ${usedToken}` },
             });
+            console.log(" Messages reçus :", response.data);
             setMessages(response.data);
+            setError("");
         } catch (err) {
-            console.error("Erreur lors de la récupération des messages :", err);
-            setError("Impossible de récupérer les messages. Vérifiez votre connexion.");
+            console.error("Erreur lors de la récupération :", err);
+            if (err.response) {
+                console.error("Détail erreur serveur :", err.response.status, err.response.data);
+            }
+            setError("Impossible de récupérer les messages. Vérifiez votre connexion ou les identifiants.");
         }
     };
 
@@ -33,12 +41,21 @@ function AdminMessages() {
         e.preventDefault();
         try {
             const response = await axios.post("http://localhost:5001/login", loginData);
-            localStorage.setItem("token", response.data.accessToken);
-            setToken(response.data.accessToken);
+            const accessToken = response.data.accessToken;
+            localStorage.setItem("token", accessToken);
+            setToken(accessToken);
             setLoginError("");
+            await fetchMessages(accessToken);
         } catch (err) {
+            console.error(" Erreur de login :", err.response?.data || err.message);
             setLoginError(err.response?.data?.error || "Erreur lors de la connexion.");
         }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        setToken("");
+        setMessages([]);
     };
 
     return (
@@ -46,7 +63,6 @@ function AdminMessages() {
             {!token ? (
                 <div>
                     <h1>Connexion Admin</h1>
-
                     <form onSubmit={handleLogin}>
                         <input
                             type="text"
@@ -55,9 +71,7 @@ function AdminMessages() {
                             onChange={(e) => setLoginData({ ...loginData, username: e.target.value })}
                             required
                         />
-
                         <br /><br />
-
                         <div className="password-container">
                             <input
                                 type={showPassword ? "text" : "password"}
@@ -71,19 +85,17 @@ function AdminMessages() {
                                 {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
                             </span>
                         </div>
-
-                        <br /> <br />
-                        
+                        <br /><br />
                         <button type="submit">Se connecter</button>
-                        
                     </form>
-
                     {loginError && <p className="error">{loginError}</p>}
                 </div>
             ) : (
                 <div>
                     <h1>Messages reçus</h1>
                     {error && <p className="error">{error}</p>}
+                    <button onClick={() => fetchMessages(token)}>Recharger les messages</button>
+                    <br /><br />
                     {messages.length > 0 ? (
                         <table>
                             <thead>
@@ -108,7 +120,7 @@ function AdminMessages() {
                     ) : (
                         <p>Aucun message enregistré.</p>
                     )}
-                    <button onClick={() => { localStorage.removeItem("token"); setToken(""); }} id="deco">Déconnexion</button>
+                    <button onClick={handleLogout} id="deco">Déconnexion</button>
                 </div>
             )}
         </div>
@@ -116,4 +128,3 @@ function AdminMessages() {
 }
 
 export default AdminMessages;
-

@@ -8,10 +8,10 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 
-// Connexion à MongoDB via variable d'environnement
+// Connexion à MongoDB
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/contactDB';
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
@@ -21,7 +21,7 @@ mongoose.connect(mongoUri, {
 
 const jwtSecret = process.env.JWT_SECRET || 'lexus';
 
-// Schéma et modèle
+// Schéma Mongoose
 const contactSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -30,22 +30,27 @@ const contactSchema = new mongoose.Schema({
 });
 const Contact = mongoose.model('Contact', contactSchema);
 
-// Middleware pour vérifier le token
+// Middleware d'authentification JWT
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; 
+    const token = authHeader && authHeader.split(' ')[1];
+
+    console.log("Token reçu :", token); 
+    console.log(" Clé secrète utilisée :", jwtSecret); 
 
     if (!token) return res.sendStatus(403);
 
     jwt.verify(token, jwtSecret, (err, user) => {
-        if (err) return res.sendStatus(403);
+        if (err) {
+            console.log(" Erreur de vérification du token :", err); 
+            return res.sendStatus(403);
+        }
         req.user = user;
         next();
     });
 }
 
 // Routes
-
 app.get('/messages', authenticateToken, async (req, res) => {
     try {
         const messages = await Contact.find();
@@ -60,7 +65,7 @@ app.post('/login', (req, res) => {
 
     if (username === 'bad' && password === 'ame') {
         const user = { username };
-        const accessToken = jwt.sign(user, jwtSecret);
+        const accessToken = jwt.sign(user, jwtSecret, { expiresIn: '1h' }); 
         res.json({ accessToken });
     } else {
         res.status(401).json({ error: 'Utilisateur ou mot de passe incorrect!' });
@@ -78,7 +83,7 @@ app.post('/contact', async (req, res) => {
     }
 });
 
-// Servir le frontend React
+// Servir React
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
@@ -86,4 +91,3 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Serveur en cours d'exécution sur le port ${PORT}`));
-
