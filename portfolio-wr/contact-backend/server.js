@@ -1,21 +1,27 @@
+require('dotenv').config(); 
+
 const express = require('express');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Connexion à MongoDB
-mongoose.connect('mongodb://localhost:27017/contactDB', {
+// Connexion à MongoDB via variable d'environnement
+const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/contactDB';
+mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('Connecté à MongoDB'))
   .catch(err => console.error('Erreur de connexion à MongoDB', err));
 
-// Schéma et modèle pour les messages de contact
+const jwtSecret = process.env.JWT_SECRET || 'lexus';
+
+// Schéma et modèle
 const contactSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -26,17 +32,20 @@ const Contact = mongoose.model('Contact', contactSchema);
 
 // Middleware pour vérifier le token
 function authenticateToken(req, res, next) {
-    const token = req.headers['authorization'];
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; 
+
     if (!token) return res.sendStatus(403);
 
-    jwt.verify(token, 'SECRET_KEY', (err, user) => {
+    jwt.verify(token, jwtSecret, (err, user) => {
         if (err) return res.sendStatus(403);
         req.user = user;
         next();
     });
 }
 
-// Route protégée pour récupérer les messages
+// Routes
+
 app.get('/messages', authenticateToken, async (req, res) => {
     try {
         const messages = await Contact.find();
@@ -46,32 +55,35 @@ app.get('/messages', authenticateToken, async (req, res) => {
     }
 });
 
-// Route pour l'authentification admin
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Vérifiez les identifiants admin (à améliorer pour production)
     if (username === 'bad' && password === 'ame') {
         const user = { username };
-        const accessToken = jwt.sign(user, 'SECRET_KEY');
+        const accessToken = jwt.sign(user, jwtSecret);
         res.json({ accessToken });
     } else {
         res.status(401).json({ error: 'Utilisateur ou mot de passe incorrect!' });
     }
 });
 
-// Route pour envoyer un message
 app.post('/contact', async (req, res) => {
     try {
         const { name, email, message } = req.body;
         const newContact = new Contact({ name, email, message });
         await newContact.save();
-        res.status(200).json({ message: 'Message envoyé ' });
+        res.status(200).json({ message: 'Message envoyé' });
     } catch (err) {
         res.status(500).json({ error: 'Erreur lors de l\'enregistrement du message.' });
     }
 });
 
-// Lancer le serveur
-const PORT = 5001;
+// Servir le frontend React
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Serveur en cours d'exécution sur le port ${PORT}`));
+
