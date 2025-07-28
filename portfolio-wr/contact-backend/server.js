@@ -84,10 +84,10 @@ app.post('/contact', async (req, res) => {
 });
 
 // Servir React
-app.use(express.static(path.join(__dirname, 'dist')));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
+// app.use(express.static(path.join(__dirname, 'dist')));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'dist/index.html'));
+// });
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Serveur en cours d'exécution sur le port ${PORT}`));
