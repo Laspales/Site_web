@@ -16,10 +16,7 @@ app.use(compression()); // compression gzip
 
 // Connexion à MongoDB
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/contactDB';
-mongoose.connect(mongoUri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(mongoUri)
 .then(() => console.log('✅ Connecté à MongoDB'))
 .catch(err => console.error('❌ Erreur de connexion à MongoDB', err));
 
