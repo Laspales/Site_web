@@ -1,4 +1,4 @@
-require('dotenv').config(); 
+require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -6,18 +6,22 @@ const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const compression = require('compression'); // pour booster la perf
 
 const app = express();
+
 app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
+app.use(compression()); // compression gzip
 
 // Connexion à MongoDB
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/contactDB';
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}).then(() => console.log('Connecté à MongoDB'))
-  .catch(err => console.error('Erreur de connexion à MongoDB', err));
+})
+.then(() => console.log('✅ Connecté à MongoDB'))
+.catch(err => console.error('❌ Erreur de connexion à MongoDB', err));
 
 const jwtSecret = process.env.JWT_SECRET || 'lexus';
 
@@ -35,22 +39,16 @@ function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
 
-    console.log("Token reçu :", token); 
-    console.log(" Clé secrète utilisée :", jwtSecret); 
-
     if (!token) return res.sendStatus(403);
 
     jwt.verify(token, jwtSecret, (err, user) => {
-        if (err) {
-            console.log(" Erreur de vérification du token :", err); 
-            return res.sendStatus(403);
-        }
+        if (err) return res.sendStatus(403);
         req.user = user;
         next();
     });
 }
 
-// Routes
+// Routes API
 app.get('/messages', authenticateToken, async (req, res) => {
     try {
         const messages = await Contact.find();
@@ -65,7 +63,7 @@ app.post('/login', (req, res) => {
 
     if (username === 'bad' && password === 'ame') {
         const user = { username };
-        const accessToken = jwt.sign(user, jwtSecret, { expiresIn: '1h' }); 
+        const accessToken = jwt.sign(user, jwtSecret, { expiresIn: '1h' });
         res.json({ accessToken });
     } else {
         res.status(401).json({ error: 'Utilisateur ou mot de passe incorrect!' });
@@ -83,11 +81,13 @@ app.post('/contact', async (req, res) => {
     }
 });
 
-// Servir React
-// app.use(express.static(path.join(__dirname, 'dist')));
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'dist/index.html'));
-// });
+// 👉 Servir le frontend React (build Vite)
+app.use(express.static(path.join(__dirname, '../front/dist')));
+
+// 👉 Rediriger les routes vers index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../front/dist/index.html'));
+});
 
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Serveur en cours d'exécution sur le port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Serveur en cours d'exécution sur le port ${PORT}`));
