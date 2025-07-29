@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './pages-css/Contact-Style.css';
-import { RiMailSendLine } from "react-icons/ri";
-import { motion } from "framer-motion";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -18,20 +16,25 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Récupérer l'URL backend depuis la variable d'environnement
-    const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+  if (!formData.name || !formData.email || !formData.message) {
+    setStatus("Tous les champs doivent être remplis.");
+    return;
+  }
 
-    try {
-      const response = await axios.post(`${backendUrl}/contact`, formData);
-      setStatus(response.data.message);
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setStatus("Erreur lors de l'envoi du message.");
-      console.error(error);
-    }
-  };
+  const backendUrl = window.location.origin;
+
+  try {
+    const response = await axios.post(`${backendUrl}/contact`, formData);
+    setStatus(response.data.message);
+    setFormData({ name: '', email: '', message: '' });
+  } catch (error) {
+    setStatus("Erreur lors de l'envoi du message.");
+    console.error(error);
+  }
+};
+
 
   return (
     <div className="App-Contact">
