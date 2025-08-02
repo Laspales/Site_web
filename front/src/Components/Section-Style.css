@@ -1,96 +1,131 @@
- /* style pour .title et .Surname */
+/* Style pour .title et .Surname */
+.title{
+    font-size: 1.25em;
+    display: block;
+    width: 100px;
+    position: fixed;
+    top: 15%;
+    left: 5%;
+}
 
- .title, #trespo {
-     font-size: 1.25em;
-     display: block;
-     width: 100px;
-     position: fixed;
-     top: 15%;
-     left: 5%;
- }
+.Surname {
+    font-size: 1.25em;
+    display: block;
+    width: auto;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
 
- .Surname, #frespo {
-     font-size: 1.25em;
-     display: block;
-     width: auto;
-     position: fixed;
-     bottom: 5%;
-     right: 5%;
- }
+.title h1,
+.Surname h1 {
+    color: black;
+}
 
- .Surname span {
-     text-transform: uppercase;
- }
-
- .title h1,
- .Surname h1 {
-     color: black;
- }
-
- .title h1 .grey,
- .Surname h1 .grey {
-     color: grey;
- }
-#trespo, #frespo{
+.title h1 .grey,
+.Surname h1 .grey {
+    color: grey;
+}
+.hiderespo{
     visibility: hidden;
-    width: 500px;
-    text-transform: capitalize;
-    font-size: 25px;
-    width: 100vw;
-}
-#trespo span{
-    text-transform: uppercase;
+    overflow: hidden;
+    font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
- /* RESPONSIVE DESIGN PAGE D,ACCUEIL */
+
+
+/* Style pour div image */
+.image {
+    position: fixed;
+    top: 33%;
+    left: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin: auto;
+    width: clamp(120px, 20vw, 220px);
+    height: clamp(100px, 18vw, 200px);
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* RESPONSIVE DESIGN PAGE D’ACCUEIL */
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 0.3rem;
-        margin: 10px;
-        text-align: center;
+
+    .App-Section .title h1,
+    .App-Section .Surname h1 {
         visibility: hidden;
     }
-    #trespo, #frespo{
+
+
+    .image {
+        visibility: hidden;
+    }
+
+    body::before {
+        display: none;
+    }
+    .hiderespo{
         visibility: visible;
+        position: fixed;
+        top: 15vh;
+        left: 5vw;
+        max-width: 90vw;
+        max-height: 90vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: clamp(1rem, 2.5vw, 2rem);
     }
-    /* .image {
-
-        width: 120px;
-        height: 100px;
+    .profile-imagesection {
+        width: 150px;
+        height: 150px;
+        margin: 15px 0 0 15px;
     }
-*/
 
+    #trespo,
+    #frespo {
+        width: 100%;
+        max-width: 95%;
+        margin: 0;
+        text-transform: none;
+        font-size: clamp(1rem, 3.0vw, 5rem);
+    }
 }
- /* style pour div image */
- .image {
-     position: fixed;
-     top: 33%;
-     left: 45%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin: auto;
-     width: 220px;
-     height: 200px;
 
- }
- /* style dark theme */
- body.dark .image  {
-     width: 220px;
-     height: 200px;
-     background-color: rgba(255, 255, 255, 0.65);
-     clip-path: polygon(50% 0%,
-             90% 25%,
-             90% 75%,
-             50% 100%,
-             10% 75%,
-             10% 25%
-         );
+/* Style dark theme */
 
- }
- body.dark .image img {
-     width: 220px;
-     height: 200px;
-     object-fit: cover;
- }
+body.dark .image {
+    position: fixed;
+    top: 33%;
+    left: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin: auto;
+    width: clamp(120px, 20vw, 220px);
+    height: clamp(100px, 18vw, 200px);
+    clip-path: polygon(50% 0%,
+            90% 25%,
+            90% 75%,
+            50% 100%,
+            10% 75%,
+            10% 25%);
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+body.dark .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

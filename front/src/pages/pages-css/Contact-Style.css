@@ -1,11 +1,11 @@
 .App-Contact {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content:flex-start;
+  align-items: first baseline;
   flex-direction: column;
   width: 700px;
   position: absolute;
-  top: 15vh;
+  top: 13vh;
   left: 10vw;
 }
 
@@ -14,6 +14,7 @@
   display: block;
   width: 400px;
   margin-left: 11px;
+
 }
 
 .Contact-Form {
@@ -81,7 +82,7 @@ textarea:focus {
 @media (max-width: 600px) {
   .App-Contact {
     position: fixed;
-    top: 3vh;
+    top: 7.5vh;
     left: auto;
     width: 100%;
     max-width: 100%;

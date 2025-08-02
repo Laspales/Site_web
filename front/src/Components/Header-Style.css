@@ -147,8 +147,24 @@ html, body {
 /* style dark theme */
 body.dark {
   color: rgba(250, 250, 250, 0.95) !important;
-  background-color: rgba(3, 10, 37, 0.7) !important;
+  background-color: rgba(10, 10, 25, 0.8) !important; /* sombre mais pas noir pur */
 }
+
+body.dark::after {
+  background-image:
+    radial-gradient(at 30% 30%, rgba(0, 120, 255, 0.07) 0px, transparent 50%),
+    radial-gradient(at 70% 70%, rgba(128, 0, 128, 0.05) 0px, transparent 50%);
+  opacity: 0.2;
+  filter: blur(60px);
+}
+
+body.dark::before {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px) center,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px) center;
+  background-size: 50px 50px;
+}
+
 
 body.dark Header a,
 body.dark Header li {

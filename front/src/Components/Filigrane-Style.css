@@ -1,55 +1,148 @@
 /* Filigrane logo dev */
-.fili1 {
-    position: fixed;
-    top: -20%;
-    left: -5%;
-    font-size: 20.5em;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.15);
-    pointer-events: none; 
-    opacity: 0.4;
+.Fili {
+  z-index: 0;
+  font-size: 23.5em;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  opacity: 0.4;
+
+}
+
+.fili-1 {
+  position: fixed;
+  top: -20%;
+  left: -5%;
+  filter: blur(1px);
+  animation: float-1 20s ease-in-out infinite;
+
+}
+
+.fili-2 {
+  position: fixed;
+  bottom: -30%;
+  left: -10%;
+  transform: rotate(45deg);
+  filter: blur(1px);
+  animation: float-2 20s linear infinite;
+}
+
+.fili-3 {
+  position: fixed;
+  bottom: -30%;
+  right: -10%;
+  transform: rotate(-45deg);
+  filter: blur(1px);
+  animation: float-3 20s ease-in-out infinite;
+}
+
+.fili-4 {
+  position: fixed;
+  top: -35%;
+  left: 43%;
+  transform: rotate(-45deg);
+  filter: blur(1px);
+  animation: float-4 20s ease-in-out infinite;
+}
+
+.fili-5 {
+  position: fixed;
+  top: 0;
+  right: -10%;
+  transform: rotate(45deg);
+  filter: blur(1px);
+  animation: float-5 20s ease-in-out infinite;
+}
+
+.fili-6 {
+  position: fixed;
+  bottom: -45%;
+  right: 35%;
+  transform: rotate(-20deg);
+  filter: blur(1px);
+  animation: float-6 20s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+  0% {
+    transform: scale(1) rotate(0deg);
   }
-  .fili2 {
-    position: fixed;
-    bottom: -30%;
-    left: -10%;
-    transform: rotate(45deg);
-    font-size: 20.5em;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.15);
-    pointer-events: none; 
-    opacity: 0.4;
+
+  50% {
+    transform: scale(1.15) rotate(2deg);
   }
-  .fili3 {
-    position: fixed;
-    bottom: -30%;
-    right: -5%;
-    transform: rotate(-45deg);
-    font-size: 20.5em;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.15);
-    pointer-events: none; 
-    opacity: 0.4;
+
+  100% {
+    transform: scale(1) rotate(0deg);
   }
-  .fili4 {
-    position: fixed;
-    top: -35%;
-    left: 43%;
-    transform: rotate(-45deg);
-    font-size: 20.5em;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.15);
-    pointer-events: none; 
-    opacity: 0.4;
+}
+
+@keyframes float-2 {
+  0% {
+    transform:  rotate(45deg);
   }
-  .fili5 {
-    position: fixed;
-    top: 0;
-    right: -10%;
-    font-size: 20.5em;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.15);
-    pointer-events: none; 
-    opacity: 0.4;
-    transform: rotate(45deg);
+
+  50% {
+    transform:  rotate(0deg);
   }
+
+  100% {
+    transform:  rotate(45deg);
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    transform: translateX(0) rotate(-45deg);
+  }
+
+  50% {
+    transform: translateX(0px) rotate(-30deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(-45deg);
+  }
+}
+
+@keyframes float-4 {
+  0% {
+    transform: translateX(0) rotate(-45deg);
+  }
+
+  50% {
+    transform: translateX(-17px) rotate(-30deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(-45deg);
+  }
+}
+
+@keyframes float-5 {
+  0% {
+    transform: scale(1) rotate(45deg);
+  }
+
+  50% {
+    transform: scale(1.0) rotate(30deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+@keyframes float-6 {
+  0% {
+    transform: scale(1) rotate(-20deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(-20deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(-20deg);
+  }
+}

@@ -34,11 +34,11 @@ body::after {
 /* Barre de défilement  */
 
 body::-webkit-scrollbar {
-  width: 12px; /* largeur de la barre de défilement */
+  width: 12px; 
 }
 
 body::-webkit-scrollbar-track {
-  background: rgba(200, 200, 200, 1); /* couleur de la piste de défilement */
+  background: rgba(200, 200, 200, 1); 
 }
 
 body::-webkit-scrollbar-thumb {
