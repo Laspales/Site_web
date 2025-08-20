@@ -29,7 +29,7 @@
 
 .fili-3 {
   position: fixed;
-  bottom: -30%;
+  bottom: -35%;
   right: -10%;
   transform: rotate(-45deg);
   filter: blur(1px);
@@ -47,7 +47,7 @@
 
 .fili-5 {
   position: fixed;
-  top: 0;
+  top: -10%;
   right: -10%;
   transform: rotate(45deg);
   filter: blur(1px);
@@ -145,4 +145,35 @@
   100% {
     transform: scale(1) rotate(-20deg);
   }
+}
+
+/* ✅ Responsive (tablettes) */
+@media (max-width: 1024px) {
+    /* .Fili {
+        font-size: 12em;
+      
+    } */
+
+    .fili-1 {  top: -20%; left: -5%; }
+    .fili-2 {  bottom: -30%; left: -10%; }
+    .fili-3 {   bottom: -35%; right: -10%; }
+    .fili-4 { top: -35%; left: 43%; }
+    .fili-5 {  top: -10%; right: -10%;}
+    .fili-6 {  bottom: -45%; right: 35%; }
+}
+
+/* ✅ Responsive (mobiles) */
+@media (max-width: 600px) {
+    .Fili {
+        font-size: 8em;
+        color: rgba(150, 150, 150, 0.3);
+     
+    }
+
+    .fili-1 {  top: 35%; left: -5%; }
+    .fili-2 {  bottom: -5%; left: -5%; }
+    .fili-3 {   top: 40%; right: -50%; }
+    .fili-4 { top: -5%; left: -3%; }
+    .fili-5 {  top: -5%; right: -5%;}
+    .fili-6 {  bottom: -5%; right: -5%; }
 }

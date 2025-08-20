@@ -16,51 +16,83 @@ function Section() {
                     transition={{ duration: 1, ease: "easeInOut" }}
                 >
                     Développeur <br />
-                    <span className="grey">Web</span>
+                    <span className="bracket">&lt;</span>
+                    <span className="grey">web</span>
+                    <span className="bracket">/&gt;</span>
                 </motion.h1>
             </div>
 
             {/* image et texte responsive (mobile) */}
             <div className="hiderespo">
                 <div className="profile-imagesection">
-                    <motion.div 
+                    <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 5, type: "spring", stiffness: 150, damping: 100 }}
                         whileHover={{ scale: 1.15, transition: { duration: 0.2 } }}
-                     
-                        
+
+
                     >
-                    <motion.img
-                        src="/images/profile_images/profile-pic (2).png"
-                        alt="Profile"
-                        width={"130px"}
-                        height={"130px"}
-                        initial={{ scale: 1 }}
-                        animate={{
-                            scale: [1, 1.2, 1],
-                        }}
-                        transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            ease: "easeInOut"
-                        }}
-                       
-                    />
+                        <motion.img
+                            src="/images/profile_images/profile-pic (2).png"
+                            alt="Profile"
+                            width={"130px"}
+                            height={"130px"}
+                            initial={{ scale: 1 }}
+                            animate={{
+                                scale: [1, 1.2, 1],
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: 4,
+                                repeatType: "loop",
+                                ease: "easeInOut"
+                            }}
+
+                        />
                     </motion.div>
                 </div>
                 <div id="trespo">
-                    <TypewriterText text={`  Salut, moi c’est EPALLA NDJALLA Badouel Laspales, passionné de code et curieux de tout ce qui touche au web. Je crée avec passion et j’aime résoudre des problèmes. Bienvenue dans mon univers! Un portfolio qui reflète mon parcours, mes projets et ma passion pour le développement web`}
+                    <TypewriterText
+                        text={[
+                            { content: "const ", className: "key" },
+                            { content: "moi", className: "var" },
+                            { content: " = {", className: "bracket" },
+
+                            { content: "\n  nom: ", className: "propriete" },
+                            { content: '"Badouel EPALLA NDJALLA"', className: "string" },
+
+                            { content: ",\n  date_de_naissance: ", className: "propriete" },
+                            { content: '979123200000', className: "number" },
+
+                            { content: ",\n  origine: ", className: "propriete" },
+                            { content: '🇨🇲', className: "string" },
+
+                            { content: ",\n  profil: ", className: "propriete" },
+                            { content: '"👨‍💻 Développeur Fullstack"', className: "string" },
+
+                            { content: ",\n  domaines: ", className: "propriete" },
+                            { content: '"💻 Web, 🚀 UX & 🎨 Créativité"', className: "string" },
+
+                            { content: ",\n  devise: ", className: "propriete" },
+                            { content: '"Ce qui ne te tue pas aujourdhui te tuera demain🤞🏽🪐"', className: "string" },
+
+                            { content: "\n};", className: "bracket" }
+                        ]}
                         onFinish={() => setShowFrespo(true)}
                     />
-
+                    {showFrespo && (
+                        <TypewriterText
+                            text={[
+                                { content: "{", className: "bracket" },
+                                { content: "/* Bon on peut y aller heun!!*/ ", className: "cmmt" },
+                                { content: "}", className: "bracket" }
+                            ]}
+                            speed={50}
+                        />
+                    )}
                 </div>
-                {showFrespo && (
-                    <div id="frespo">
-                        <TypewriterText text={`  Commençons ----->`} />
-                    </div>
-                )}
+
             </div>
 
             {/* Image centrale */}
