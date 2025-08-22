@@ -65,11 +65,11 @@
 
 
 /* Responsive pour écrans entre 600px et 900px */
-@media screen and (min-width: 600px) and (max-width: 900px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
    .App-Apropos {
-      position: fixed;
+      position: relative;
       top: 10vh;
-      left: auto;
+      left: 20vw;
       width: 100%;
       padding: 15px;
    }
@@ -123,13 +123,14 @@
 /* == RESPONSIVE MAX 600PX ==*/
 @media screen and (max-width: 600px) {
    .App-Apropos {
-      position: fixed;
-      top: 10vh;
+      position: relative;
+      top: 1.5vh;
       left: 0;
       width: 100%;
-      padding: 10px;
+      max-width: 100%;
+      padding: 4rem 0rem;
       box-sizing: border-box;
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
    }
 
    .profile-image,
@@ -137,64 +138,74 @@
       display: none;
    }
 
+   .App-Apropos .Apropos-Title {
+      font-size: 0.70rem;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 1rem 0;
+      padding: 0 1rem;
+   }
+
    .timeline-container {
       display: flex;
       flex-direction: column;
       align-items: stretch;
       width: 100%;
+      max-width: 100%;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      position: relative;
+      top: 10%;
+      left: -20%;
    }
 
    .timeline-item {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      margin: 0 0 1.5rem 0;
-      padding: 0;
+      width: 70%;
+      max-width: 70%;
       box-sizing: border-box;
    }
 
    .timeline-content {
-      width: 100%;
-      max-width: 100%;
-      font-size: 0.9rem;
+      width: 50%;
+      max-width: 50%;
+      font-size: 0.8rem;
       line-height: 1.4;
       white-space: pre-wrap;
       word-wrap: break-word;
       overflow-x: auto;
-      padding: 12px;
-      border-radius: 6px;
+      padding: 0 1.5rem 0 1.5rem;
       box-sizing: border-box;
+      background: #1e1e1e !important;
+      border: none !important;
+      border-left: 3px solid #f00 !important;
+      
    }
 
    /* Style type code */
-   .key {
-      color: #dcdcdc;
+   .timeline-content .key {
+      color: #6a9955;;
    }
 
-   .var {
-      color: #ab0909;
+   .timeline-content .var {
+      color: #f00;
    }
 
-   .propriete {
-      color: #808080;
+   .timeline-content .propriete { 
+      color: #f1fa8c;
    }
 
-   .string {
+   .timeline-content .string {
       color: #ffffff;
    }
 
-   .bracket {
+   .timeline-content .bracket {
       color: #888888;
    }
 
-   .cmmt {
-      color: #6a9955;
-   }
-
-   .number {
+   .timeline-content .number {
       color: #f1fa8c;
    }
 

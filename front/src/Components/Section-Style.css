@@ -96,7 +96,7 @@
         max-width: 95%;
         margin: 0;
         text-transform: none;
-        font-size: clamp(1.4rem, 3.4vw, 5.4rem);
+        font-size: clamp(1rem, 3vw, 5rem);
         font-family: "Fira Code", monospace;
     }
 

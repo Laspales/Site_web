@@ -85,7 +85,7 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"🧩"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"Histoire (2GM, Cameroun, Décolonisation Afrique Noire), documentaires & YouTube"', className: "string" },
+        { content: '"Histoire (2e Guerre Mondiale, Cameroun, Décolonisation Afrique Noire), documentaires & YouTube"', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
     [

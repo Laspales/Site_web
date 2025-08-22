@@ -81,7 +81,7 @@ textarea:focus {
 /* RESPONSIVE DESIGN CONTACT */
 @media (max-width: 600px) {
   .App-Contact {
-    position: fixed;
+    position: relative;
     top: 7.5vh;
     left: auto;
     width: 100%;
