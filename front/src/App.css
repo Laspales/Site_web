@@ -34,7 +34,7 @@ body::after {
 /* Barre de défilement  */
 
 body::-webkit-scrollbar {
-  width: 12px; 
+  width: 0px; 
 }
 
 body::-webkit-scrollbar-track {

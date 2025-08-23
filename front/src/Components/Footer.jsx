@@ -12,7 +12,7 @@ function Footer() {
         <div className="App-Footer">
             <footer>
                 <ul>
-                        <li><a href="https://www.linkedin.com/in/aspales-epalla-ndjalla-9a5555254/" target="blank"><CiLinkedin /></a></li>
+                        <li><a href="https://www.linkedin.com/in/badouel-epalla-ndjalla-9a5555254/" target="blank"><CiLinkedin /></a></li>
                         <li><a href="https://github.com/Laspales" target="blank"><VscGithubAlt /></a></li>
                         <li><Link to="/contact"><MdOutlineContactMail /></Link></li>
                         <li className="fcv"> <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer"><TbFileCv />

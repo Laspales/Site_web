@@ -132,7 +132,7 @@ html, body {
   }
 
   body.dark .App-header {
-    background-color: rgba(34, 34, 34, 0.9);
+    background-color: rgba(34, 34, 34, 1);
   }
 
   body.dark .line {

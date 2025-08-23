@@ -75,7 +75,7 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"📚"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"J’apprécie les récits d’aventure, de mystère et d’analyse. Arsène Lupin, anthologies africaines, mangas (One Piece, DBZ, Naruto, HXH)"', className: "string" },
+        { content: '"J’apprécie les récits d’aventure, de mystère et d’analyse. Arsène Lupin, anthologies africaines, mangas (One Piece, Dragon Ball, Naruto, Hunter x Hunter)"', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
     [
@@ -95,7 +95,7 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"🎶"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"Hip-hop/Rap, Orchestral (Paul Mauriat), New Age, Brassens, Julio Iglesias"', className: "string" },
+        { content: '"Hip-hop/Rap, Orchestral (Paul Mauriat), New Age, Georges Brassens, Julio Iglesias, Kenny G"', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
     [
@@ -111,10 +111,10 @@ const itemsReact = [
 ];
 
 function APropos() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 501);
 
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 600);
+        const handleResize = () => setIsMobile(window.innerWidth < 501);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);

@@ -1,44 +1,14 @@
 /* ===================== */
 /* ====== DESKTOP ====== */
 /* ===================== */
-.App-Apropos {
-   position: absolute;
-   top: 15vh;
-   left: 10vw;
-   width: 900px;
-   min-height: 500px;
-}
-
 .profile-image {
-   width: 180px;
-   height: 180px;
+   width: clamp(120px, 15vw, 170px);
+   height: clamp(120px, 15vw, 170px);
    border-radius: 50%;
    position: absolute;
    top: 16.5vh;
-   left: -10vw;
+   left: -13vw;
 }
-
-.timeline-container {
-   position: absolute;
-   left: 5vw;
-   top: 8.5vh;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: 20px;
-   min-width: 1100px;
-   padding-left: 50px;
-   margin-top: 40px;
-}
-
-.timeline-item {
-   width: 49%;
-   display: flex;
-   align-items: center;
-   gap: 15px;
-   position: relative;
-}
-
 .timeline-icon {
    width: 40px;
    height: 40px;
@@ -50,38 +20,83 @@
    justify-content: center;
    color: rgba(0, 0, 0, 0.7);
    position: absolute;
-   left: 10px;
+   top: 35%;
+   left: 1%;
    z-index: 1;
 }
+/* 1) Rendre le conteneur fluide au lieu de figé */
+.App-Apropos {
+   position: relative;
+   top: 15vh;
+   left: 10vw;
+   width: min(100%, 1000px); /* <= avant: 900px */
+   min-height: 500px;
+   box-sizing: border-box;
+}
 
+/* 2) Deux colonnes identiques + items étirés */
+.timeline-container {
+   position: absolute;
+   top: 8.5vh;
+   left: 5vw;
+   display: grid;
+   grid-template-columns: repeat(2, minmax(0, 2fr)); /* <= avant: 2fr 1fr */
+   align-items: stretch;        /* étire chaque item à la hauteur de la ligne */
+   gap: clamp(12px, 2vw, 24px); /* fluide (facultatif mais utile) */
+   padding-left: clamp(16px, 3vw, 50px);
+   margin-top: clamp(21px, 4.2vh, 45px);
+   min-width: 768px;
+   max-width: 1100px;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+/* 3) Les items occupent 100% de la cellule */
+.timeline-item {
+   width: 100%;
+   display: flex;
+   align-items: stretch; /* <= pour que le contenu prenne toute la hauteur */
+   position: relative;
+}
+
+/* 4) Cartes de même largeur + hauteur cohérente, qui s’adaptent */
 .timeline-content {
-   margin-left: 70px;
+   width: 100%;
+   margin-left: clamp(40px, 5vw, 60px); /* garde la place pour l’icône absolue */
    background: #f5f5f5;
-   padding: 5px 10px;
+   padding: clamp(8px, 1vw, 16px) clamp(10px, 1.2vw, 20px); 
    border-radius: 10px;
    border: 1.5px solid rgba(0, 0, 0, 0.7);
-   font-size: 15.3px;
+   font-size: clamp(13px, 1.1vw, 15.3px); /* taille fluide */
+   box-sizing: border-box;
 }
 
 
 /* Responsive pour écrans entre 600px et 900px */
-@media screen and (min-width: 600px) and (max-width: 1000px) {
+@media screen and (min-width: 501px) and (max-width: 1100px) {
    .App-Apropos {
       position: relative;
-      top: 10vh;
+      top: 6vh;
       left: 20vw;
       width: 100%;
-      padding: 15px;
+      padding: 3.5rem 1rem;
    }
-
+   .App-Apropos .Apropos-Title {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 1rem 0;
+      padding: 0 1rem;
+      position: relative;
+      left: -20%;
+   }
    .profile-image {
       display: none;
    }
 
    .timeline-container {
       position: relative;
-      left: auto;
-      top: auto;
+      top: 0;
+      left: -20%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -92,8 +107,8 @@
    }
 
    .timeline-item {
-      width: 95%;
-      max-width: 600px;
+      width: 90%;
+      max-width: 650px;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -117,11 +132,12 @@
       font-size: 13.5px;
       padding: 4px 8px;
       line-height: 1.3;
+      margin-left: clamp(60px, 5vw, 80px);
    }
 }
 
-/* == RESPONSIVE MAX 600PX ==*/
-@media screen and (max-width: 600px) {
+/* == RESPONSIVE MAX 500PX ==*/
+@media screen and (max-width: 500px) {
    .App-Apropos {
       position: relative;
       top: 1.5vh;
@@ -130,7 +146,6 @@
       max-width: 100%;
       padding: 4rem 0rem;
       box-sizing: border-box;
-      /* overflow-x: hidden; */
    }
 
    .profile-image,
@@ -151,13 +166,14 @@
       flex-direction: column;
       align-items: stretch;
       width: 100%;
+      min-width: 1050px !important;
       max-width: 100%;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       position: relative;
       top: 10%;
-      left: -20%;
+      left: -2.5%;
    }
 
    .timeline-item {
@@ -180,10 +196,8 @@
       box-sizing: border-box;
       background: #1e1e1e !important;
       border: none !important;
-      border-left: 3px solid #f00 !important;
-      
+      border-left: 3px solid #f00 !important;   
    }
-
    /* Style type code */
    .timeline-content .key {
       color: #6a9955;;
