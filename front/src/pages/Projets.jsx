@@ -143,7 +143,7 @@ function Projets() {
                     initial={{ opacity: 0, x: 0 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 0 }}
-                    transition={{ duration: 0.02 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                     className="conteneur-slider"
                 >
                     <div className="description">

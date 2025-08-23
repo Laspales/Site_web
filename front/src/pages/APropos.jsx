@@ -118,7 +118,7 @@ function APropos() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
+    
     return (
         <div className="App-Apropos">
             <div className="Apropos-Title">
@@ -130,8 +130,8 @@ function APropos() {
                     <motion.img
                         src="/images/profile_images/profile-pic (2).png"
                         alt="Profile"
-                        width={"180px"}
-                        height={"180px"}
+                        width={"170px"}
+                        height={"170px"}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 5, type: "spring", stiffness: 150, damping: 100 }}
