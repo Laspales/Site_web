@@ -16,7 +16,7 @@ function normalizeText(text) {
 }
 
 
-export default function TypewriterText({ text, speed = 30, onFinish, as: Tag = "p" }) {
+export default function TypewriterText({ text, speed = 20, onFinish, as: Tag = "p" }) {
   const segments = normalizeText(text);
   const fullTextRef = useRef(segments.map((s) => s.content).join(""));
   const [visibleCount, setVisibleCount] = useState(0);

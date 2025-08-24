@@ -59,7 +59,11 @@
 /* RESPONSIVE DESIGN PAGE D’ACCUEIL */
 
 @media (max-width: 768px) {
-
+.App-Section{
+    /* position: relative;
+    top: 10vw; */
+    padding: 4rem 0;
+}
     .App-Section .title h1,
     .App-Section .Surname h1 {
         visibility: hidden;
