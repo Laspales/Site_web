@@ -5,7 +5,7 @@ function ProjectCarousel({ images, interval = 5000, speed = 700 }) {
   const wrapRef = useRef(null);
   const controls = useAnimation();
   const [current, setCurrent] = useState(0);
-  const [slideW, setSlideW] = useState(600); 
+  const [slideW, setSlideW] = useState(600);
 
   useEffect(() => {
     const measure = () => setSlideW(wrapRef.current?.clientWidth || 600);
@@ -22,7 +22,7 @@ function ProjectCarousel({ images, interval = 5000, speed = 700 }) {
     return () => clearInterval(id);
   }, [images.length, interval]);
 
-  // Anim à chaque changement d’index
+  // Animation à chaque changement
   useEffect(() => {
     controls.start({
       x: -current * slideW,
@@ -31,45 +31,11 @@ function ProjectCarousel({ images, interval = 5000, speed = 700 }) {
   }, [current, slideW, controls, speed]);
 
   return (
-    <div
-      ref={wrapRef}
-      className="carousel-wrapper"
-      style={{
-        position: "absolute",
-        top: "15%",
-        left: "47.3%",
-        width: "600px",
-        height: "450px",
-        overflow: "hidden"
-      }}
-    >
-      <motion.div
-        animate={controls}
-        style={{
-          display: "flex",
-          height: "100%",
-          willChange: "transform"
-        }}
-      >
+    <div ref={wrapRef} className="carousel-wrapper">
+      <motion.div animate={controls} className="carousel-inner">
         {images.map((src, i) => (
-          <div
-            key={i}
-            style={{
-              flex: "0 0 100%", 
-              width: slideW,     
-              height: "100%"
-            }}
-          >
-            <img
-              src={src}
-              alt={`slide-${i}`}
-              draggable="false"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain"
-              }}
-            />
+          <div key={i} className="carousel-slide" style={{ width: slideW }}>
+            <img src={src} alt={`slide-${i}`} draggable="false" />
           </div>
         ))}
       </motion.div>

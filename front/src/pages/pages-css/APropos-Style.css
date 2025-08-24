@@ -36,7 +36,7 @@
 
 .timeline-container {
    position: relative;
-   top: 6vh;
+   top: 5vh;
    left: 0;
    display: grid;
    grid-template-columns: repeat(2, 1fr);

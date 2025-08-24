@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiFillHtml5 } from "react-icons/ai";
@@ -122,6 +122,14 @@ const projects = [
 
 function Projets() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth <= 1100);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const handleNav = (direction) => {
         setCurrentIndex((prev) =>
@@ -131,83 +139,134 @@ function Projets() {
         );
     };
 
-    const currentProject = projects[currentIndex];
-
     return (
         <div className="App-Projets">
             <h1>Mes projets</h1>
 
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={currentProject.name}
-                    initial={{ opacity: 0, x: 0 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="conteneur-slider"
-                >
-                    <div className="description">
-                        <h3 className="titre">{currentProject.name}</h3>
-                        <p className="desc">{currentProject.description}</p>
-                        <ul className="techno">
-                            {currentProject.technologies.map((tech, index) => {
-                                const Icon = technologyIcons[tech.key];
-                                return (
-                                    <motion.li
-                                        initial={{ scale: 1 }}
-                                        animate={{
-                                            scale: [1, 1.2, 1],
-                                        }}
-                                        transition={{
-                                            duration: 2,
-                                            repeat: Infinity,
-                                            repeatType: "loop",
-                                            ease: "easeInOut"
-                                        }}
-                                    >
-                                        <li
-                                            key={index}
-                                            className="tec"
-                                            data-label={tech.name}
-                                            style={{
-                                                ...tech.style,
-                                                width: "42px",
-                                                height: "42px",
-                                                display: "flex",
-                                                alignItems: "center",
-                                                justifyContent: "center",
-                                                borderRadius: "50%",
-                                                paddingTop: "5px",
-                                                fontSize: "1.5rem",
-                                                listStyle: "none",
-                                                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                                                position: "relative",
-                                                cursor: "default"
-                                            }}
-                                        >
-                                            {Icon && <span>{Icon}</span>}
-                                        </li>
-                                    </motion.li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                    <div className="projet-image">
-                        <ProjectCarousel images={currentProject.images} />
-                    </div>
-                </motion.div>
-            </AnimatePresence>
-
-            <div className="nav-arrows">
-                <button className="prev" onClick={() => handleNav("prev")}>
-                    <BsArrowLeft />
-                </button>
-                <button className="next" onClick={() => handleNav("next")}>
-                    <BsArrowRight />
-                </button>
+            <div className="projet-container">
+                {isMobile
+                    ? projects.map((project) => (
+                        <div key={project.name} className="conteneur-slider">
+                            <div className="description">
+                                <h3 className="titre">{project.name}</h3>
+                                <p className="desc">{project.description}</p>
+                                <ul className="techno">
+                                    {project.technologies.map((tech, idx) => {
+                                        const Icon = technologyIcons[tech.key];
+                                        return (
+                                            <motion.li
+                                                key={idx}
+                                                className="tec"
+                                                data-label={tech.name}
+                                                initial={{ scale: 1 }}
+                                                animate={{ scale: [1, 1.2, 1] }}
+                                                transition={{
+                                                    duration: 2,
+                                                    repeat: Infinity,
+                                                    repeatType: "loop",
+                                                    ease: "easeInOut"
+                                                }}
+                                                style={{
+                                                    ...tech.style,
+                                                    width: "42px",
+                                                    height: "42px",
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                    borderRadius: "50%",
+                                                    paddingTop: "5px",
+                                                    fontSize: "1.5rem",
+                                                    listStyle: "none",
+                                                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                                                    position: "relative",
+                                                    cursor: "default"
+                                                }}
+                                            >
+                                                {Icon && <span>{Icon}</span>}
+                                            </motion.li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                            <div className="projet-image">
+                                <ProjectCarousel images={project.images} />
+                            </div>
+                        </div>
+                    ))
+                    : (() => {
+                        const currentProject = projects[currentIndex];
+                        return (
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={currentProject.name}
+                                    initial={{ opacity: 0, x: 0 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: 0 }}
+                                    transition={{ duration: 0.6, ease: "easeOut" }}
+                                    className="conteneur-slider"
+                                >
+                                    <div className="description">
+                                        <h3 className="titre">{currentProject.name}</h3>
+                                        <p className="desc">{currentProject.description}</p>
+                                        <ul className="techno">
+                                            {currentProject.technologies.map((tech, idx) => {
+                                                const Icon = technologyIcons[tech.key];
+                                                return (
+                                                    <motion.li
+                                                        key={idx}
+                                                        className="tec"
+                                                        data-label={tech.name}
+                                                        initial={{ scale: 1 }}
+                                                        animate={{ scale: [1, 1.2, 1] }}
+                                                        transition={{
+                                                            duration: 2,
+                                                            repeat: Infinity,
+                                                            repeatType: "loop",
+                                                            ease: "easeInOut"
+                                                        }}
+                                                        style={{
+                                                            ...tech.style,
+                                                            width: "42px",
+                                                            height: "42px",
+                                                            display: "flex",
+                                                            alignItems: "center",
+                                                            justifyContent: "center",
+                                                            borderRadius: "50%",
+                                                            paddingTop: "5px",
+                                                            fontSize: "1.5rem",
+                                                            listStyle: "none",
+                                                            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                                                            position: "relative",
+                                                            cursor: "default"
+                                                        }}
+                                                    >
+                                                        {Icon && <span>{Icon}</span>}
+                                                    </motion.li>
+                                                );
+                                            })}
+                                        </ul>
+                                    </div>
+                                    <div className="projet-image">
+                                        <ProjectCarousel images={currentProject.images} />
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        );
+                    })()}
             </div>
+
+            {!isMobile && (
+                <div className="nav-arrows">
+                    <button className="prev" onClick={() => handleNav("prev")}>
+                        <BsArrowLeft />
+                    </button>
+                    <button className="next" onClick={() => handleNav("next")}>
+                        <BsArrowRight />
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
 
-export default Projets; 
+export default Projets;
