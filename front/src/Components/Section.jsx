@@ -24,7 +24,7 @@ function Section() {
                 >
                     Développeur <br />
                     <span className="bracket">&lt;</span>
-                    <Animtext texts={["Web", "Fullstack", "de ton cul"]} delay={3000} />
+                    <Animtext texts={["Web", "Fullstack"]} delay={3000} />
                     <span className="bracket">/&gt;</span>
                 </motion.h1>
             </div>
