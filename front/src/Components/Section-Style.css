@@ -58,11 +58,11 @@
 
 /* RESPONSIVE DESIGN PAGE D’ACCUEIL */
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
 .App-Section{
     /* position: relative;
     top: 10vw; */
-    padding: 4rem 0;
+    padding: 6rem 0;
 }
     .App-Section .title h1,
     .App-Section .Surname h1 {
@@ -135,6 +135,43 @@
     }
 
 }
+/* Cas où la hauteur de l’écran est trop petite */
+@media (max-height: 500px) {
+    .title {
+        font-size: 0.85em !important; 
+        
+    }
+
+    .Surname {
+        font-size: 0.85em !important;
+    }
+
+    .image {
+        width: clamp(80px, 13vw, 130px) !important;
+        height: clamp(80px, 13vw, 130px) !important;
+        position: fixed !important;
+        top: 35% !important;
+        left: 40% !important;
+    }
+
+    .hiderespo {
+        font-size: clamp(0.8rem, 1.8vw, 1.2rem); /* réduit encore plus */
+        gap: 3px;
+        max-height: 80vh;
+    }
+
+    .profile-imagesection {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+
+    #trespo,
+    #frespo {
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
+    }
+}
+
 
 /* Style dark theme */
 

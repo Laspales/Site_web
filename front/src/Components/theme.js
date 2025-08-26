@@ -3,7 +3,7 @@ export function initializeThemeHandler() {
     const screenWidth = window.innerWidth;
 
 
-    if (screenWidth < 768) {
+    if (screenWidth < 850) {
         body.classList.remove('light');
         body.classList.add('dark');
         localStorage.setItem('old_Theme', 'dark');

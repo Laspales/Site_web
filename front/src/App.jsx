@@ -42,7 +42,7 @@ function App() {
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 768) {
+      if (screenWidth < 850) {
         document.body.classList.remove('light');
         document.body.classList.add('dark');
         localStorage.setItem('old_Theme', 'dark');

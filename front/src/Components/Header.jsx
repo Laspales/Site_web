@@ -40,6 +40,7 @@ function Header({ toggleTheme }) {
                         </li>
                     </ul>
                 </div>
+                
             </nav>
         </header>
     );
