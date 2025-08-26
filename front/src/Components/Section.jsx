@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import TypewriterText from './textman';
 import './Section-Style.css';
+import Animtext from "./animtext";
 
 function Section() {
     const [showFrespo, setShowFrespo] = useState(false);
+    {/* animation texte */}
+
+   
+
+    {/* fin de la fonction */}
     return (
         <div className="App-Section">
 
             {/* Titre principal en haut à gauche */}
+
             <div className="title">
                 <motion.h1
                     initial={{ opacity: 0, y: -50 }}
@@ -17,10 +24,11 @@ function Section() {
                 >
                     Développeur <br />
                     <span className="bracket">&lt;</span>
-                    <span className="grey">web</span>
+                    <Animtext texts={["Web", "Fullstack", "de ton cul"]} delay={3000} />
                     <span className="bracket">/&gt;</span>
                 </motion.h1>
             </div>
+
 
             {/* image et texte responsive (mobile) */}
             <div className="hiderespo">
@@ -132,8 +140,8 @@ function Section() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                 >
-                    Laspales <br />
-                    <span className="grey">Epalla</span>&nbsp;
+                    <Animtext texts={["Badouel", "Laspales"]}  delay={4000} id="sname"/> <br />
+                    <span>Epalla</span>&nbsp;
                     <span>Ndjalla</span>
                 </motion.h1>
             </div>
