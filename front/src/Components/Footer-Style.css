@@ -84,7 +84,7 @@ body.dark .App-Footer #cv{
 /* note à moi même voir comment forcer pour que l'emoji scintille aussi */
 
 
-/* RESPONSIVE DESIGN FOOTER */
+/* === RESPONSIVE FOOTER === */
 
 @media (max-width: 768px) {
   footer {
@@ -123,5 +123,11 @@ body.dark .App-Footer #cv{
     visibility: hidden;
     position: fixed;
     top: -100%;
+  }
+}
+
+@media (min-width: 851px) and (max-width: 1100px) {
+  footer{
+    backdrop-filter: blur(10px);
   }
 }

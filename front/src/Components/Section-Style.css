@@ -56,12 +56,10 @@
 }
 
 
-/* RESPONSIVE DESIGN PAGE D’ACCUEIL */
+/* === RESPONSIVE SECTION (HOMEPAGE) === */
 
 @media (max-width: 850px) {
 .App-Section{
-    /* position: relative;
-    top: 10vw; */
     padding: 6rem 0;
 }
     .App-Section .title h1,
@@ -173,7 +171,7 @@
 }
 
 
-/* Style dark theme */
+/* === STYLE DARK THEME === */
 
 body.dark .image {
     position: fixed;

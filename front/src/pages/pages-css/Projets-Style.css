@@ -166,7 +166,7 @@
 @media screen and (min-width: 501px) and (max-width: 1100px) {
   body::-webkit-scrollbar {
   width: 0px; 
-}
+  }
 
   .App-Projets {
     position: relative;
@@ -185,7 +185,7 @@
     padding-top: 20px;
     max-width: none;
      position: relative;
-    left: -5% !important;
+    left: -15% !important;
   }
 
   .App-Projets .description {

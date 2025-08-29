@@ -6,6 +6,7 @@ import { IoLogoJavascript, IoLogoLaravel } from "react-icons/io5";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 import { RiNodejsLine } from "react-icons/ri";
+import { FiTerminal } from "react-icons/fi";
 import ProjectCarousel from "./ProjectCarousel";
 import "./pages-css/Projets-Style.css";
 
@@ -146,7 +147,7 @@ function Projets() {
 
     return (
         <div className="App-Projets">
-            <h1>Mes projets</h1>
+            <h1> <sub><FiTerminal  style={{width:"70px", height: "70px"}}/></sub>Mes projets</h1>
 
             <div className="projet-container">
                 {!isMobile && (
