@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AiFillHtml5 } from "react-icons/ai";
 import { SiCss3, SiPhp, SiTypescript, SiMysql, SiSocketdotio } from "react-icons/si";
 import { IoLogoJavascript, IoLogoLaravel } from "react-icons/io5";
+import { IoMdArrowDropleft } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
 import { RiNodejsLine } from "react-icons/ri";
 import ProjectCarousel from "./ProjectCarousel";
 import "./pages-css/Projets-Style.css";
@@ -144,6 +146,29 @@ function Projets() {
             <h1>Mes projets</h1>
 
             <div className="projet-container">
+                {!isMobile && (
+                    <div className="nav-arrows">
+                        <button className="prev" onClick={() => handleNav("prev")}>
+                            <motion.span
+                                initial={{ scale: 1 }}
+                                whileHover={{ scale: 1.5 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <IoMdArrowDropleft />
+                            </motion.span>
+
+                        </button>
+                        <button className="next" onClick={() => handleNav("next")}>
+                            <motion.span
+                                initial={{ scale: 1 }}
+                                whileHover={{ scale: 1.5 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <IoMdArrowDropright />
+                            </motion.span>
+                        </button>
+                    </div>
+                )}
                 {isMobile
                     ? projects.map((project) => (
                         <div key={project.name} className="conteneur-slider">
@@ -255,16 +280,7 @@ function Projets() {
                     })()}
             </div>
 
-            {!isMobile && (
-                <div className="nav-arrows">
-                    <button className="prev" onClick={() => handleNav("prev")}>
-                        <BsArrowLeft />
-                    </button>
-                    <button className="next" onClick={() => handleNav("next")}>
-                        <BsArrowRight />
-                    </button>
-                </div>
-            )}
+
         </div>
     );
 }

@@ -5,10 +5,10 @@ function ProjectCarousel({ images, interval = 5000, speed = 700 }) {
   const wrapRef = useRef(null);
   const controls = useAnimation();
   const [current, setCurrent] = useState(0);
-  const [slideW, setSlideW] = useState(600);
+  const [slideW, setSlideW] = useState(600); 
 
   useEffect(() => {
-    const measure = () => setSlideW(wrapRef.current?.clientWidth || 600);
+    const measure = () => setSlideW(wrapRef.current?.clientWidth || 600); 
     measure();
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
@@ -26,7 +26,7 @@ function ProjectCarousel({ images, interval = 5000, speed = 700 }) {
   useEffect(() => {
     controls.start({
       x: -current * slideW,
-      transition: { duration: speed / 1000, ease: [0.22, 1, 0.36, 1] }
+      transition: { duration: speed / 900, ease: [0.22, 1, 0.36, 1] } 
     });
   }, [current, slideW, controls, speed]);
 
@@ -34,7 +34,7 @@ function ProjectCarousel({ images, interval = 5000, speed = 700 }) {
     <div ref={wrapRef} className="carousel-wrapper">
       <motion.div animate={controls} className="carousel-inner">
         {images.map((src, i) => (
-          <div key={i} className="carousel-slide" style={{ width: slideW }}>
+          <div key={i} className="carousel-slide" style={{ width: slideW}}>
             <img src={src} alt={`slide-${i}`} draggable="false" />
           </div>
         ))}

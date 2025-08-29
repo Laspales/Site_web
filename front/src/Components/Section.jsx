@@ -51,7 +51,7 @@ function Section() {
                                 scale: [1, 1.2, 1],
                             }}
                             transition={{
-                                duration: 2,
+                                duration: 1.5,
                                 repeat: 4,
                                 repeatType: "loop",
                                 ease: "easeInOut"
@@ -140,7 +140,7 @@ function Section() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                 >
-                    <Animtext texts={["Badouel", "Laspales"]}  delay={4000} id="sname"/> <br />
+                    <Animtext texts={["Badouel", "Laspales"]}  delay={5000} id="sname"/> <br />
                     <span>Epalla</span>&nbsp;
                     <span>Ndjalla</span>
                 </motion.h1>

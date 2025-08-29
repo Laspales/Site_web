@@ -1,6 +1,6 @@
 .App-Apropos {
    position: relative;
-   top: 10.5vh;
+   top: 8vh;
    left: 2vw;
    margin: 0 auto;
    width: clamp(800px, 80vw, 1200px);
@@ -8,7 +8,10 @@
    box-sizing: border-box;
    padding: 0 0 0 5rem;
 }
-
+.App-Apropos .Apropos-Title {
+   position: relative;
+   left: -15%;
+}
 .profile-image {
    border-radius: 50%;
    position: absolute;
@@ -36,7 +39,7 @@
 
 .timeline-container {
    position: relative;
-   top: 5vh;
+   top: 0;
    left: 0;
    display: grid;
    grid-template-columns: repeat(2, 1fr);
@@ -64,7 +67,7 @@
    padding: clamp(8px, 1vw, 16px) clamp(10px, 1.2vw, 20px);
    border-radius: 10px;
    border: 1.5px solid rgba(0, 0, 0, 0.7);
-   font-size: clamp(14px, 1.1vw, 16px);
+   font-size: clamp(12px, 1.05vw, 14px);
    box-sizing: border-box;
 }
 
@@ -72,7 +75,7 @@
 @media screen and (min-width: 501px) and (max-width: 1000px) {
    .App-Apropos {
       position: relative;
-      top: 6vh;
+      top: 2vh;
       left: 20vw;
       width: 100%;
       padding: 3.5rem 1rem;
@@ -83,8 +86,8 @@
       max-width: 100%;
       margin: 0 0 1rem 0;
       padding: 0 1rem;
-      position: relative;
-      left: -20%;
+      position: relative !important;
+      left: -20%  !important;
    }
 
    .profile-image {
@@ -157,6 +160,8 @@
       max-width: 100%;
       margin: 0 0 1rem 0;
       padding: 0 1rem;
+      position: relative !important;
+      left: 0 !important;
    }
 
    .timeline-container {
