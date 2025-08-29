@@ -89,11 +89,7 @@
 .next:hover {
   color: rgba(0, 0, 0, 1);
   background: rgba(255, 255, 255, 0.75);
-  /* transform: scale(1.1); */
 }
-
-
-
 
 /* Gestion carousel */
 .App-Projets .conteneur-slider {
@@ -105,7 +101,6 @@
   width: 100%;
   max-width: 950px;
   height: 450px;
-  /* padding-top: 40px; */
   margin: 0 50px;
   transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
   box-sizing: border-box;

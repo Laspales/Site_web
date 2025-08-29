@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiFillHtml5 } from "react-icons/ai";
 import { SiCss3, SiPhp, SiTypescript, SiMysql, SiSocketdotio } from "react-icons/si";
@@ -81,10 +80,10 @@ const projects = [
             "NodeJS", "JavaScript", "HTML", "CSS", "Socket.io"
         ]),
         images: [
-            "/images/images_projets/irc/irc0.PNG",
-            "/images/images_projets/irc/irc1.PNG",
-            "/images/images_projets/irc/irc2.PNG",
-            "/images/images_projets/irc/irc3.PNG",
+            "/images/images_projets/irc/irc0.png",
+            "/images/images_projets/irc/irc1.png",
+            "/images/images_projets/irc/irc2.png",
+            "/images/images_projets/irc/irc3.png",
         ]
     },
     {
@@ -98,10 +97,10 @@ const projects = [
             "HTML", "CSS", "Laravel", "PHP", "MySQL"
         ]),
         images: [
-            "images/images_projets/portfolio/pf0.PNG",
-            "images/images_projets/portfolio/pf1.PNG",
-            "images/images_projets/portfolio/pf2.PNG",
-            "images/images_projets/portfolio/pf3.PNG",
+            "images/images_projets/portfolio/pf0.png",
+            "images/images_projets/portfolio/pf1.png",
+            "images/images_projets/portfolio/pf2.png",
+            "images/images_projets/portfolio/pf3.png",
         ]
     },
     {
@@ -115,9 +114,9 @@ const projects = [
             "TypeScript", "NodeJS"
         ]),
         images: [
-            "/images/images_projets/hyrule_castle/hc0.PNG",
-            "/images/images_projets/hyrule_castle/hc1.PNG",
-            "/images/images_projets/hyrule_castle/hc2.PNG",
+            "/images/images_projets/hyrule_castle/hc0.png",
+            "/images/images_projets/hyrule_castle/hc1.png",
+            "/images/images_projets/hyrule_castle/hc2.png",
         ]
     }
 ];
@@ -133,13 +132,17 @@ function Projets() {
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
-    const handleNav = (direction) => {
+    const [direction, setDirection] = useState(0); // -1 = prev, +1 = next
+
+    const handleNav = (dir) => {
+        setDirection(dir === "next" ? 1 : -1);
         setCurrentIndex((prev) =>
-            direction === "next"
+            dir === "next"
                 ? (prev + 1) % projects.length
                 : (prev - 1 + projects.length) % projects.length
         );
     };
+
 
     return (
         <div className="App-Projets">
@@ -189,7 +192,8 @@ function Projets() {
                                                     duration: 2,
                                                     repeat: Infinity,
                                                     repeatType: "loop",
-                                                    ease: "easeInOut"
+                                                    ease: "easeInOut",
+                                                    delay: idx * 0.6
                                                 }}
                                                 style={{
                                                     ...tech.style,
@@ -221,14 +225,34 @@ function Projets() {
                     : (() => {
                         const currentProject = projects[currentIndex];
                         return (
-                            <AnimatePresence mode="wait">
+                            <AnimatePresence mode="wait" custom={direction}>
                                 <motion.div
                                     key={currentProject.name}
-                                    initial={{ opacity: 0, x: 0 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: 0 }}
-                                    transition={{ duration: 0.6, ease: "easeOut" }}
+                                    custom={direction}
+                                    initial={{
+                                        opacity: 0,
+                                        x: direction > 0 ? 50 : -50,
+                                        rotateY: direction > 0 ? 30 : -30,
+                                        scale: 0.9
+                                    }}
+                                    animate={{
+                                        opacity: 1,
+                                        x: 0,
+                                        rotateY: 0,
+                                        scale: 1
+                                    }}
+                                    exit={{
+                                        opacity: 0,
+                                        x: direction > 0 ? 200 : -200,
+                                        rotateY: direction > 0 ? -30 : 30,
+                                        scale: 0.9
+                                    }}
+                                    transition={{
+                                        duration: 0.35,
+                                        ease: "easeInOut"
+                                    }}
                                     className="conteneur-slider"
+                                    style={{ perspective: 4000 }}
                                 >
                                     <div className="description">
                                         <h3 className="titre">{currentProject.name}</h3>
@@ -247,7 +271,8 @@ function Projets() {
                                                             duration: 2,
                                                             repeat: Infinity,
                                                             repeatType: "loop",
-                                                            ease: "easeInOut"
+                                                            ease: "easeInOut",
+                                                            delay: idx * 0.6,
                                                         }}
                                                         style={{
                                                             ...tech.style,
