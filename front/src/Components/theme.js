@@ -13,7 +13,7 @@ export function initializeThemeHandler() {
         body.classList.add(savedTheme);
     }
 
-    // Écouteur de clic pour le bouton theme
+    // clic pour le bouton theme
     const btnTheme = document.querySelector('.theme');
     if (btnTheme) {
         btnTheme.addEventListener('click', () => {

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaCircleHalfStroke } from "react-icons/fa6";
+import { CiLight } from "react-icons/ci";
+import { CiDark } from "react-icons/ci";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 import "./Header-Style.css";
@@ -11,6 +12,7 @@ function Header({ toggleTheme }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [showPulse, setShowPulse] = useState(false);
     const [pulsePlayed, setPulsePlayed] = useState(false);
+    const [isDark, setIsDark] = useState(false);
 
     const isActive = (path) => (location.pathname === path ? "active" : "");
 
@@ -29,6 +31,10 @@ function Header({ toggleTheme }) {
         }
     }, [menuOpen, pulsePlayed]);
 
+    const handleToggleTheme = () => {
+        toggleTheme();           
+        setIsDark(!isDark);      
+    };
     return (
         <header className="App-header">
             <nav className="navbar">
@@ -100,7 +106,17 @@ function Header({ toggleTheme }) {
                             </Link>
                         </li>
                         <li className="nv">
-                            <FaCircleHalfStroke className="theme" onClick={toggleTheme} />
+                            <motion.li
+                                initial = {{ rotate: 0 }}
+                                whileTap = {{ rotate: 360 }}
+                                transition = {{ duration: 0.5 }}
+                            >
+                                {isDark ? (
+                                    <CiLight size={20} onClick={handleToggleTheme} style={{ cursor: 'pointer' }} />
+                                ) : (
+                                    <CiDark size={20} onClick={handleToggleTheme} style={{ cursor: 'pointer' }} />
+                                )}
+                            </motion.li>
                         </li>
                     </ul>
                 </div>

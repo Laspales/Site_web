@@ -5,6 +5,8 @@ import { SiCss3, SiPhp, SiTypescript, SiMysql, SiSocketdotio } from "react-icons
 import { IoLogoJavascript, IoLogoLaravel } from "react-icons/io5";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { RiNodejsLine } from "react-icons/ri";
 import { FiTerminal } from "react-icons/fi";
 import ProjectCarousel from "./ProjectCarousel";
@@ -158,7 +160,7 @@ function Projets() {
                                 whileHover={{ scale: 1.5 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <IoMdArrowDropleft />
+                                <MdKeyboardDoubleArrowLeft />
                             </motion.span>
 
                         </button>
@@ -168,7 +170,7 @@ function Projets() {
                                 whileHover={{ scale: 1.5 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <IoMdArrowDropright />
+                                <MdKeyboardDoubleArrowRight />
                             </motion.span>
                         </button>
                     </div>

@@ -86,7 +86,7 @@ body.dark .App-Footer #cv{
 
 /* === RESPONSIVE FOOTER === */
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   footer {
     position: fixed;
     bottom: -0.5%;
