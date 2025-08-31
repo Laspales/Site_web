@@ -68,7 +68,7 @@ function Section() {
                             { content: " = {", className: "bracket" },
 
                             { content: "\n  nom: ", className: "propriete" },
-                            { content: '"Badouel EPALLA NDJALLA"', className: "string" },
+                            { content: '"EPALLA NDJALLA Badouel Laspales"', className: "string" },
 
                             { content: ",\n  date_de_naissance: ", className: "propriete" },
                             { content: '979123200000', className: "number" },

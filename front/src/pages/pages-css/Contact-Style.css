@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 700px;
   position: absolute;
-  top: 13vh;
+  top: 1vh;
   left: 10vw;
 }
 
@@ -15,6 +15,9 @@
   width: 400px;
   margin-left: 11px;
 
+}
+.Contact-Title h1 {
+  margin-bottom: 1rem; 
 }
 
 .Contact-Form {
@@ -31,6 +34,7 @@ textarea {
   width: 100%;
   padding: 10px;
   border-left: 4px solid rgba(0, 0, 0, 0.7);
+
   border-radius: 5px;
   font-size: 1.25em;
   font-weight: 500;
@@ -77,42 +81,12 @@ textarea:focus {
   background-color: whitesmoke;
   color: rgba(0, 0, 0, 0.8);
 }
-/* Style dark */
 
-
-body.dark .App-Contact #name,
-body.dark .App-Contact #message,
-body.dark .App-Contact #email {
-  border-left: 4px solid rgba(250, 250, 250, 0.9);
-}
-
-body.dark .App-Contact #name::placeholder,
-body.dark .App-Contact #message::placeholder,
-body.dark .App-Contact #email::placeholder {
-  color: rgba(250, 250, 250, 0.9);
-}
-body.dark .App-Contact #name:focus,
-body.dark .App-Contact #message:focus,
-body.dark .App-Contact #email:focus {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: rgba(250, 250, 250, 0.9);
-}
-
-body.dark .App-Contact #send {
-  background-color: rgba(250, 250, 250, 0.9);
-  color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(250, 250, 250, 0.9);
-}
-
-body.dark .App-Contact #send:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: rgba(250, 250, 250, 0.9);
-}
-/* RESPONSIVE DESIGN CONTACT */
+/* === RESPONSIVE DESIGN CONTACT === */
 @media (max-width: 600px) {
   .App-Contact {
     position: relative;
-    top: 7.5vh;
+    top: 0vh;
     left: auto;
     width: 100%;
     max-width: 100%;
@@ -162,4 +136,36 @@ body.dark .App-Contact #send:hover {
     text-align: center;
     padding: 10px;
   }
+}
+
+/* === STYLE DARK THEME === */
+
+
+body.dark .App-Contact #name,
+body.dark .App-Contact #message,
+body.dark .App-Contact #email {
+  border-left: 4px solid rgba(250, 250, 250, 0.9);
+}
+
+body.dark .App-Contact #name::placeholder,
+body.dark .App-Contact #message::placeholder,
+body.dark .App-Contact #email::placeholder {
+  color: rgba(250, 250, 250, 0.9);
+}
+body.dark .App-Contact #name:focus,
+body.dark .App-Contact #message:focus,
+body.dark .App-Contact #email:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgba(250, 250, 250, 0.9);
+}
+
+body.dark .App-Contact #send {
+  background-color: rgba(250, 250, 250, 0.9);
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(250, 250, 250, 0.9);
+}
+
+body.dark .App-Contact #send:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgba(250, 250, 250, 0.9);
 }

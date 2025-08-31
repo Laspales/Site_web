@@ -32,7 +32,7 @@ function Footer() {
 
                         >
                             <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer">
-                                <span>Voir mon cv</span><CiFaceSmile /><TbFileCv className="fcv"/>
+                                <span>Voir mon cv 😁</span><TbFileCv className="fcv"/>
                             </a>
                         </motion.li>
 

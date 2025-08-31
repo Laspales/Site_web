@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FiTerminal } from "react-icons/fi";
+import TypewriterText from '../Components/textman';
 import './pages-css/APropos-Style.css';
 
 const items = [
@@ -118,11 +120,14 @@ function APropos() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-    
+
     return (
         <div className="App-Apropos">
             <div className="Apropos-Title">
-                <h1>À propos de moi </h1>
+                <h1 style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <FiTerminal style={{ width: "70px", height: "70px" }} />
+                    <TypewriterText text={[{ content: "À propos de moi" }]} speed={100} />
+                </h1>
             </div>
 
             <div className="timeline-container">

@@ -1,8 +1,12 @@
 .App-Projets {
-  position: absolute;
-  top: 13vh;
+  position: fixed;
+  top: 1vh;
   left: 12vw;
 
+}
+.App-Projets h1 {
+  position: relative;
+  left: -4vw;
 }
 
 .description .titre {
@@ -90,6 +94,30 @@
   color: rgba(0, 0, 0, 1);
   background: rgba(255, 255, 255, 0.75);
 }
+.prev::after, .next::after {
+  position: absolute;
+  left: -2%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+.prev::after {
+  content: "Précédent";
+}
+.next::after {
+  content: "Suivant";
+}
+.prev:hover::after, .next:hover::after {
+  opacity: 1;
+}
 
 /* Gestion carousel */
 .App-Projets .conteneur-slider {
@@ -97,7 +125,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
   width: 100%;
   max-width: 950px;
   height: 450px;
@@ -134,7 +161,7 @@
 
 /* Carousel wrapper doit s'adapter à la hauteur du conteneur */
 .App-Projets .carousel-wrapper {
-  width: 510px;
+  width: 500px;
   height: 310px;
   overflow: hidden;
   border-radius: 10px;
@@ -143,7 +170,7 @@
 
 .App-Projets .carousel-slide img {
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: contain;
   border-radius: 10px;
   display: block;
@@ -174,6 +201,10 @@
     left: 0vw;
     width: 90vw;
     padding: 4.5rem 1rem;
+  }
+  .App-Projets h1{
+    position: relative;
+      left: 0vw;    
   }
 
   .App-Projets .conteneur-slider {
@@ -246,7 +277,7 @@
 
  .App-Projets h1{
    position: relative;
-    left: 10vw;
+   left: 10vw;
  }
 
   .App-Projets .conteneur-slider {
@@ -326,4 +357,9 @@ body.dark .App-Projets .next:hover {
   color: rgba(0, 0, 0, 0.95);
   background-color: white;
   opacity: 1;
+}
+body.dark .App-Projets .prev::after,
+body.dark .App-Projets .next::after,  body.dark .tec::after {
+  background-color: #eee;
+  color: #222;
 }

@@ -3,12 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AiFillHtml5 } from "react-icons/ai";
 import { SiCss3, SiPhp, SiTypescript, SiMysql, SiSocketdotio } from "react-icons/si";
 import { IoLogoJavascript, IoLogoLaravel } from "react-icons/io5";
-import { IoMdArrowDropleft } from "react-icons/io";
-import { IoMdArrowDropright } from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { RiNodejsLine } from "react-icons/ri";
 import { FiTerminal } from "react-icons/fi";
+import TypewriterText from '../Components/textman';
 import ProjectCarousel from "./ProjectCarousel";
 import "./pages-css/Projets-Style.css";
 
@@ -114,7 +113,7 @@ const projects = [
             </>
         ),
         technologies: normalizeTechnologies([
-            "TypeScript", "NodeJS"
+            "NodeJS", "TypeScript"
         ]),
         images: [
             "/images/images_projets/hyrule_castle/hc0.png",
@@ -135,7 +134,7 @@ function Projets() {
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
-    const [direction, setDirection] = useState(0); // -1 = prev, +1 = next
+    const [direction, setDirection] = useState(0);
 
     const handleNav = (dir) => {
         setDirection(dir === "next" ? 1 : -1);
@@ -149,7 +148,11 @@ function Projets() {
 
     return (
         <div className="App-Projets">
-            <h1> <sub><FiTerminal  style={{width:"70px", height: "70px"}}/></sub>Mes projets</h1>
+            <h1 style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <FiTerminal style={{ width: "70px", height: "70px" }} />
+                <TypewriterText text={[{ content: "Mes projets" }]} speed={100} />
+            </h1>
+
 
             <div className="projet-container">
                 {!isMobile && (
@@ -159,6 +162,7 @@ function Projets() {
                                 initial={{ scale: 1 }}
                                 whileHover={{ scale: 1.5 }}
                                 transition={{ duration: 0.3 }}
+                                style={{ padding: "10px" }}
                             >
                                 <MdKeyboardDoubleArrowLeft />
                             </motion.span>
@@ -169,6 +173,7 @@ function Projets() {
                                 initial={{ scale: 1 }}
                                 whileHover={{ scale: 1.5 }}
                                 transition={{ duration: 0.3 }}
+                                style={{ padding: "10px" }}
                             >
                                 <MdKeyboardDoubleArrowRight />
                             </motion.span>
@@ -236,22 +241,22 @@ function Projets() {
                                         opacity: 0,
                                         x: direction > 0 ? 50 : -50,
                                         rotateY: direction > 0 ? 30 : -30,
-                                        scale: 0.9
+                                        scale: [0.8, 0.85, 0.9]
                                     }}
                                     animate={{
                                         opacity: 1,
                                         x: 0,
                                         rotateY: 0,
-                                        scale: 1
+                                        scale: [0.95, 1, 1.05]
                                     }}
                                     exit={{
                                         opacity: 0,
                                         x: direction > 0 ? 200 : -200,
                                         rotateY: direction > 0 ? -30 : 30,
-                                        scale: 0.9
+                                        scale: [1, 0.9, 0.8]
                                     }}
                                     transition={{
-                                        duration: 0.35,
+                                        duration: 0.2,
                                         ease: "easeInOut"
                                     }}
                                     className="conteneur-slider"

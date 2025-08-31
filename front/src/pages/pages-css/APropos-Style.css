@@ -1,6 +1,6 @@
 .App-Apropos {
    position: relative;
-   top: 8vh;
+   top: 1vh;
    left: 2vw;
    margin: 0 auto;
    width: clamp(800px, 80vw, 1200px);
@@ -62,7 +62,7 @@
 .timeline-content {
    flex: 1;
    width: 100%;
-   margin-left: clamp(40px, 5vw, 60px);
+   margin-left: clamp(70px, 5.6vw, 90px);
    background: #f5f5f5;
    padding: clamp(8px, 1vw, 16px) clamp(10px, 1.2vw, 20px);
    border-radius: 10px;

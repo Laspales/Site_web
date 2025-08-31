@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { FiTerminal } from "react-icons/fi";
+import TypewriterText from '../Components/textman';
 import './pages-css/Contact-Style.css';
 
 function Contact() {
@@ -16,30 +18,33 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!formData.name || !formData.email || !formData.message) {
-    setStatus("Tous les champs doivent être remplis.");
-    return;
-  }
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus("Tous les champs doivent être remplis.");
+      return;
+    }
 
-  const backendUrl = window.location.origin;
+    const backendUrl = window.location.origin;
 
-  try {
-    const response = await axios.post(`${backendUrl}/contact`, formData);
-    setStatus(response.data.message);
-    setFormData({ name: '', email: '', message: '' });
-  } catch (error) {
-    setStatus("Erreur lors de l'envoi du message.");
-    console.error(error);
-  }
-};
+    try {
+      const response = await axios.post(`${backendUrl}/contact`, formData);
+      setStatus(response.data.message);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus("Erreur lors de l'envoi du message.");
+      console.error(error);
+    }
+  };
 
 
   return (
     <div className="App-Contact">
       <div className="Contact-Title">
-        <h1>Contact.</h1>
+        <h1 style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <FiTerminal style={{ width: "70px", height: "70px" }} />
+          <TypewriterText text={[{ content: "Contact." }]} speed={100} />
+        </h1>
         <p>Contactez-moi ou envoyez-moi un email directement sur <b>badepalla09@gmail.com</b></p>
       </div>
       <div className="Contact-Form">
