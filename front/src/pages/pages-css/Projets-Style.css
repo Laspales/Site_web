@@ -278,6 +278,7 @@
  .App-Projets h1{
    position: relative;
    left: 10vw;
+   font-size: 2em;
  }
 
   .App-Projets .conteneur-slider {

@@ -3,6 +3,7 @@ import axios from "axios";
 import { FiTerminal } from "react-icons/fi";
 import TypewriterText from '../Components/textman';
 import './pages-css/Contact-Style.css';
+import { motion } from "framer-motion";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -49,7 +50,8 @@ function Contact() {
       </div>
       <div className="Contact-Form">
         <form onSubmit={handleSubmit}>
-          <input
+          <br /><br />
+          <motion.input
             id="name"
             type="text"
             name="name"
@@ -57,10 +59,13 @@ function Contact() {
             required
             value={formData.name}
             onChange={handleChange}
+            initial={{ scale: 1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
           />
           <br /><br />
 
-          <input
+          <motion.input
             id="email"
             type="email"
             name="email"
@@ -68,20 +73,35 @@ function Contact() {
             required
             value={formData.email}
             onChange={handleChange}
+            initial={{ scale: 1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
           />
           <br /><br />
 
-          <textarea
+          <motion.textarea
             id="message"
             name="message"
             placeholder="Message"
             required
             value={formData.message}
             onChange={handleChange}
-          ></textarea>
+            initial={{ scale: 1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          />
           <br /><br />
-
-          <button type="submit" id="send">Envoyer</button>
+        
+          <motion.button 
+          type="submit" 
+          id="send"
+          initial={{ scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          >
+            Envoyer
+          </motion.button>
         </form>
         {status && <p>{status}</p>}
       </div>

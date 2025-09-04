@@ -125,7 +125,7 @@ function APropos() {
         <div className="App-Apropos">
             <div className="Apropos-Title">
                 <h1 style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <FiTerminal style={{ width: "70px", height: "70px" }} />
+                    <FiTerminal style={{ width: "70px", height: "70px" }} className="ter"/>
                     <TypewriterText text={[{ content: "À propos de moi" }]} speed={100} />
                 </h1>
             </div>
@@ -139,8 +139,8 @@ function APropos() {
                         height={"170px"}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{ duration: 5, type: "spring", stiffness: 150, damping: 100 }}
-                        whileHover={{ scale: 1.15, transition: { duration: 0.2 } }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 100 }}
+                        whileHover={{ scale: 1.10, transition: { type: "spring", stiffness: "300" } }}
                         className="profile-img"
                     />
                 </div>
@@ -153,7 +153,7 @@ function APropos() {
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
                                 transition={{ delay: index * 0.5, duration: 6, type: "spring", stiffness: 150, damping: 100 }}
-                                whileHover={{ scale: 1.15, rotate: 360, transition: { duration: 0.35 } }}
+                                whileHover={{ scale: 1.15, rotate: 360, transition: { type: "spring", stiffness: "300" } }}
                                 whileTap={{ scale: 0.9, rotate: 360, transition: { duration: 0.2 } }}
                             >
                                 {item.icon}
@@ -163,9 +163,9 @@ function APropos() {
                             className="timeline-content"
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.4 + 0.3, duration: 1 }}
-                            whileHover={{ scale: 1.05, color: "white", backgroundColor: "black", transition: { duration: 0.35 } }}
-                            whileTap={{ scale: 0.95, color: "white", backgroundColor: "black", transition: { duration: 0.2 } }}
+                            // transition={{ delay: index * 0.4 + 0.3, duration: 1 }}
+                            whileHover={{ scale: 1.05, color: "white", backgroundColor: "black", transition: { type : "spring", stiffness: 300} }}
+                            whileTap={{ scale: 0.95, color: "white", backgroundColor: "black", transition: { type : "spring", stiffness: 100 } }}
                         >
                             {isMobile
                                 ? item.map((part, i) => (

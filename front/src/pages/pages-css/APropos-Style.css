@@ -8,15 +8,21 @@
    box-sizing: border-box;
    padding: 0 0 0 5rem;
 }
+
 .App-Apropos .Apropos-Title {
    position: relative;
    left: -15%;
+  
 }
+.App-Apropos .Apropos-Title h1 {
+   margin-bottom: clamp(3px, 1vh, 7px);
+}
+
 .profile-image {
    border-radius: 50%;
    position: absolute;
    top: 13.5vh;
-   left: -10vw;
+   left: -13vw;
    width: clamp(120px, 12vw, 180px);
    height: clamp(120px, 12vw, 180px);
 }
@@ -46,7 +52,7 @@
    align-items: stretch;
    gap: clamp(12px, 2vw, 32px);
    padding: 0 clamp(12px, 3vw, 50px);
-   margin: clamp(20px, 4vh, 50px) auto 0 auto;
+   margin: 0 auto;
    width: 100%;
    max-width: 1200px;
    box-sizing: border-box;
@@ -62,12 +68,12 @@
 .timeline-content {
    flex: 1;
    width: 100%;
-   margin-left: clamp(70px, 5.6vw, 90px);
+   margin-left: clamp(50px, 5.6vw, 70px);
    background: #f5f5f5;
-   padding: clamp(8px, 1vw, 16px) clamp(10px, 1.2vw, 20px);
+   padding: clamp(8px, 1vw, 16px) clamp(7px, 1.1vw, 12px);
    border-radius: 10px;
    border: 1.5px solid rgba(0, 0, 0, 0.7);
-   font-size: clamp(12px, 1.05vw, 14px);
+   font-size: clamp(10px, 1vw, 13px);
    box-sizing: border-box;
 }
 
@@ -84,7 +90,6 @@
    .App-Apropos .Apropos-Title {
       width: 100%;
       max-width: 100%;
-      margin: 0 0 1rem 0;
       padding: 0 1rem;
       position: relative !important;
       left: -20%  !important;
@@ -103,7 +108,7 @@
       align-items: flex-start;
       min-width: unset;
       padding-left: 0;
-      margin-top: 15px;
+      /* margin-top: 15px; */
       gap: 12px;
    }
 
@@ -155,13 +160,17 @@
    }
 
    .App-Apropos .Apropos-Title {
-      font-size: 0.70rem;
+      font-size: 0.65rem;
       width: 100%;
       max-width: 100%;
       margin: 0 0 1rem 0;
       padding: 0 1rem;
       position: relative !important;
       left: 0 !important;
+   }
+   .App-Apropos .ter{
+      width: 30px !important;
+      height: 30px !important;
    }
 
    .timeline-container {
@@ -176,7 +185,7 @@
       box-sizing: border-box;
       position: relative;
       top: 10%;
-      left: -2.5%;
+      left: -5%;
    }
 
    .timeline-item {

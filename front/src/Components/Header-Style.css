@@ -205,7 +205,9 @@ body.dark .Admin-Messages form input,
 body.dark .Admin-Messages form #mdp {
   color: white;
 }
-
+body.dark footer #cv {
+  filter: invert(1);
+}
 body.dark .App-Contact #send:hover,
 body.dark .Admin-Messages form button:hover,
 body.dark .Admin-Messages #deco:hover {

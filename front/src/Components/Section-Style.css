@@ -2,7 +2,7 @@
 .title {
     font-size: 1.15em;
     display: block;
-    width: 100px;
+    width: 130px;
     position: fixed;
     top: 15%;
     left: 5%;
@@ -26,12 +26,15 @@
 .Surname h1 .grey {
     color: grey;
 }
-
+/* .Surname h1 .redc {
+    color: #ab0909;
+} */
 .hiderespo {
     visibility: hidden;
     overflow: hidden;
     font-size: clamp(1rem, 2.5vw, 2rem);
 }
+
 
 
 
@@ -191,7 +194,7 @@ body.dark .image {
             10% 75%,
             10% 25%);
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.55);
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 body.dark .image img {
@@ -200,5 +203,5 @@ body.dark .image img {
     object-fit: cover;
 }
 body.dark  .App-Section .title .grey, body.dark .App-Section .Surname .grey {
-    color: grey;
+    color: navajowhite;
 }

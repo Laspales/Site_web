@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import TypewriterText from './textman';
 import './Section-Style.css';
 import Animtext from "./animtext";
@@ -24,7 +24,7 @@ function Section() {
                 >
                     Développeur <br />
                     <span className="bracket">&lt;</span>
-                    <Animtext texts={["Web", "Fullstack"]} delay={3000} />
+                    <Animtext texts={["Web", "Fullstack"]} delay={3000} className="grey"/>
                     <span className="bracket">/&gt;</span>
                 </motion.h1>
             </div>
@@ -140,8 +140,8 @@ function Section() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                 >
-                    <Animtext texts={["Badouel", "Laspales"]}  delay={5000} id="sname"/> <br />
-                    <span>Epalla</span>&nbsp;
+                    <Animtext texts={["Badouel", "Laspales"]}  delay={5000} className="redc"/> <br />
+                    <span className="grey">Epalla</span>&nbsp;
                     <span>Ndjalla</span>
                 </motion.h1>
             </div>

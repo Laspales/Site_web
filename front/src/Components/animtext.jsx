@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-function Animtext({ texts, delay = 3000 }) {
+function Animtext({ texts, delay = 3000, className = "" }) {
   const [index, setIndex] = useState(0);
-  const [displayText, setDisplayText] = useState(texts[0]);
+  const [renderedText, setRenderedText] = useState([]);
 
   useEffect(() => {
     let frame = 0;
@@ -13,7 +13,7 @@ function Animtext({ texts, delay = 3000 }) {
     const chars = "!<>-_\\/[]{}—=+*^?#________";
 
     const setText = (newText) => {
-      const oldText = displayText;
+      const oldText = texts[index] || "";
       const length = Math.max(oldText.length, newText.length);
       queue = [];
       for (let i = 0; i < length; i++) {
@@ -29,24 +29,28 @@ function Animtext({ texts, delay = 3000 }) {
     };
 
     const update = () => {
-      let output = "";
+      let output = [];
       let complete = 0;
       for (let i = 0, n = queue.length; i < n; i++) {
         let { from, to, start, end, char } = queue[i];
         if (frame >= end) {
           complete++;
-          output += to;
+          output.push(<span key={i}>{to}</span>);
         } else if (frame >= start) {
           if (!char || Math.random() < 0.28) {
             char = chars[Math.floor(Math.random() * chars.length)];
             queue[i].char = char;
           }
-          output += `<span class="dud">${char}</span>`;
+          output.push(
+            <span key={i} className="dud">
+              {char}
+            </span>
+          );
         } else {
-          output += from;
+          output.push(<span key={i}>{from}</span>);
         }
       }
-      setDisplayText(output);
+      setRenderedText(output);
       if (complete === queue.length) {
         timeout = setTimeout(() => {
           const nextIndex = (index + 1) % texts.length;
@@ -67,10 +71,9 @@ function Animtext({ texts, delay = 3000 }) {
   }, [index, texts, delay]);
 
   return (
-    <motion.span
-      className="grey"
-      dangerouslySetInnerHTML={{ __html: displayText }}
-    />
+    <motion.span className={className}>
+      {renderedText}
+    </motion.span>
   );
 }
 

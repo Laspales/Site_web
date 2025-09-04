@@ -12,29 +12,29 @@ function Footer() {
         <div className="App-Footer">
             <footer>
                 <ul>
-                        <li><a href="https://www.linkedin.com/in/badouel-epalla-ndjalla-9a5555254/" target="blank"><CiLinkedin /></a></li>
-                        <li><a href="https://github.com/Laspales" target="blank"><VscGithubAlt /></a></li>
-                        <li><Link to="/contact"><MdOutlineContactMail /></Link></li>
-                        <li className="fcv"> <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer"><TbFileCv />
-                            </a></li>
+                    <li><a href="https://www.linkedin.com/in/badouel-epalla-ndjalla-9a5555254/" target="blank"><CiLinkedin /></a></li>
+                    <li><a href="https://github.com/Laspales" target="blank"><VscGithubAlt /></a></li>
+                    <li><Link to="/contact"><MdOutlineContactMail /></Link></li>
+                    <li className="fcv"> <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer"><TbFileCv />
+                    </a></li>
                     <li id="cv">
                         <motion.li
                             initial={{ scale: 1 }}
-                            animate={{
-                                scale: [1, 1.1, 1],
-                            }}
-                            transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                ease: "easeInOut"
-                            }}
-
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer">
-                                <span>Voir mon cv 😁</span><TbFileCv className="fcv"/>
+                            <a
+                                href="/pdf/CV_Badouel_Epalla_DFE.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="cv-button"
+                            >
+
+                                <span>Consulter mon CV</span>
                             </a>
                         </motion.li>
+
 
                     </li>
 
