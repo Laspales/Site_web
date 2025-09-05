@@ -34,9 +34,7 @@ textarea {
   width: 100%;
   max-width: 350px;
   padding: 10px;
-  /* border-left: 2px solid rgba(0, 0, 0, 0.7); */
   border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-  /* border-radius: 5px; */
   font-size: 1.25em;
   font-weight: 500;
   margin-bottom: 1rem;
@@ -83,6 +81,7 @@ textarea:focus {
 }
 
 /* === RESPONSIVE DESIGN CONTACT === */
+
 @media (max-width: 600px) {
   .App-Contact {
     position: relative;
@@ -144,7 +143,6 @@ textarea:focus {
 body.dark .App-Contact #name,
 body.dark .App-Contact #message,
 body.dark .App-Contact #email {
-  /* border-left: 2px solid rgba(250, 250, 250, 0.9); */
   border-bottom: 2px solid rgba(250, 250, 250, 0.9);
 }
 

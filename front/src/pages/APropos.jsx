@@ -57,6 +57,17 @@ const items = [
             </>
         )
     },
+    {
+        icon: "💻",
+        text: (
+            <>
+                Mes compétences en <strong>développement</strong> :<br />
+                <strong>Front-End :</strong> HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular<br />
+                <strong>Back-End :</strong> PHP, Laravel, Symfony, Node.js, Express.js, Java, Python<br />
+                <strong>Bases de données :</strong> MySQL, MongoDB, PhpMyAdmin<br />
+            </>
+        )
+    }
 ];
 
 const itemsReact = [
@@ -109,6 +120,16 @@ const itemsReact = [
         { content: ",\n  text: ", className: "propriete" },
         { content: '"Football (Bayern, Arsenal), Badminton, Vélo"', className: "string" },
         { content: "\n};", className: "bracket" }
+    ],
+    [
+        { content: "const ", className: "key" },
+        { content: "devSkills", className: "var" },
+        { content: " = {", className: "bracket" },
+        { content: "\n  icon: ", className: "propriete" },
+        { content: '"💻"', className: "string" },
+        { content: ",\n  text: ", className: "propriete" },
+        { content: '"HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular, PHP, Laravel, Symfony, Node.js, Express.js, Java, Python, MySQL, MongoDB, PhpMyAdmin"', className: "string" },
+        { content: "\n};", className: "bracket" }
     ]
 ];
 
@@ -125,7 +146,7 @@ function APropos() {
         <div className="App-Apropos">
             <div className="Apropos-Title">
                 <h1 style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <FiTerminal style={{ width: "70px", height: "70px" }} className="ter"/>
+                    <FiTerminal style={{ width: "70px", height: "70px" }} className="ter" />
                     <TypewriterText text={[{ content: "À propos de moi" }]} speed={100} />
                 </h1>
             </div>
@@ -163,9 +184,9 @@ function APropos() {
                             className="timeline-content"
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
-                            // transition={{ delay: index * 0.4 + 0.3, duration: 1 }}
-                            whileHover={{ scale: 1.05, color: "white", backgroundColor: "black", transition: { type : "spring", stiffness: 300} }}
-                            whileTap={{ scale: 0.95, color: "white", backgroundColor: "black", transition: { type : "spring", stiffness: 100 } }}
+                            transition={{ delay: index * 0.4 + 0.3, duration: 1 }}
+                            whileHover={{ scale: 1.05, color: "white", backgroundColor: "black", transition: { type: "spring", stiffness: 300 } }}
+                            whileTap={{ scale: 0.95, color: "white", backgroundColor: "black", transition: { type: "spring", stiffness: 100 } }}
                         >
                             {isMobile
                                 ? item.map((part, i) => (

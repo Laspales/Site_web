@@ -4,6 +4,7 @@
   left: 12vw;
 
 }
+
 .App-Projets h1 {
   position: relative;
   left: -4vw;
@@ -55,6 +56,7 @@
 
 
 /*boutons prev et next*/
+
 .App-Projets .nav-arrows {
   position: absolute;
   top: 71%;
@@ -83,18 +85,23 @@
   pointer-events: auto;
 
 }
+
 .prev {
   background: rgba(0, 0, 0, 0.4);
 }
+
 .next {
   background: rgba(0, 0, 0, 0.75);
 }
+
 .prev:hover,
 .next:hover {
   color: rgba(0, 0, 0, 1);
   background: rgba(255, 255, 255, 0.75);
 }
-.prev::after, .next::after {
+
+.prev::after,
+.next::after {
   position: absolute;
   left: -2%;
   transform: translateX(-50%);
@@ -109,17 +116,22 @@
   transition: opacity 0.2s ease;
   z-index: 10;
 }
+
 .prev::after {
   content: "Précédent";
 }
+
 .next::after {
   content: "Suivant";
 }
-.prev:hover::after, .next:hover::after {
+
+.prev:hover::after,
+.next:hover::after {
   opacity: 1;
 }
 
 /* Gestion carousel */
+
 .App-Projets .conteneur-slider {
   display: flex;
   flex-direction: row;
@@ -135,6 +147,7 @@
 }
 
 /* Description (colonne à gauche) */
+
 .App-Projets .description {
   position: relative;
   top: -10%;
@@ -149,6 +162,7 @@
 }
 
 /* Image / carousel (à droite) */
+
 .App-Projets .projet-image {
   flex: 1 1 auto;
   height: 100%;
@@ -160,6 +174,7 @@
 }
 
 /* Carousel wrapper doit s'adapter à la hauteur du conteneur */
+
 .App-Projets .carousel-wrapper {
   width: 500px;
   height: 310px;
@@ -177,6 +192,7 @@
 }
 
 /* inner slides */
+
 .App-Projets .carousel-inner {
   display: flex;
   height: 100%;
@@ -190,9 +206,10 @@
 
 
 /* === RESPONSIVE 501 - 1100 === */
+
 @media screen and (min-width: 501px) and (max-width: 1100px) {
   body::-webkit-scrollbar {
-  width: 0px; 
+    width: 0px;
   }
 
   .App-Projets {
@@ -202,20 +219,21 @@
     width: 90vw;
     padding: 4.5rem 1rem;
   }
-  .App-Projets h1{
+
+  .App-Projets h1 {
     position: relative;
-      left: 0vw;    
+    left: 0vw;
   }
 
   .App-Projets .conteneur-slider {
-    flex-direction: column;   
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;                
-    height: auto;             
+    gap: 30px;
+    height: auto;
     padding-top: 20px;
     max-width: none;
-     position: relative;
+    position: relative;
     left: -15% !important;
   }
 
@@ -232,16 +250,16 @@
     width: 90%;
     height: auto;
     padding: 0 8px;
-    
+
   }
 
   .App-Projets .carousel-wrapper {
     width: 90%;
-     max-width: 600px;
+    max-width: 600px;
     height: auto;
-   
+
     margin: 0 auto;
-    max-height: 500px;      
+    max-height: 500px;
   }
 
   .App-Projets .carousel-slide {
@@ -260,7 +278,7 @@
 }
 
 
-/* === RESPONSIVE 0 - 500 === */
+/* === RESPONSIVE max 500 === */
 
 @media screen and (max-width: 500px) {
   body::-webkit-scrollbar {
@@ -275,11 +293,11 @@
     padding: 4.5rem 1rem;
   }
 
- .App-Projets h1{
-   position: relative;
-   left: 10vw;
-   font-size: 2em;
- }
+  .App-Projets h1 {
+    position: relative;
+    left: 10vw;
+    font-size: 2em;
+  }
 
   .App-Projets .conteneur-slider {
     flex-direction: column;
@@ -346,9 +364,11 @@ body.dark .App-Projets .prev,
 body.dark .App-Projets .next {
   color: rgba(0, 0, 0, 0.75);
 }
+
 body.dark .App-Projets .prev {
   background-color: rgba(250, 250, 250, 0.4);
 }
+
 body.dark .App-Projets .next {
   background-color: rgba(255, 255, 255, 0.75);
 }
@@ -359,8 +379,10 @@ body.dark .App-Projets .next:hover {
   background-color: white;
   opacity: 1;
 }
+
 body.dark .App-Projets .prev::after,
-body.dark .App-Projets .next::after,  body.dark .tec::after {
+body.dark .App-Projets .next::after,
+body.dark .tec::after {
   background-color: #eee;
   color: #222;
 }
