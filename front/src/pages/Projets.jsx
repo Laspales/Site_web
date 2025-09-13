@@ -82,10 +82,10 @@ const projects = [
             "NodeJS", "JavaScript", "HTML", "CSS", "Socket.io"
         ]),
         images: [
-            "/images/images_projets/irc/irc0.png",
-            "/images/images_projets/irc/irc1.png",
-            "/images/images_projets/irc/irc2.png",
-            "/images/images_projets/irc/irc3.png",
+            "/images/images_projets/irc/irc0.PNG",
+            "/images/images_projets/irc/irc1.PNG",
+            "/images/images_projets/irc/irc2.PNG",
+            "/images/images_projets/irc/irc3.PNG",
         ]
     },
     {
@@ -99,10 +99,10 @@ const projects = [
             "HTML", "CSS", "Laravel", "PHP", "MySQL"
         ]),
         images: [
-            "images/images_projets/portfolio/pf0.png",
-            "images/images_projets/portfolio/pf1.png",
-            "images/images_projets/portfolio/pf2.png",
-            "images/images_projets/portfolio/pf3.png",
+            "images/images_projets/portfolio/pf0.PNG",
+            "images/images_projets/portfolio/pf1.PNG",
+            "images/images_projets/portfolio/pf2.PNG",
+            "images/images_projets/portfolio/pf3.PNG",
         ]
     },
     {
@@ -116,9 +116,9 @@ const projects = [
             "NodeJS", "TypeScript"
         ]),
         images: [
-            "/images/images_projets/hyrule_castle/hc0.png",
-            "/images/images_projets/hyrule_castle/hc1.png",
-            "/images/images_projets/hyrule_castle/hc2.png",
+            "/images/images_projets/hyrule_castle/hc0.PNG",
+            "/images/images_projets/hyrule_castle/hc1.PNG",
+            "/images/images_projets/hyrule_castle/hc2.PNG",
         ]
     }
 ];
