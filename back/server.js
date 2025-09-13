@@ -78,10 +78,10 @@ app.post('/contact', async (req, res) => {
     }
 });
 
-// 👉 Servir le frontend React (build Vite)
+// Servir le frontend React (build Vite)
 app.use(express.static(path.join(__dirname, '../front/dist')));
 
-// 👉 Rediriger les routes vers index.html
+// Rediriger les routes vers index.html
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../front/dist/index.html'));
 });
