@@ -1,124 +1,110 @@
-# Portfolio de Badouel EPALLA NDJALLA
+# 📂 Portfolio de Badouel EPALLA NDJALLA
 
-  Bienvenue sur mon portfolio ! Ce site met en avant mon parcours, mes projets, mes compétences et mes expériences professionnelles. Vous y trouverez plusieurs pages :
+Bienvenue sur mon portfolio ! Ce site met en avant mon parcours, mes projets, mes compétences et mes expériences professionnelles.  
 
-   **Accueil** : Présentation générale et introduction à mon univers professionnel.
+## 📑 Pages disponibles  
+- **Accueil** : Présentation générale et introduction à mon univers professionnel.  
+- **À propos** : Détails sur mon parcours, mes formations, mes centres d’intérêt et mes skills.  
+- **Projets** : Description de mes réalisations, avec des exemples concrets et visuels.  
+- **Contact** : Formulaire pour me contacter directement.  
 
-   **À propos** : Détails sur mon parcours, mes formations et mes centres d’intérêt et mes skills.
+---
 
-   **Projets** : Description de mes réalisations, avec des exemples concrets visuels.
+## 🛠️ Technologies utilisées  
+- **Frontend** : React.js, React Router, Tailwind CSS, Framer Motion  
+- **Backend** : Node.js, Express  
+- **Bases de données** : MongoDB, MySQL  
+- **Versioning & Collaboration** : Git, GitHub  
 
-   **Contact** : Petit formulaire pour me contacter directement.
+---
 
+## ✨ Fonctionnalités clés  
+- Navigation fluide et responsive  
+- Formulaire de contact avec validation frontend et backend  
+- Galerie de projets avec carrousel  
+- Section compétences dynamique avec graphiques et animations  
+- Optimisé pour mobile et desktop  
+- Footer avec liens vers LinkedIn, GitHub et CV  
 
+---
 
-## Technologies utilisées
+## 🚀 Installation et lancement  
 
-  Ce site a été développé avec :
+### 1️⃣ Cloner le dépôt  
+```bash
+git clone https://github.com/Laspales/Site_web.git
+````
 
-   **Frontend** : React.js, React Router, Tailwind CSS, Framer Motion
+### 2️⃣ Installer les dépendances
 
-   **Backend** : Node.js, Express
+* **Frontend** :
 
-   **Bases de données** : MongoDB, MySQL
+  ```bash
+  cd front
+  npm install
+  ```
 
-   **Versioning & Collaboration** : Git, GitHub
+* **Backend** :
 
+  ```bash
+  cd back
+  npm install
+  ```
 
-## Fonctionnalités clés
+### 3️⃣ Configurer les variables d’environnement
 
-   - Navigation fluide et responsive
+Créez un fichier `.env` dans le dossier `back` avec vos paramètres :
 
-   - Formulaire de contact avec validation frontend et backend
+```
+PORT=5000
+MONGO_URI=<votre_url_mongodb>
+MYSQL_HOST=<votre_hôte_mysql>
+MYSQL_USER=<utilisateur_mysql>
+MYSQL_PASSWORD=<mot_de_passe_mysql>
+```
 
-   - Galerie de projets avec carrousel 
+### 4️⃣ Lancer le projet
 
-   - Section compétences dynamique avec graphiques et animations
+* **Démarrer le backend** :
 
-   - Optimisé pour mobile et desktop
+  ```bash
+  cd back
+  npm start
+  ```
 
-   - Footer contenant des liens vers mon LinkedIn, mon GitHub et mon CV
+* **Démarrer le frontend** (dans un autre terminal) :
 
+  ```bash
+  cd front
+  npm run dev
+  ```
 
-## Installation et lancement
+### 5️⃣ Accéder au portfolio
 
-  1. **Cloner le dépôt**  
-    ```bash
-    git clone https://github.com/Laspales/Site_web.git
-    ```
+* **Backend** : [http://localhost:5001/](http://localhost:5001/)
+* **Frontend** : [http://localhost:3000/](http://localhost:3000/)
 
-  2. **Installer les dépendances**  
+---
 
-    - Pour le frontend :
-      ```bash
-      cd front
-      npm install
-      ```
+## 🤝 Contributions
 
-    * Pour le backend :
-      ```bash
-      cd back
-      npm install
-      ```
+* Signaler des bugs via les issues GitHub
+* Proposer des améliorations via pull requests
+* Suggérer de nouvelles fonctionnalités pour enrichir le portfolio
 
-  3. **Configurer les variables d’environnement**  
-    - Créez un fichier `.env` dans le dossier `back` avec vos paramètres (exemple : URL de la base de données, port, etc.).
-          ```bash
-          PORT=5000
-          MONGO_URI=<votre_url_mongodb>
-          MYSQL_HOST=<votre_hôte_mysql>
-          MYSQL_USER=<utilisateur_mysql>
-          MYSQL_PASSWORD=<mot_de_passe_mysql>
-          ```
+---
 
+## ⚠️ Difficultés rencontrées
 
-  4. **Lancer le projet**  
-    - Démarrer le backend :
+* Optimisation du backend pour les messages
+* Glitch clavier pour accéder à la page admin (uniquement en back)
+* Animations multiples et fluides sur toutes les pages
+* Responsive design adapté à toutes les tailles et orientations d'écran
 
-      ```bash
-      cd /back 
-      npm start
-      ```
+---
 
-    * Démarrer le frontend (dans un autre terminal) :
+## 👨‍💻 Auteur
 
-      ```bash
-      cd front
-      npm run dev
-      ```
+**EPALLA NDJALLA Badouel Laspales**
 
-  5. **Accéder au portfolio**
-      - le back 
-          http://localhost:5001/
-      - le front 
-          http://localhost:3000/
-
-
-## Contributions
-
-  - Signaler des bugs via issues GitHub
-
-  - Proposer des améliorations via pull requests
-
-  - Suggérer de nouvelles fonctionnalités pour enrichir le portfolio
-
-
-
-## Difficultés rencontrées
-
-  - Optimisation du back pour les messages 
-  - Glitch clavier pour accéder à la page admin (uniquement en back)
-  - Animations multiples et fluides pour toutes les pages 
-  - Responsive design adapté à toutes les tailles et orientations d'écran
-
-
-
-## Merci de votre visite et bonne découverte !
-
-
-## Auteur 
-    
-  - EPALLA NDJALLA Badouel Laspales  
-
-  
-
+---
