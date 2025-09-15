@@ -49,13 +49,13 @@
 
   2. **Installer les dépendances**  
 
-    - Pour le frontend :
+    - **Pour le frontend :**
       ```bash
       cd front
       npm install
       ```
 
-    - Pour le backend :
+    - **Pour le backend :**
       ```bash
       cd back
       npm install
@@ -64,6 +64,7 @@
   3. **Configurer les variables d’environnement**  
     - Créez un fichier `.env` dans le dossier `back` avec vos paramètres (exemple : URL de la base de données, port, etc.).
           ```bash
+          \n
           PORT=5000
           MONGO_URI=<votre_url_mongodb>
           MYSQL_HOST=<votre_hôte_mysql>
