@@ -22,20 +22,19 @@
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
-.Admin-Messages #deco {
+.Admin-Messages #deco, .Admin-Messages #load {
     all: unset;
-    position: absolute;
-    top: 100%;
     cursor: pointer;
     text-align: center;
     border: 1px solid;
     border-radius: 5px;
     padding: 5px;
     margin-top: 30px;
+    margin-left: 20px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
-.Admin-Messages form button:hover, .Admin-Messages #deco:hover{
+.Admin-Messages form button:hover, .Admin-Messages #deco:hover, .Admin-Messages #load:hover {
     background-color: white;
     color: rgba(0, 0, 0, 0.8);
 }
@@ -64,8 +63,8 @@
 }
 
 .eye-icon {
-    position: absolute;
-    right: 10px;
+    position: relative;
+    right: 10%;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.8);
 }

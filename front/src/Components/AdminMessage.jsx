@@ -94,7 +94,8 @@ function AdminMessages() {
                 <div>
                     <h1>Messages reçus</h1>
                     {error && <p className="error">{error}</p>}
-                    <button onClick={() => fetchMessages(token)}>Recharger les messages</button>
+                    <button onClick={() => fetchMessages(token)} id="load">Recharger les messages</button>
+                    <button onClick={handleLogout} id="deco">Déconnexion</button>
                     <br /><br />
                     {messages.length > 0 ? (
                         <table>
@@ -120,7 +121,7 @@ function AdminMessages() {
                     ) : (
                         <p>Aucun message enregistré.</p>
                     )}
-                    <button onClick={handleLogout} id="deco">Déconnexion</button>
+                    
                 </div>
             )}
         </div>

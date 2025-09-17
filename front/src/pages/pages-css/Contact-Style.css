@@ -80,6 +80,31 @@ textarea:focus {
   color: rgba(0, 0, 0, 0.8);
 }
 
+/* Style messages envoyés ou erreurs */
+
+.status-message {
+  margin-top: 1rem;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Succès */
+.status-message.success {
+  background-color: #e6ffed;
+  color: #2d7a46;
+  border: 1px solid #2d7a46;
+}
+
+/* Erreur */
+.status-message.error {
+  background-color: #ffe6e6;
+  color: #b80000;
+  border: 1px solid #b80000;
+}
+
+
 /* === RESPONSIVE DESIGN CONTACT === */
 
 @media (max-width: 600px) {
@@ -89,7 +114,7 @@ textarea:focus {
     left: -5%;
     width: 100%;
     max-width: 100%;
-    padding: 2rem 1rem;
+    padding: 5rem 1.5rem 5rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;

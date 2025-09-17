@@ -12,7 +12,7 @@ function Contact() {
     message: '',
   });
 
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState({ type: '', text: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +22,7 @@ function Contact() {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
-      setStatus("Tous les champs doivent être remplis.");
+      setStatus({ type: 'error', text: 'Tous les champs doivent être remplis.' });
       return;
     }
 
@@ -30,13 +30,20 @@ function Contact() {
 
     try {
       const response = await axios.post(`${backendUrl}/contact`, formData);
-      setStatus(response.data.message);
+      setStatus({ type: 'success', text: response.data.message });
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      setStatus("Erreur lors de l'envoi du message.");
+      setStatus({ type: 'error', text: "Erreur lors de l'envoi du message." });
       console.error(error);
     }
   };
+  React.useEffect(() => {
+  if (status.text) {
+    const timer = setTimeout(() => setStatus({ type: '', text: '' }), 2000);
+    return () => clearTimeout(timer);
+  }
+}, [status]);
+
 
 
   return (
@@ -91,19 +98,29 @@ function Contact() {
             transition={{ type: "spring", stiffness: 300 }}
           />
           <br /><br />
-        
-          <motion.button 
-          type="submit" 
-          id="send"
-          initial={{ scale: 1 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300 }}
+
+          <motion.button
+            type="submit"
+            id="send"
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             Envoyer
           </motion.button>
         </form>
-        {status && <p>{status}</p>}
+        {status.text && (
+          <motion.p
+            className={`status-message ${status.type}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {status.text}
+          </motion.p>
+        )}
+
       </div>
     </div>
   );
