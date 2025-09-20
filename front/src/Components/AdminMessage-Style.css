@@ -1,28 +1,70 @@
 .Admin-Messages {
-    position: absolute;
-    top: 15%;
-    left: 20%;
-    padding: 5px;
+    position: relative;
+    top: 10vh;
+    margin: 2% auto;
+    padding: 20px;
+    max-width: 1000px;
+    width: 95%;
+    box-sizing: border-box;
 }
 
-.Admin-Messages form input, .Admin-Messages form #mdp{
-    width: 95.5%;
+/* Connexion admin */
+.Admin-Messages form input,
+.Admin-Messages form #mdp {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 15px;
     color: rgba(0, 0, 0, 0.8);
     border-bottom: 3px solid rgba(0, 0, 0, 0.8);
     background: none;
+    box-sizing: border-box;
 }
+
+.eye-icon {
+    position: relative;
+    right: 2%;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.error {
+    color: rgba(255, 55, 39, 1);
+    font-weight: bold;
+    background-color: rgba(255, 229, 229, 1);
+    padding: 10px;
+    border: 1px solid rgba(255, 55, 39, 1);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Header buttons à gauche, fixe */
+.Admin-Messages .header-buttons {
+    position: fixed;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    gap: 10px;
+    z-index: 10;
+    width: 250px;
+}
+
 .Admin-Messages form button {
     all: unset;
     cursor: pointer;
-    padding: 5px;
     text-align: center;
     border: 1px solid;
     border-radius: 5px;
+    padding: 8px 15px;
+    margin: 5px 0;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
+    transition: 0.3s;
 }
-.Admin-Messages #deco, .Admin-Messages #load {
+
+.Admin-Messages #deco,
+.Admin-Messages #load {
     all: unset;
     cursor: pointer;
     text-align: center;
@@ -34,46 +76,77 @@
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
-.Admin-Messages form button:hover, .Admin-Messages #deco:hover, .Admin-Messages #load:hover {
+
+.Admin-Messages form button:hover,
+.Admin-Messages #deco:hover,
+.Admin-Messages #load:hover {
     background-color: white;
     color: rgba(0, 0, 0, 0.8);
 }
 
-.Admin-Messages table{
+/* Table container à droite, scroll horizontal si nécessaire */
+.Admin-Messages .table-container {
+    margin-left: 250px;
+    overflow-x: auto;
+    width: 95%;
+    max-width: calc(100% - 30px);
+}
+
+/* Table scrollable */
+.Admin-Messages table {
     width: 100%;
-    max-width: 950px;
+    min-width: 700px;
     border: 1px solid;
     border-collapse: collapse;
-    margin-top: 10px;
-    padding: 10px;
 }
-.Admin-Messages table tr td, .Admin-Messages table tr th{
+
+.Admin-Messages table th,
+.Admin-Messages table td {
     border: 1px solid;
-    padding: 15px;
-}
-.password-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.password-container input {
-    flex: 1;
-    padding-right: 30px;
-}
-
-.eye-icon {
-    position: relative;
-    right: 10%;
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.8);
-}
-.error {
-    color: rgba(255, 55, 39, 1);
-    font-weight: bold;
-    background-color: rgba(255, 229, 229, 1);
     padding: 10px;
-    border: 1px solid rgba(255, 55, 39, 1);
-    border-radius: 5px;
-    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Media queries pour mobile */
+
+
+/* Pour petits écrans (smartphones en mode paysage ou portrait) */
+@media (max-width: 1070px) {
+    .Admin-Messages {
+        top: 5vh;
+        padding: 10px;
+    }
+
+    /* Les boutons passent en haut en ligne */
+    .Admin-Messages .header-buttons {
+        position: relative;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    /* La table occupe toute la largeur */
+    .Admin-Messages .table-container {
+        margin-left: 0;
+        width: 50%;
+        max-width: 100%;
+    }
+
+    .Admin-Messages table {
+        min-width: 500px;
+        font-size: clamp(12px, 1.5vw, 14px);
+    }
+
+    .Admin-Messages table th,
+    .Admin-Messages table td {
+        padding: 8px;
+    }
+
+    .eye-icon {
+       position: relative !important;
+       top: -10% !important;
+       right: 5% !important;
+    }
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./AdminMessage-Style.css";
+import { motion } from "framer-motion";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 function AdminMessages() {
@@ -86,42 +87,74 @@ function AdminMessages() {
                             </span>
                         </div>
                         <br /><br />
-                        <button type="submit">Se connecter</button>
+                        
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                type="submit"
+                            >
+                                   Se connecter
+                            </motion.button>
+                         
+                            
+                     
                     </form>
                     {loginError && <p className="error">{loginError}</p>}
                 </div>
             ) : (
-                <div>
-                    <h1>Messages reçus</h1>
-                    {error && <p className="error">{error}</p>}
-                    <button onClick={() => fetchMessages(token)} id="load">Recharger les messages</button>
-                    <button onClick={handleLogout} id="deco">Déconnexion</button>
-                    <br /><br />
-                    {messages.length > 0 ? (
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Email</th>
-                                    <th>Message</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {messages.map((msg, index) => (
-                                    <tr key={index}>
-                                        <td>{msg.name}</td>
-                                        <td>{msg.email}</td>
-                                        <td>{msg.message}</td>
-                                        <td>{new Date(msg.date).toLocaleString()}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    ) : (
-                        <p>Aucun message enregistré.</p>
-                    )}
+                <div className="Messages-section">
+                    <div className="header-buttons">
+                        <h1>Messages reçus</h1>
+                        {error && <p className="error">{error}</p>}
+                        
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                onClick={() => fetchMessages(token)}
+                                id="load"
+                            >
+
+                                Recharger les messages
+                            </motion.button>
                     
+                     
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                onClick={handleLogout} 
+                                id="deco"
+                            >
+                                Déconnexion
+                            </motion.button>
+                        
+                    </div>
+                    <br /><br />
+                    <div className="table-container">
+                        {messages.length > 0 ? (
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Email</th>
+                                        <th>Message</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {messages.map((msg, index) => (
+                                        <tr key={index}>
+                                            <td>{msg.name}</td>
+                                            <td>{msg.email}</td>
+                                            <td>{msg.message}</td>
+                                            <td>{new Date(msg.date).toLocaleString()}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        ) : (
+                            <p>Aucun message enregistré.</p>
+                        )}
+                    </div>
                 </div>
             )}
         </div>

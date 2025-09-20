@@ -29,6 +29,9 @@ function Header({ toggleTheme }) {
         }
     }, [menuOpen, pulsePlayed]);
 
+    // Si on est sur la page admin, ne montrer que le logo
+    const isAdminPage = location.pathname === "/admin";
+
     return (
         <header className="App-header">
             <nav className="navbar">
@@ -41,69 +44,72 @@ function Header({ toggleTheme }) {
                             height="80px"
                         />
                     </Link>
+                    
                 </div>
 
-                {/* Bouton menu */}
-                <div
-                    className={`menu-toggle ${menuOpen ? "open" : ""}`}
-                    onClick={handleToggleMenu}
-                >
-                    <motion.div
-                        initial={{ rotate: 0 }}
-                        animate={{
-                            rotate: menuOpen
-                                ? 90
-                                : showPulse
-                                    ? [0, -8, 8, -6, 6, -3, 3, 0]
-                                    : 0,
-                        }}
-                        transition={{
-                            rotate:
-                                showPulse && !menuOpen
-                                    ? { duration: 0.8, repeat: Infinity, ease: "easeInOut" }
-                                    : { duration: 0.4 },
-                        }}
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            transformOrigin: "50% 50%",
-                        }}
-                    >
-                        {menuOpen ? <IoCloseOutline size={30} /> : <CiMenuBurger size={30} />}
-                    </motion.div>
+                {!isAdminPage && (
+                    <>
+                        {/* Bouton menu */}
+                        <div
+                            className={`menu-toggle ${menuOpen ? "open" : ""}`}
+                            onClick={handleToggleMenu}
+                        >
+                            <motion.div
+                                initial={{ rotate: 0 }}
+                                animate={{
+                                    rotate: menuOpen
+                                        ? 90
+                                        : showPulse
+                                            ? [0, -8, 8, -6, 6, -3, 3, 0]
+                                            : 0,
+                                }}
+                                transition={{
+                                    rotate:
+                                        showPulse && !menuOpen
+                                            ? { duration: 0.8, repeat: Infinity, ease: "easeInOut" }
+                                            : { duration: 0.4 },
+                                }}
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    transformOrigin: "50% 50%",
+                                }}
+                            >
+                                {menuOpen ? <IoCloseOutline size={30} /> : <CiMenuBurger size={30} />}
+                            </motion.div>
+                        </div>
 
-
-                </div>
-
-                {/* Navigation */}
-                <div className="linear">
-                    <ul className={`line ${menuOpen ? "active" : ""}`}>
-                        <li className={`nv ${isActive("/")}`}>
-                            <Link to="/" onClick={closeMenu}>
-                                Accueil
-                            </Link>
-                        </li>
-                        <li className={`nv ${isActive("/apropos")}`}>
-                            <Link to="/apropos" onClick={closeMenu}>
-                                À propos
-                            </Link>
-                        </li>
-                        <li className={`nv ${isActive("/projets")}`}>
-                            <Link to="/projets" onClick={closeMenu}>
-                                Projets
-                            </Link>
-                        </li>
-                        <li className={`nv ${isActive("/contact")}`}>
-                            <Link to="/contact" onClick={closeMenu}>
-                                Contact
-                            </Link>
-                        </li>
-                        <li className="nv">
-                            <FaCircleHalfStroke className="theme" onClick={toggleTheme} />
-                        </li>
-                    </ul>
-                </div>
+                        {/* Navigation */}
+                        <div className="linear">
+                            <ul className={`line ${menuOpen ? "active" : ""}`}>
+                                <li className={`nv ${isActive("/")}`}>
+                                    <Link to="/" onClick={closeMenu}>
+                                        Accueil
+                                    </Link>
+                                </li>
+                                <li className={`nv ${isActive("/apropos")}`}>
+                                    <Link to="/apropos" onClick={closeMenu}>
+                                        À propos
+                                    </Link>
+                                </li>
+                                <li className={`nv ${isActive("/projets")}`}>
+                                    <Link to="/projets" onClick={closeMenu}>
+                                        Projets
+                                    </Link>
+                                </li>
+                                <li className={`nv ${isActive("/contact")}`}>
+                                    <Link to="/contact" onClick={closeMenu}>
+                                        Contact
+                                    </Link>
+                                </li>
+                                <li className="nv">
+                                    <FaCircleHalfStroke className="theme" onClick={toggleTheme} />
+                                </li>
+                            </ul>
+                        </div>
+                    </>
+                )}
             </nav>
         </header>
     );
