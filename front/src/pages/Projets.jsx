@@ -59,7 +59,7 @@ const projects = [
             </>
         ),
         technologies: normalizeTechnologies([
-            "Laravel", "JavaScript", "PHP", "HTML", "CSS", "MySQL"
+            "Laravel", "JavaScript", "HTML", "CSS", "MySQL"
         ]),
         images: [
             "/images/images_projets/bubbletea/image6.png",
@@ -96,7 +96,7 @@ const projects = [
             </>
         ),
         technologies: normalizeTechnologies([
-            "HTML", "CSS", "Laravel", "PHP", "MySQL"
+            "HTML", "CSS", "Laravel", "MySQL"
         ]),
         images: [
             "images/images_projets/portfolio/pf0.PNG",

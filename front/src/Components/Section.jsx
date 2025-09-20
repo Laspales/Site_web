@@ -71,7 +71,7 @@ function Section() {
                             { content: '"EPALLA NDJALLA Badouel Laspales"', className: "string" },
 
                             { content: ",\n  date_de_naissance: ", className: "propriete" },
-                            { content: '979123200000', className: "number" },
+                            { content: '2001-01-18T04:00:00Z', className: "number" },
 
                             { content: ",\n  origine: ", className: "propriete" },
                             { content: '🇨🇲', className: "string" },
@@ -83,7 +83,7 @@ function Section() {
                             { content: '"💻 Web, 🚀 UX & 🎨 Créativité"', className: "string" },
 
                             { content: ",\n  devise: ", className: "propriete" },
-                            { content: '"Ce qui ne te tue pas aujourdhui te tuera demain🤞🏽🪐"', className: "string" },
+                            { content: '"Comme le code, la vie demande des itérations pour atteindre la perfection.🤞🏽🪐"', className: "string" },
 
                             { content: "\n};", className: "bracket" }
                         ]}
@@ -93,7 +93,7 @@ function Section() {
                         <TypewriterText
                             text={[
                                 { content: "{", className: "bracket" },
-                                { content: "/* Bon on peut y aller heun!!*/ ", className: "cmmt" },
+                                { content: "/* 🐛 Aucun bug n’a été maltraité (pour l’instant) */ ", className: "cmmt" },
                                 { content: "}", className: "bracket" }
                             ]}
                             speed={50}

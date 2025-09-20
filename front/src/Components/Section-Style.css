@@ -87,6 +87,7 @@
         flex-direction: column;
         gap: 5px;
         font-size: clamp(1rem, 2.5vw, 2rem);
+        padding: 0 0 4rem 0 !important;
     }
 
     .profile-imagesection {
@@ -124,11 +125,11 @@
     }
 
     .bracket {
-        color: #888888;
+        color: #f08c42;
     }
 
     .cmmt {
-        color: #6a9955;
+        color: #98c379;
     }
 
     .number {
@@ -156,7 +157,7 @@
     }
 
     .hiderespo {
-        font-size: clamp(0.8rem, 1.8vw, 1.2rem); /* réduit encore plus */
+        font-size: clamp(0.8rem, 1.8vw, 1.2rem); 
         gap: 3px;
         max-height: 80vh;
     }
