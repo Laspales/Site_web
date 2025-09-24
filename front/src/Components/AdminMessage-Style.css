@@ -130,7 +130,7 @@
     /* La table occupe toute la largeur */
     .Admin-Messages .table-container {
         margin-left: 0;
-        width: 50%;
+        width: 90%;
         max-width: 100%;
     }
 
@@ -146,7 +146,12 @@
 
     .eye-icon {
        position: relative !important;
-       top: -10% !important;
+       right: 5% !important;
+    }
+}
+@media (max-width: 550px) {
+  .eye-icon {
+       position: fixed !important;
        right: 5% !important;
     }
 }

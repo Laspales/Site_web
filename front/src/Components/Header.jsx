@@ -44,7 +44,7 @@ function Header({ toggleTheme }) {
                             height="80px"
                         />
                     </Link>
-                    
+
                 </div>
 
                 {!isAdminPage && (
@@ -84,27 +84,53 @@ function Header({ toggleTheme }) {
                         <div className="linear">
                             <ul className={`line ${menuOpen ? "active" : ""}`}>
                                 <li className={`nv ${isActive("/")}`}>
-                                    <Link to="/" onClick={closeMenu}>
-                                        Accueil
-                                    </Link>
+                                    <motion.li
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+
+                                        <Link to="/" onClick={closeMenu}>
+                                            Accueil
+                                        </Link>
+                                    </motion.li>
                                 </li>
                                 <li className={`nv ${isActive("/apropos")}`}>
-                                    <Link to="/apropos" onClick={closeMenu}>
-                                        À propos
-                                    </Link>
+                                    <motion.li
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        <Link to="/apropos" onClick={closeMenu}>
+                                            À propos
+                                        </Link>
+                                    </motion.li>
                                 </li>
                                 <li className={`nv ${isActive("/projets")}`}>
-                                    <Link to="/projets" onClick={closeMenu}>
-                                        Projets
-                                    </Link>
+                                    <motion.li
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        <Link to="/projets" onClick={closeMenu}>
+                                            Projets
+                                        </Link>
+                                    </motion.li>
                                 </li>
                                 <li className={`nv ${isActive("/contact")}`}>
-                                    <Link to="/contact" onClick={closeMenu}>
-                                        Contact
-                                    </Link>
+                                    <motion.li
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        <Link to="/contact" onClick={closeMenu}>
+                                            Contact
+                                        </Link>
+                                    </motion.li>
                                 </li>
                                 <li className="nv">
-                                    <FaCircleHalfStroke className="theme" onClick={toggleTheme} />
+                                    <motion.li
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        <FaCircleHalfStroke className="theme" onClick={toggleTheme} />
+                                    </motion.li>
                                 </li>
                             </ul>
                         </div>

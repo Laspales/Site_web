@@ -1,6 +1,6 @@
 /* Style pour .title et .Surname */
 .title {
-    font-size: 1.15em;
+    font-size: clamp(1.05em, 2vw, 1.15em);
     display: block;
     width: 130px;
     position: fixed;
@@ -9,7 +9,7 @@
 }
 
 .Surname {
-    font-size: 1.25em;
+    font-size: clamp(1.05em, 2vw, 1.15em);
     display: block;
     width: auto;
     position: fixed;
@@ -26,6 +26,7 @@
 .Surname h1 .grey {
     color: grey;
 }
+
 /* .Surname h1 .redc {
     color: #ab0909;
 } */
@@ -41,7 +42,7 @@
 /* Style pour div image */
 .image {
     position: fixed;
-    top: 33%;
+    top: 35%;
     left: 45%;
     display: flex;
     justify-content: center;
@@ -62,9 +63,10 @@
 /* === RESPONSIVE SECTION (HOMEPAGE) === */
 
 @media (max-width: 850px) {
-.App-Section{
-    padding: 6rem 0;
-}
+    .App-Section {
+        padding: 6rem 0;
+    }
+
     .App-Section .title h1,
     .App-Section .Surname h1 {
         visibility: hidden;
@@ -137,11 +139,12 @@
     }
 
 }
+
 /* Cas où la hauteur de l’écran est trop petite */
 @media (max-height: 500px) {
     .title {
-        font-size: 0.85em !important; 
-        
+        font-size: 0.85em !important;
+
     }
 
     .Surname {
@@ -157,7 +160,7 @@
     }
 
     .hiderespo {
-        font-size: clamp(0.8rem, 1.8vw, 1.2rem); 
+        font-size: clamp(0.8rem, 1.8vw, 1.2rem);
         gap: 3px;
         max-height: 80vh;
     }
@@ -179,7 +182,7 @@
 
 body.dark .image {
     position: fixed;
-    top: 33%;
+    top: 35%;
     left: 45%;
     display: flex;
     justify-content: center;
@@ -203,6 +206,8 @@ body.dark .image img {
     height: 100%;
     object-fit: cover;
 }
-body.dark  .App-Section .title .grey, body.dark .App-Section .Surname .grey {
+
+body.dark .App-Section .title .grey,
+body.dark .App-Section .Surname .grey {
     color: navajowhite;
 }

@@ -46,7 +46,7 @@ html, body {
 }
 
 .line li {
-  padding: 0 1rem;
+  padding: 0 0.6rem;
 }
 
 .line li a {
@@ -59,6 +59,7 @@ html, body {
 .nv.active {
   border-bottom: 3px solid;
   opacity: 0.8;
+  font-weight: bold;
 }
 
 .theme {

@@ -9,31 +9,51 @@ import './Footer-Style.css';
 
 function Footer() {
     const location = useLocation();
-    const isAdminPage = location.pathname === "/admin"; 
+    const isAdminPage = location.pathname === "/admin";
 
-    if (isAdminPage) return null; 
+    if (isAdminPage) return null;
 
     return (
         <div className="App-Footer">
             <footer>
                 <ul>
                     <li>
-                        <a href="https://www.linkedin.com/in/badouel-epalla-ndjalla-9a5555254/" target="_blank" rel="noopener noreferrer">
-                            <CiLinkedin />
-                        </a>
+                        <motion.li
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
+                            <a href="https://www.linkedin.com/in/badouel-epalla-ndjalla-9a5555254/" target="_blank" rel="noopener noreferrer">
+                                <CiLinkedin />
+                            </a>
+                        </motion.li>
                     </li>
                     <li>
-                        <a href="https://github.com/Laspales" target="_blank" rel="noopener noreferrer">
-                            <VscGithubAlt />
-                        </a>
+                        <motion.li
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
+                            <a href="https://github.com/Laspales" target="_blank" rel="noopener noreferrer">
+                                <VscGithubAlt />
+                            </a>
+                        </motion.li>
                     </li>
                     <li>
-                        <Link to="/contact"><MdOutlineContactMail /></Link>
+                        <motion.li
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
+                            <Link to="/contact"><MdOutlineContactMail /></Link>
+                        </motion.li>
                     </li>
                     <li className="fcv">
-                        <a href="/pdf/CV_Badouel_Epalla_DFE.pdf" target="_blank" rel="noopener noreferrer">
-                            <TbFileCv />
-                        </a>
+                        <motion.li
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
+                            <a href="/pdf/CV_BadouelEpalla.pdf" target="_blank" rel="noopener noreferrer">
+                                <TbFileCv />
+                            </a>
+                        </motion.li>
                     </li>
                     <li id="cv">
                         <motion.li
@@ -43,7 +63,7 @@ function Footer() {
                             transition={{ type: "spring", stiffness: 300 }}
                         >
                             <a
-                                href="/pdf/CV_Badouel_Epalla_DFE.pdf"
+                                href="/pdf/CV_BadouelEpalla.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="cv-button"
