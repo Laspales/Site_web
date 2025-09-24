@@ -9,7 +9,7 @@ const items = [
         icon: "🎓",
         text: (
             <>
-                Apprenti ingénieur en <strong>Software Engineering</strong> à l'ESIEA avec une préférence pour le
+                Apprenti ingénieur en <strong>Software Engineering</strong> avec une préférence pour le
                 <strong> développement Full Stack</strong>.
             </>
         )
@@ -78,7 +78,7 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"🎓"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"Apprenti ingénieur en Software Engineering à l’ESIEA avec une préférence pour le développement Full Stack"', className: "string" },
+        { content: '"Apprenti ingénieur en Software Engineering avec une préférence pour le développement Full Stack"', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
     [
