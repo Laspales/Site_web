@@ -36,15 +36,23 @@ function Header({ toggleTheme }) {
         <header className="App-header">
             <nav className="navbar">
                 <div className="logo">
-                    <Link to="/" onClick={closeMenu}>
-                        <img
-                            src="/images/LA_logo.png"
-                            alt="Logo"
-                            width="95px"
-                            height="80px"
-                        />
-                    </Link>
+                    <motion.div
+                        className="logo-hover"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
 
+
+                        <Link to="/" onClick={closeMenu}>
+                            <img
+                                src="/images/LA_logo.png"
+                                alt="Logo"
+                                width="95px"
+                                height="80px"
+                            />
+                        </Link>
+                    </motion.div>
                 </div>
 
                 {!isAdminPage && (

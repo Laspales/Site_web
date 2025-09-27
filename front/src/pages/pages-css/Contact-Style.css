@@ -49,7 +49,7 @@ input:focus,
 textarea:focus {
   outline: none;
   color: rgba(0, 0, 0, 1);
-  border-color: #ab0909;
+  border-color: red;
 }
 
 #message {
@@ -180,7 +180,7 @@ body.dark .App-Contact #name:focus,
 body.dark .App-Contact #message:focus,
 body.dark .App-Contact #email:focus {
   color: rgba(250, 250, 250, 0.9);
-  border-color: #ab0909;
+  border-color: red;
 }
 
 body.dark .App-Contact #send {
