@@ -22,7 +22,7 @@ function Footer() {
                             whileHover={{ scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <a href="https://www.linkedin.com/in/badouel-epalla-ndjalla-9a5555254/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/badouel-epalla-9a5555254/" target="_blank" rel="noopener noreferrer">
                                 <CiLinkedin />
                             </a>
                         </motion.li>
@@ -50,7 +50,7 @@ function Footer() {
                             whileHover={{ scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <a href="/pdf/CV_BadouelEpalla.pdf" target="_blank" rel="noopener noreferrer">
+                            <a href="/pdf/CV_BadEpalla.pdf.pdf" target="_blank" rel="noopener noreferrer">
                                 <TbFileCv />
                             </a>
                         </motion.li>
