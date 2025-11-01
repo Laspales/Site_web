@@ -15,6 +15,18 @@ const items = [
         )
     },
     {
+        icon: "💻",
+        text: (
+            <>
+                Mes compétences en <strong>développement</strong> :<br />
+                <strong>Front-End :</strong> HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular<br />
+                <strong>Back-End :</strong> PHP, Laravel, Symfony, Node.js, Express.js, Java, Python<br />
+                <strong>Bases de données :</strong> MySQL, MongoDB, PhpMyAdmin<br />
+            </>
+        )
+    },
+    
+    {
         icon: "📚",
         text: (
             <>
@@ -56,17 +68,6 @@ const items = [
                 j'aime pratiquer le <strong>badminton</strong> et faire du <strong>vélo</strong>.
             </>
         )
-    },
-    {
-        icon: "💻",
-        text: (
-            <>
-                Mes compétences en <strong>développement</strong> :<br />
-                <strong>Front-End :</strong> HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular<br />
-                <strong>Back-End :</strong> PHP, Laravel, Symfony, Node.js, Express.js, Java, Python<br />
-                <strong>Bases de données :</strong> MySQL, MongoDB, PhpMyAdmin<br />
-            </>
-        )
     }
 ];
 
@@ -81,6 +82,17 @@ const itemsReact = [
         { content: '"Apprenti ingénieur en Software Engineering avec une préférence pour le développement Full Stack"', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
+    [
+        { content: "const ", className: "key" },
+        { content: "devSkills", className: "var" },
+        { content: " = {", className: "bracket" },
+        { content: "\n  icon: ", className: "propriete" },
+        { content: '"💻"', className: "string" },
+        { content: ",\n  text: ", className: "propriete" },
+        { content: '"HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular, PHP, Laravel, Symfony, Node.js, Express.js, Java, Python, MySQL, MongoDB, PhpMyAdmin"', className: "string" },
+        { content: "\n};", className: "bracket" }
+    ],
+    
     [
         { content: "const ", className: "key" },
         { content: "lectures", className: "var" },
@@ -98,7 +110,7 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"🧩"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"Histoire (2e Guerre Mondiale, Cameroun, Décolonisation Afrique Noire), documentaires & YouTube"', className: "string" },
+        { content: '"Histoire (Seconde Guerre Mondiale, Cameroun, Décolonisation Afrique Noire), documentaires & YouTube"', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
     [
@@ -120,17 +132,8 @@ const itemsReact = [
         { content: ",\n  text: ", className: "propriete" },
         { content: '"Football (Bayern, Arsenal), Badminton, Vélo"', className: "string" },
         { content: "\n};", className: "bracket" }
-    ],
-    [
-        { content: "const ", className: "key" },
-        { content: "devSkills", className: "var" },
-        { content: " = {", className: "bracket" },
-        { content: "\n  icon: ", className: "propriete" },
-        { content: '"💻"', className: "string" },
-        { content: ",\n  text: ", className: "propriete" },
-        { content: '"HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular, PHP, Laravel, Symfony, Node.js, Express.js, Java, Python, MySQL, MongoDB, PhpMyAdmin"', className: "string" },
-        { content: "\n};", className: "bracket" }
     ]
+    
 ];
 
 function APropos() {
