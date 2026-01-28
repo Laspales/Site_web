@@ -55,27 +55,27 @@ function App() {
   }, []);
 
   //accès page admin avec code clavier
-  useEffect(() => {
-    let buffer = "";
-    const secretCode = "grint676";
+  // useEffect(() => {
+  //   let buffer = "";
+  //   const secretCode = "grint676";
 
-    const handleKeyPress = (e) => {
-      buffer += e.key.toLowerCase();
-      if (buffer.length > secretCode.length) {
-        buffer = buffer.slice(-secretCode.length);
-      }
+  //   const handleKeyPress = (e) => {
+  //     buffer += e.key.toLowerCase();
+  //     if (buffer.length > secretCode.length) {
+  //       buffer = buffer.slice(-secretCode.length);
+  //     }
 
-      if (buffer === secretCode) {
-        window.location.href = "/admin";
-      }
-    };
+  //     if (buffer === secretCode) {
+  //       window.location.href = "/admin";
+  //     }
+  //   };
 
-    window.addEventListener("keydown", handleKeyPress);
+  //   window.addEventListener("keydown", handleKeyPress);
 
-    return () => {
-      window.removeEventListener("keydown", handleKeyPress);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyPress);
+  //   };
+  // }, []);
 
 
   return (

@@ -132,6 +132,16 @@ function Header({ toggleTheme }) {
                                         </Link>
                                     </motion.li>
                                 </li>
+                                {/* <li className={`nv ${isActive("/admin")}`}>
+                                    <motion.li
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        <Link to="/admin" onClick={closeMenu}>
+                                            Admin
+                                        </Link>
+                                    </motion.li>
+                                </li> */}
                                 <li className="nv">
                                     <motion.li
                                         whileHover={{ scale: 1.1 }}
