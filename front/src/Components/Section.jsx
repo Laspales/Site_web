@@ -44,8 +44,8 @@ function Section() {
                         <motion.img
                             src="/images/profile_images/profile-pic (2).png"
                             alt="Profile"
-                            width={"120px"}
-                            height={"120px"}
+                            width={"130px"}
+                            height={"130px"}
                             initial={{ scale: 1 }}
                             animate={{
                                 scale: [1, 1.1, 1],

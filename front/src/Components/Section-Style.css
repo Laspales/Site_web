@@ -79,17 +79,17 @@
 
     .hiderespo {
         visibility: visible;
-        position: fixed;
-        top: 11vh;
+        position: relative;
+        top: 1vh;
         left: 5vw;
         max-width: 90vw;
-        max-height: 90vh;
+        /* max-height: 90vh; */
         overflow: auto;
         display: flex;
         flex-direction: column;
         gap: 5px;
         font-size: clamp(1rem, 2.5vw, 2rem);
-        padding: 0 0 4rem 0 !important;
+        padding: 0 0 2rem 0 !important;
     }
 
     .profile-imagesection {
@@ -152,8 +152,8 @@
     }
 
     .image {
-        width: clamp(80px, 13vw, 120px) !important;
-        height: clamp(80px, 13vw, 120px) !important;
+        width: clamp(80px, 13vw, 130px) !important;
+        height: clamp(80px, 13vw, 130px) !important;
         position: fixed !important;
         top: 38% !important;
         left: 40% !important;
