@@ -44,11 +44,11 @@ function Section() {
                         <motion.img
                             src="/images/profile_images/profile-pic (2).png"
                             alt="Profile"
-                            width={"130px"}
-                            height={"130px"}
+                            width={"120px"}
+                            height={"120px"}
                             initial={{ scale: 1 }}
                             animate={{
-                                scale: [1, 1.2, 1],
+                                scale: [1, 1.1, 1],
                             }}
                             transition={{
                                 duration: 1.5,
