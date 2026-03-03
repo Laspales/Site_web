@@ -89,7 +89,7 @@
         flex-direction: column;
         gap: 5px;
         font-size: clamp(1rem, 2.5vw, 2rem);
-        padding: 0 0 2rem 0 !important;
+        padding: 0 0 4rem 0 !important;
     }
 
     .profile-imagesection {
