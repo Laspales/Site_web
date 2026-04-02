@@ -7,6 +7,8 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { RiNodejsLine } from "react-icons/ri";
 import { FiTerminal } from "react-icons/fi";
+import { RiNextjsLine } from "react-icons/ri";
+import { FaReact } from "react-icons/fa";
 import TypewriterText from '../Components/textman';
 import ProjectCarousel from "./ProjectCarousel";
 import "./pages-css/Projets-Style.css";
@@ -21,7 +23,9 @@ const technologyStyles = {
     mysql: { backgroundColor: "#e5f7e7", color: "#00758f" },
     nodejs: { backgroundColor: "#e6ffe6", color: "#3c873a" },
     socketio: { backgroundColor: "#f4f4f4", color: "#010101" },
-    typescript: { backgroundColor: "#f0f8ff", color: "#3178c6" }
+    typescript: { backgroundColor: "#f0f8ff", color: "#3178c6" },
+    nextjs: { backgroundColor: "#000", color: "#fff" },
+    react: { backgroundColor: "#e0f7ff", color: "#61dafb" }
 };
 
 // Icônes associées à chaque techno
@@ -34,7 +38,9 @@ const technologyIcons = {
     nodejs: <RiNodejsLine />,
     typescript: <SiTypescript />,
     mysql: <SiMysql />,
-    socketio: <SiSocketdotio />
+    socketio: <SiSocketdotio />,
+    nextjs: <RiNextjsLine />,
+    react: <FaReact />
 };
 
 // Normalisation des noms et styles
@@ -120,6 +126,41 @@ const projects = [
             "/images/images_projets/hyrule_castle/hc1.PNG",
             "/images/images_projets/hyrule_castle/hc2.PNG",
         ]
+    },
+    {
+        name: "Gestion des molécules",
+        description: (
+            <>
+                Application de gestion des molécules avec visualisation 3D
+            </>
+        ),
+        technologies: normalizeTechnologies([
+            "NextJS", "React", "TypeScript", "CSS"
+        ]),
+        images: [
+            "/images/images_projets/test_molecule/TM1.PNG",
+            "/images/images_projets/test_molecule/TM2.PNG",
+            "/images/images_projets/test_molecule/TM3.PNG",
+            "/images/images_projets/test_molecule/TM4.PNG",
+        ]
+    },
+    {
+        name: "count and click",
+        description: (
+            <>
+                Compter et cliquer : un jeu de clic simple pour tester votre rapidité, votre précision et votre concentration.
+            </>
+        ),
+        technologies: normalizeTechnologies([
+            "HTML", "CSS", "JavaScript"
+        ]),
+        images: [
+            "/images/images_projets/count_click/cc1.PNG",
+            "/images/images_projets/count_click/cc2.PNG",
+            "/images/images_projets/count_click/cc3.PNG",
+            "/images/images_projets/count_click/cc4.PNG",
+            "/images/images_projets/count_click/cc5.PNG",
+        ]   
     }
 ];
 
