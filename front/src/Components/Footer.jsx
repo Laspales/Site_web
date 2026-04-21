@@ -63,7 +63,7 @@ function Footer() {
                             transition={{ type: "spring", stiffness: 300 }}
                         >
                             <a
-                                href="/pdf/CV_BadEpalla_Liora.pdf"
+                                href="/pdf/CV_Badouel_Epalla.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="cv-button"
