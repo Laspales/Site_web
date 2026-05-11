@@ -50,7 +50,7 @@ function Footer() {
                             whileHover={{ scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <a href="/pdf/CV_BadEpalla_Liora.pdf" target="_blank" rel="noopener noreferrer">
+                            <a href="/pdf/CV_Badouel_Epalla.pdf" target="_blank" rel="noopener noreferrer">
                                 <TbFileCv />
                             </a>
                         </motion.li>
