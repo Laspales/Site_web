@@ -12,8 +12,8 @@ Bienvenue sur mon portfolio ! Ce site met en avant mon parcours, mes projets, me
 
 ## 🛠️ Technologies utilisées  
 - **Frontend** : React.js, React Router, Tailwind CSS, Framer Motion  
-- **Backend** : Node.js, Express  
-- **Bases de données** : MongoDB, MySQL  
+- **Backend** : Express;js  
+- **Bases de données** : MongoDB 
 - **Versioning & Collaboration** : Git, GitHub  
 
 ---
