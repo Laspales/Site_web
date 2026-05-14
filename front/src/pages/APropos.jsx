@@ -65,7 +65,7 @@ const items = [
         text: (
             <>
                 Le <strong>football</strong> est ma passion, je le pratique autant que je le suis. Je suis supporter du
-                <strong> Bayern de Munich</strong> et aussi d'<strong>Arsenal</strong>. En dehors du football,
+                <strong> Bayern de Munich</strong>. En dehors du football,
                 j'aime pratiquer le <strong>badminton</strong> et faire du <strong>vélo</strong>.
             </>
         )
@@ -131,7 +131,7 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"⚽"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"Football (Bayern, Arsenal), Badminton, Vélo"', className: "string" },
+        { content: '"Football (Bayern de Munich), Badminton, Vélo"', className: "string" },
         { content: "\n};", className: "bracket" }
     ]
 
