@@ -60,8 +60,10 @@ const projects = [
         name: "bubbletea",
         description: (
             <>
-                Site e-commerce pour Bubble Tea avec gestion des commandes et espace admin.
-                Paiement en ligne disponible.
+                Plateforme e-commerce conçue de A à Z : parcours utilisateur complet,
+                gestion des commandes, espace admin et paiement en ligne.{" "}
+                <strong>Vision produit :</strong> priorisation des features par valeur métier,
+                authentification sécurisée et expérience d'achat fluide.
             </>
         ),
         technologies: normalizeTechnologies([
@@ -81,7 +83,10 @@ const projects = [
         name: "irc",
         description: (
             <>
-                Chat en temps réel avec salons, notifications et gestion des utilisateurs connectés.
+                Application de messagerie instantanée temps réel avec salons, notifications
+                et gestion des utilisateurs connectés.{" "}
+                <strong>Vision produit :</strong> arbitrage des fonctionnalités selon les
+                retours utilisateurs, livraison itérative et engagement amélioré.
             </>
         ),
         technologies: normalizeTechnologies([
@@ -98,7 +103,9 @@ const projects = [
         name: "premier portfolio",
         description: (
             <>
-                Portfolio dynamique avec formulaire de contact et présentation de projets.
+                Portfolio dynamique avec formulaire de contact et présentation de projets.{" "}
+                <strong>Vision produit :</strong> conception orientée expérience utilisateur,
+                optimisé pour faciliter la prise de contact et la lisibilité des réalisations.
             </>
         ),
         technologies: normalizeTechnologies([
@@ -115,7 +122,9 @@ const projects = [
         name: "my hyrule castle",
         description: (
             <>
-                Mini-jeu web d’exploration avec graphismes rétro, inspiré du RPG Zelda.
+                Mini-jeu web d'exploration avec graphismes rétro, inspiré du RPG Zelda.{" "}
+                <strong>Vision produit :</strong> architecture client-serveur avec gestion
+                d'état temps réel, système de combat et persistance des données joueur.
             </>
         ),
         technologies: normalizeTechnologies([
@@ -131,7 +140,9 @@ const projects = [
         name: "Gestion des molécules",
         description: (
             <>
-                Application de gestion des molécules avec visualisation 3D
+                Application de gestion des molécules avec visualisation 3D interactive.{" "}
+                <strong>Vision produit :</strong> interface pensée pour des utilisateurs
+                non-techniques, rendu visuel intuitif et navigation simplifiée.
             </>
         ),
         technologies: normalizeTechnologies([
@@ -148,7 +159,9 @@ const projects = [
         name: "count and click",
         description: (
             <>
-                Compter et cliquer : un jeu de clic simple pour tester votre rapidité, votre précision et votre concentration.
+                Jeu de clic pour tester rapidité, précision et concentration.{" "}
+                <strong>Vision produit :</strong> boucle de jeu courte et addictive,
+                feedback instantané pour maximiser l'engagement et la rejouabilité.
             </>
         ),
         technologies: normalizeTechnologies([
@@ -160,7 +173,7 @@ const projects = [
             "/images/images_projets/count_click/cc3.PNG",
             "/images/images_projets/count_click/cc4.PNG",
             "/images/images_projets/count_click/cc5.PNG",
-        ]   
+        ]
     }
 ];
 

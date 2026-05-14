@@ -1,61 +1,73 @@
-# 📂 Portfolio de Badouel EPALLA NDJALLA
+# 📂 Portfolio — Badouel Epalla
 
-Bienvenue sur mon portfolio ! Ce site met en avant mon parcours, mes projets, mes compétences et mes expériences professionnelles.  
-
-## 📑 Pages disponibles  
-- **Accueil** : Présentation générale et introduction à mon univers professionnel.  
-- **À propos** : Détails sur mon parcours, mes formations, mes centres d’intérêt et mes skills.  
-- **Projets** : Description de mes réalisations, avec des exemples concrets et visuels.  
-- **Contact** : Formulaire pour me contacter directement.  
+> **Product Owner Junior & Développeur React.js** — En recherche d'alternance (3 semaines entreprise / 1 semaine école)  
+> 🌐 [portfoliolbadouelepalla.onrender.com](https://portfoliolbadouelepalla.onrender.com) · 💼 [LinkedIn](https://linkedin.com/in/badouel-epalla) · 🐙 [GitHub](https://github.com/Laspales)
 
 ---
 
-## 🛠️ Technologies utilisées  
-- **Frontend** : React.js, React Router, Tailwind CSS, Framer Motion  
-- **Backend** : Express;js  
-- **Bases de données** : MongoDB 
-- **Versioning & Collaboration** : Git, GitHub  
+## 🎯 Présentation
+
+Ce portfolio présente mon parcours de **développeur frontend en transition vers le Product Ownership**.  
+Profil hybride : solide background technique (React.js, TypeScript, Node.js) et formation active en gestion de produit (Agile Scrum, backlog management, priorisation MoSCoW/RICE, Jira, Confluence).
+
+Étudiant en **Master Ingénierie Logicielle** (LIORA, 2025-2027), je cherche une alternance en tant que **Product Owner ou Chef de projet IT**.
 
 ---
 
-## ✨ Fonctionnalités clés  
-- Navigation fluide et responsive  
-- Formulaire de contact avec validation frontend et backend  
-- Galerie de projets avec carrousel  
-- Section compétences dynamique avec graphiques et animations  
-- Optimisé pour mobile et desktop  
-- Footer avec liens vers LinkedIn, GitHub et CV  
+## 📑 Pages du site
+
+| Page | Contenu |
+|---|---|
+| **Accueil** | Introduction, stack technique et vision produit |
+| **À propos** | Parcours, compétences PO & tech, centres d'intérêt |
+| **Projets** | Réalisations avec lecture produit (vision, features, UX) |
+| **Contact** | Formulaire de contact direct |
 
 ---
 
-## 🚀 Installation et lancement  
+## 🛠️ Stack technique du portfolio
 
-### 1️⃣ Cloner le dépôt  
+**Frontend** : React.js, React Router, Framer Motion, CSS3  
+**Backend** : Express.js  
+**Base de données** : MongoDB  
+**Versioning** : Git, GitHub  
+**Déploiement** : Render
+
+---
+
+## ✨ Fonctionnalités
+
+- Navigation fluide et responsive (mobile & desktop)
+- Galerie de projets avec carrousel et description produit
+- Formulaire de contact avec validation frontend et backend
+- Animations fluides sur toutes les pages (Framer Motion)
+- Footer avec liens vers LinkedIn, GitHub et CV téléchargeable
+
+---
+
+## 🚀 Installation et lancement
+
+### 1. Cloner le dépôt
+
 ```bash
 git clone https://github.com/Laspales/Site_web.git
-````
-
-### 2️⃣ Installer les dépendances
-
-* **Frontend** :
-
-  ```bash
-  cd front
-  npm install
-  ```
-
-* **Backend** :
-
-  ```bash
-  cd back
-  npm install
-  ```
-
-### 3️⃣ Configurer les variables d’environnement
-
-Créez un fichier `.env` dans le dossier `back` avec vos paramètres :
-
 ```
+
+### 2. Installer les dépendances
+
+```bash
+# Frontend
+cd front && npm install
+
+# Backend
+cd back && npm install
+```
+
+### 3. Configurer les variables d'environnement
+
+Créez un fichier `.env` dans le dossier `back` :
+
+```env
 PORT=5000
 MONGO_URI=<votre_url_mongodb>
 MYSQL_HOST=<votre_hôte_mysql>
@@ -63,48 +75,46 @@ MYSQL_USER=<utilisateur_mysql>
 MYSQL_PASSWORD=<mot_de_passe_mysql>
 ```
 
-### 4️⃣ Lancer le projet
+### 4. Lancer le projet
 
-* **Démarrer le backend** :
+```bash
+# Backend (terminal 1)
+cd back && npm start
 
-  ```bash
-  cd back
-  npm start
-  ```
+# Frontend (terminal 2)
+cd front && npm run dev
+```
 
-* **Démarrer le frontend** (dans un autre terminal) :
+### 5. Accéder au site
 
-  ```bash
-  cd front
-  npm run dev
-  ```
-
-### 5️⃣ Accéder au portfolio
-
-* **Backend** : [http://localhost:5001/](http://localhost:5001/)
-* **Frontend** : [http://localhost:3000/](http://localhost:3000/)
+- Frontend : [http://localhost:3000](http://localhost:3000)
+- Backend : [http://localhost:5001](http://localhost:5001)
 
 ---
 
-## 🤝 Contributions
+## 🗂️ Projets présentés
 
-* Signaler des bugs via les issues GitHub
-* Proposer des améliorations via pull requests
-* Suggérer de nouvelles fonctionnalités pour enrichir le portfolio
+| Projet | Stack | Vision produit |
+|---|---|---|
+| **Bubble Tea** (e-commerce) | Laravel, MySQL, JS | Parcours achat complet, gestion commandes, espace admin |
+| **IRC** (messagerie temps réel) | Node.js, Socket.io, TS | Features priorisées par retours utilisateurs, livraison itérative |
+| **Hyrule Castle** (RPG) | Node.js, TypeScript | Architecture client-serveur, gestion d'état temps réel |
+| **Gestion des molécules** | Next.js, React, TS | Interface pensée pour utilisateurs non-techniques |
+| **Count & Click** (jeu) | HTML, CSS, JS | Boucle de jeu courte, feedback instantané, rejouabilité |
 
 ---
 
-## ⚠️ Difficultés rencontrées
+## ⚠️ Difficultés surmontées
 
-* Optimisation du backend pour les messages
-* Glitch clavier pour accéder à la page admin (uniquement en back)
-* Animations multiples et fluides sur toutes les pages
-* Responsive design adapté à toutes les tailles et orientations d'écran
+- Optimisation des performances backend (gestion des messages en temps réel)
+- Responsive design adapté à toutes les tailles et orientations d'écran
+- Animations multiples fluides sans impact sur les performances
+- Déploiement et configuration sur Render (plan gratuit)
 
 ---
 
 ## 👨‍💻 Auteur
 
-**EPALLA NDJALLA Badouel Laspales**
-
----
+**Badouel Epalla** — Product Owner Junior & Développeur React.js  
+📧 badepalla09@gmail.com · 📞 07 60 09 86 16  
+🌐 [portfoliolbadouelepalla.onrender.com](https://portfoliolbadouelepalla.onrender.com)

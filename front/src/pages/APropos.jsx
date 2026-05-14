@@ -9,8 +9,9 @@ const items = [
         icon: "🎓",
         text: (
             <>
-                Apprenti ingénieur en <strong>Software Engineering</strong> avec une préférence pour le
-                <strong> développement Full Stack</strong>.
+                Apprenti ingénieur en <strong>Software Engineering</strong>  en transition vers le métier de <strong>Product Owner</strong>. Profil hybride :
+                solide background technique et passion pour la <strong>gestion de produit</strong>,
+                l'UX et le lien entre équipes tech et métier.
             </>
         )
     },
@@ -18,14 +19,14 @@ const items = [
         icon: "💻",
         text: (
             <>
-                Mes compétences en <strong>développement</strong> :<br />
-                <strong>Front-End :</strong> HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular<br />
-                <strong>Back-End :</strong> PHP, Laravel, Symfony, Node.js, Express.js, Java, Python<br />
-                <strong>Bases de données :</strong> MySQL, MongoDB, PhpMyAdmin<br />
+                <strong>Compétences produit :</strong> Backlog management, user stories, priorisation MoSCoW/RICE,
+                roadmap, Jira, Confluence, Notion, Figma (lecture)<br />
+                <strong>Méthodes :</strong> Agile Scrum, sprints, rituels, PSM I (en cours)<br />
+                <strong>Technique :</strong> React.js, TypeScript, Node.js, HTML5/CSS3 — lecture et compréhension du code
             </>
         )
     },
-    
+
     {
         icon: "📚",
         text: (
@@ -79,7 +80,7 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"🎓"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"Apprenti ingénieur en Software Engineering avec une préférence pour le développement Full Stack"', className: "string" },
+        { content: '"Apprenti ingénieur en Software Engineering en transition vers le Product Ownership. Profil hybride tech & produit."', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
     [
@@ -89,10 +90,10 @@ const itemsReact = [
         { content: "\n  icon: ", className: "propriete" },
         { content: '"💻"', className: "string" },
         { content: ",\n  text: ", className: "propriete" },
-        { content: '"HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Angular, PHP, Laravel, Symfony, Node.js, Express.js, Java, Python, MySQL, MongoDB, PhpMyAdmin"', className: "string" },
+        { content: '"Produit : Backlog, User Stories, MoSCoW/RICE, Jira, Confluence, Agile Scrum | Tech : React.js, TypeScript, Node.js, HTML5/CSS3"', className: "string" },
         { content: "\n};", className: "bracket" }
     ],
-    
+
     [
         { content: "const ", className: "key" },
         { content: "lectures", className: "var" },
@@ -133,7 +134,7 @@ const itemsReact = [
         { content: '"Football (Bayern, Arsenal), Badminton, Vélo"', className: "string" },
         { content: "\n};", className: "bracket" }
     ]
-    
+
 ];
 
 function APropos() {

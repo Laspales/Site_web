@@ -22,9 +22,8 @@ function Section() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                 >
-                    Développeur <br />
                     <span className="bracket">&lt;</span>
-                    <Animtext texts={["Web", "Fullstack"]} delay={3000} className="grey"/>
+                    <Animtext texts={["Product Owner", "Développeur React"]} delay={3000} className="grey"/>
                     <span className="bracket">/&gt;</span>
                 </motion.h1>
             </div>
@@ -77,10 +76,10 @@ function Section() {
                             { content: '🇨🇲', className: "string" },
 
                             { content: ",\n  profil: ", className: "propriete" },
-                            { content: '"👨‍💻 Développeur Fullstack"', className: "string" },
+                            { content: '"👨‍💻 Product Owner & Développeur React"', className: "string" },
 
                             { content: ",\n  domaines: ", className: "propriete" },
-                            { content: '"💻 Web, 🚀 UX & 🎨 Créativité"', className: "string" },
+                            { content: '"💡 Gestion Produit, 🚀 UX & 💻 Tech"', className: "string" },
 
                             { content: ",\n  devise: ", className: "propriete" },
                             { content: '"Comme le code, la vie demande des itérations pour atteindre la perfection.🤞🏽🪐"', className: "string" },
@@ -93,7 +92,7 @@ function Section() {
                         <TypewriterText
                             text={[
                                 { content: "{", className: "bracket" },
-                                { content: "/* 🐛 Aucun bug n’a été maltraité (pour l’instant) */ ", className: "cmmt" },
+                                { content: "/* 🚀 Chaque feature commence par comprendre l'utilisateur */ ", className: "cmmt" },
                                 { content: "}", className: "bracket" }
                             ]}
                             speed={50}
